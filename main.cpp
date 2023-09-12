@@ -1,5 +1,6 @@
 #include <iostream>
 #include "mytools.h"
+
 using namespace std;
 
 
@@ -11,8 +12,8 @@ int main(){
 //    tools.delete_files("E:\\BaiduNetdiskDownload\\c++", "内存");
 //    tools.countFiles("");
 //    tools.printFiles("");
-    tools.count_imgs_and_videos("F:\\未分类\\经典福利姬双马尾少女赛高酱( 赛高呀)大合集 9044P_96V", "copy");
-
+    tools.count_imgs_and_videos("F:\\未分类\\BLUECAKE Hikari - Vol.04 BAD DOCTOR Succubus (+RED.Ver)  149P", "copy");
 
     return 0;
 }
+

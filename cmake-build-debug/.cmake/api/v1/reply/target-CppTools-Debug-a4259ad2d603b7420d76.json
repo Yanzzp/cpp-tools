@@ -2,10 +2,10 @@
 	"artifacts" : 
 	[
 		{
-			"path" : "cppLearning.exe"
+			"path" : "CppTools.exe"
 		},
 		{
-			"path" : "cppLearning.pdb"
+			"path" : "CppTools.pdb"
 		}
 	],
 	"backtrace" : 1,
@@ -38,7 +38,7 @@
 			"compileCommandFragments" : 
 			[
 				{
-					"fragment" : "-g -std=gnu++17 -fdiagnostics-color=always"
+					"fragment" : "-g -fdiagnostics-color=always"
 				}
 			],
 			"language" : "CXX",
@@ -57,7 +57,7 @@
 			]
 		}
 	],
-	"id" : "cppLearning::@6890427a1f51a3e7e1df",
+	"id" : "CppTools::@6890427a1f51a3e7e1df",
 	"link" : 
 	{
 		"commandFragments" : 
@@ -77,8 +77,8 @@
 		],
 		"language" : "CXX"
 	},
-	"name" : "cppLearning",
-	"nameOnDisk" : "cppLearning.exe",
+	"name" : "CppTools",
+	"nameOnDisk" : "CppTools.exe",
 	"paths" : 
 	{
 		"build" : ".",

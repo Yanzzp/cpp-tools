@@ -9,7 +9,7 @@
 					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
 					"minimumCMakeVersion" : 
 					{
-						"string" : "3.21"
+						"string" : "3.26"
 					},
 					"projectIndex" : 0,
 					"source" : ".",
@@ -27,7 +27,7 @@
 					[
 						0
 					],
-					"name" : "cppLearning",
+					"name" : "CppTools",
 					"targetIndexes" : 
 					[
 						0
@@ -38,9 +38,9 @@
 			[
 				{
 					"directoryIndex" : 0,
-					"id" : "cppLearning::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cppLearning-Debug-c9cfbfb6f50fedb3ce03.json",
-					"name" : "cppLearning",
+					"id" : "CppTools::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-CppTools-Debug-a4259ad2d603b7420d76.json",
+					"name" : "CppTools",
 					"projectIndex" : 0
 				}
 			]
