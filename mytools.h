@@ -7,7 +7,7 @@
 #include <algorithm> // 包含算法库，用于对数字列表进行排序
 #include <fstream>
 #include <filesystem> // 包含文件系统库，用于处理文件和目录操作
-
+#include <Windows.h>
 
 using namespace std;
 namespace fs = filesystem;
@@ -24,13 +24,13 @@ private:
     bool isVideoFile(const std::string &filename);
 
 public:
-    void print_all_files(const string &path, int depth = 0);
+    void print_all_files(const string &folderPath, int depth = 0);
 
-    void delete_files(const string &path, string name, int depth = 0);
+    void delete_files(const string &folderPath, string name, int depth = 0);
 
-    void countFiles(const string &folderPath, int depth = 0);
+    void count_imgs_and_videos(const string &folderPath, string option);
 
-    int printFiles(const string &folderPath, int depth = 0);
+
 };
 
 

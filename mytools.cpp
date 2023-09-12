@@ -59,54 +59,100 @@ bool mytools::isVideoFile(const std::string &filename) {
     return false;
 }
 
-void mytools::countFiles(const string &folderPath,int depth) {
-
-    try {
-        for (const auto &entry: fs::directory_iterator(folderPath)) {
-            if (entry.is_directory()) {
-                countFiles(entry.path().string(), depth + 1); // 递归调用自身遍历子文件夹
-            } else if (entry.is_regular_file()) {
-                if (isImageFile(entry.path().filename().string())) {
-                    imageCount++;
-                } else if (isVideoFile(entry.path().filename().string())) {
-                    videoCount++;
-                }
-            }
+// 统计一个文件夹下的图片和视频的数量
+void mytools::count_imgs_and_videos(const string &folderPath, string option) {
+    for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
+        if (isImageFile(entry.path().filename().string())) {
+            imageCount++;
+        } else if (isVideoFile(entry.path().filename().string())) {
+            videoCount++;
         }
-    } catch (const std::exception &ex) {
-        std::cerr << "发生错误: " << ex.what() << std::endl;
     }
-}
-
-int mytools::printFiles(const std::string &folderPath, int depth) {
-    countFiles(folderPath, depth);
     cout << "图片的数量是: " << imageCount << endl;
     cout << "视频的数量是: " << videoCount << endl;
 
-//    string filename = "E:\\资源\\4女神大合集JVID猫系少女+淇淇+夏暮光+姗姗就打奥特曼合集\\example.txt"; // 指定要创建的文件名
-    string filename = folderPath + "\\图片数量("+ to_string(imageCount)+") 视频数量("+ to_string(videoCount)+").txt"; // 指定要创建的文件名
-    cout << filename << endl;
-
-    try {
-        fs::path fileToCreate(filename);
-        if (!fs::exists(fileToCreate)) {
-            // 文件不存在，创建文件并打开以进行写入
-            std::ofstream outputFile(fileToCreate);
-            // 检查文件是否成功打开
-            if (outputFile.is_open()) {
-                // 写入数据到文件
-                outputFile << "图片的数量是: " << imageCount << "\n";
-                outputFile << "视频的数量是: " << videoCount << "\n";
-                // 关闭文件流
-                outputFile.close();
-                std::cout << "文件 " << filename << " 创建并写入成功。\n";
-            } else {
-                std::cerr << "无法打开文件 " << filename << std::endl;
-            }
-        } else {
-            std::cerr << "文件 " << filename << " 已经存在。\n";
+    if (option == "txt") {
+        string txtFileName;
+        // 指定要创建的文件名
+        if (imageCount == 0 && videoCount != 0) {
+            txtFileName = folderPath + "\\" + to_string(videoCount) + "V.txt";
+        } else if (videoCount == 0 && imageCount != 0) {
+            txtFileName = folderPath + "\\" + to_string(imageCount) + "P.txt";
         }
-    } catch (const std::exception& ex) {
-        std::cerr << "发生错误: " << ex.what() << std::endl;
+        if (imageCount != 0 && videoCount != 0) {
+            txtFileName = folderPath + "\\" + to_string(imageCount) + "P_" + to_string(videoCount) + "V.txt";
+        }
+
+        try {
+            fs::path fileToCreate(txtFileName);
+            if (!fs::exists(fileToCreate)) {
+                // 文件不存在，创建文件并打开以进行写入
+                std::ofstream outputFile(fileToCreate);
+                if (outputFile.is_open()) { // 检查文件是否成功打开
+                    outputFile << "图片的数量是: " << imageCount << "\n";
+                    outputFile << "视频的数量是: " << videoCount << "\n";
+                    outputFile.close();
+                    std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
+                } else {
+                    std::cerr << "无法打开文件 " << txtFileName << std::endl;
+                }
+            } else {
+                //            std::cerr << "文件 " << txtFileName << " 已经存在。\n";
+                fs::remove(txtFileName);
+                std::ofstream outputFile(fileToCreate);
+                if (outputFile.is_open()) { // 检查文件是否成功打开
+                    outputFile << "图片的数量是: " << imageCount << "\n";
+                    outputFile << "视频的数量是: " << videoCount << "\n";
+                    outputFile.close();
+                    std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
+                } else {
+                    std::cerr << "无法打开文件 " << txtFileName << std::endl;
+                }
+            }
+        } catch (const std::exception &ex) {
+            std::cerr << "发生错误: " << ex.what() << std::endl;
+        }
     }
+    if (option == "copy") {
+        string textToCopy;
+        // 指定要创建的文件名
+        if (imageCount == 0 && videoCount != 0) {
+            textToCopy = to_string(videoCount) + "V";
+        } else if (videoCount == 0 && imageCount != 0) {
+            textToCopy = to_string(imageCount) + "P";
+        }
+        if (imageCount != 0 && videoCount != 0) {
+            textToCopy = to_string(imageCount) + "P_" + to_string(videoCount) + "V";
+        }
+        cout << textToCopy << endl;
+
+        if (OpenClipboard(nullptr)) {
+            // 清空剪贴板内容
+            EmptyClipboard();
+            // 获取字符串的长度，包括 null 终止字符
+            size_t textSize = textToCopy.size() + 1;
+            // 分配全局内存并将字符串复制进去
+            HGLOBAL hClipboardData = GlobalAlloc(GMEM_MOVEABLE, textSize);
+            if (hClipboardData != nullptr) {
+                char *pClipboardText = static_cast<char *>(GlobalLock(hClipboardData));
+                if (pClipboardText != nullptr) {
+                    strcpy_s(pClipboardText, textSize, textToCopy.c_str());
+                    GlobalUnlock(hClipboardData);
+
+                    // 将数据设置到剪贴板
+                    SetClipboardData(CF_TEXT, hClipboardData);
+                } else {
+                    std::cerr << "无法锁定全局内存。" << std::endl;
+                }
+            } else {
+                std::cerr << "无法分配全局内存。" << std::endl;
+            }
+
+            CloseClipboard();
+        } else {
+            std::cerr << "无法打开剪贴板。" << std::endl;
+        }
+    }
+
 }
+

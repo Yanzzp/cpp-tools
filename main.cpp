@@ -7,10 +7,12 @@ using namespace std;
 int main(){
 
     mytools tools;
-//    tools.print_all_files("E:\\资源\\4女神大合集JVID猫系少女+淇淇+夏暮光+姗姗就打奥特曼合集");
+//    tools.print_all_files("");
 //    tools.delete_files("E:\\BaiduNetdiskDownload\\c++", "内存");
+//    tools.countFiles("");
+//    tools.printFiles("");
+    tools.count_imgs_and_videos("F:\\未分类\\经典福利姬双马尾少女赛高酱( 赛高呀)大合集 9044P_96V", "copy");
 
-//    tools.countFiles("E:\\资源\\4女神大合集JVID猫系少女+淇淇+夏暮光+姗姗就打奥特曼合集");
-    tools.printFiles("E:\\资源\\4女神大合集JVID猫系少女+淇淇+夏暮光+姗姗就打奥特曼合集");
+
     return 0;
 }
