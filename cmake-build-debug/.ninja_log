@@ -1,4 +1,18 @@
 # ninja log v5
-4	594	7150865810437230	CMakeFiles/cppLearning.dir/main.cpp.obj	3e79ef012731805e
-594	702	7150865811489088	cppLearning.exe	dbd391b904243b07
-10	842	7150865671596821	CMakeFiles/cppLearning.dir/mytools.cpp.obj	487ef9015bc1b5d4
+3	941	7162068720706240	CMakeFiles/cppLearning.dir/main.cpp.obj	72318fc5b1f52bee
+783	901	7162073699595157	cppLearning.exe	dbd391b904243b07
+3	783	7162073698431445	CMakeFiles/cppLearning.dir/mytools.cpp.obj	8e1549aec1da5bc8
+3	853	7162074094025449	CMakeFiles/cppLearning.dir/mytools.cpp.obj	8e1549aec1da5bc8
+853	974	7162074095196332	cppLearning.exe	dbd391b904243b07
+3	937	7162074491628890	CMakeFiles/cppLearning.dir/mytools.cpp.obj	8e1549aec1da5bc8
+937	1071	7162074492942119	cppLearning.exe	dbd391b904243b07
+3	879	7162074567048585	CMakeFiles/cppLearning.dir/mytools.cpp.obj	8e1549aec1da5bc8
+879	1032	7162074568548360	cppLearning.exe	dbd391b904243b07
+3	789	7162074656303660	CMakeFiles/cppLearning.dir/mytools.cpp.obj	8e1549aec1da5bc8
+789	909	7162074657479853	cppLearning.exe	dbd391b904243b07
+3	968	7162075044598056	CMakeFiles/cppLearning.dir/mytools.cpp.obj	8e1549aec1da5bc8
+969	1091	7162075045807132	cppLearning.exe	dbd391b904243b07
+3	850	7162075632661154	CMakeFiles/cppLearning.dir/mytools.cpp.obj	8e1549aec1da5bc8
+850	978	7162075633914592	cppLearning.exe	dbd391b904243b07
+3	862	7162075788576806	CMakeFiles/cppLearning.dir/mytools.cpp.obj	8e1549aec1da5bc8
+862	982	7162075789759113	cppLearning.exe	dbd391b904243b07
