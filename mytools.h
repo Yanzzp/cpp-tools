@@ -9,6 +9,10 @@
 #include <filesystem> // 包含文件系统库，用于处理文件和目录操作
 #include <Windows.h>
 
+#define txt "txt"
+#define copy "copy"
+
+
 using namespace std;
 namespace fs = filesystem;
 
@@ -16,15 +20,20 @@ using namespace std;
 
 class mytools {
 private:
+
+
     int imageCount = 0;
     int videoCount = 0;
+    int audioCount = 0;
 
-    std::vector<std::string> folder_info = {"", "", ""};
+    std::vector<std::string> folder_info = {"", "", "", ""};
     uintmax_t folderSize = 0;
 
     bool isImageFile(const std::string &filename);
 
     bool isVideoFile(const std::string &filename);
+
+    bool isAudioFile(const std::string &filename);
 
     void get_file_size(string path);
 
@@ -33,7 +42,7 @@ public:
 
     void delete_files(const string &folderPath, string name, int depth = 0);
 
-    void count_imgs_and_videos(const string &folderPath, string option="");
+    void count_imgs_videos_and_audio(const string &folderPath, string option = "");
 
     void get_folder_size(const string &folderPath);
 

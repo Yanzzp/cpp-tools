@@ -1,5 +1,37 @@
 #include "mytools.h"
 
+bool mytools::isImageFile(const std::string &filename) {
+    // 根据文件扩展名判断是否为图像文件
+    std::vector<std::string> imageExtensions = {".jpg", ".jpeg", ".png", ".bmp", ".gif"};
+    for (const std::string &extension: imageExtensions) {
+        if (filename.find(extension) != std::string::npos) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool mytools::isVideoFile(const std::string &filename) {
+    // 根据文件扩展名判断是否为视频文件
+    std::vector<std::string> videoExtensions = {".mp4", ".avi", ".mkv", ".mov", ".wmv"};
+    for (const std::string &extension: videoExtensions) {
+        if (filename.find(extension) != std::string::npos) {
+            return true;
+        }
+    }
+    return false;
+}
+
+bool mytools::isAudioFile(const std::string &filename) {
+    // 根据文件扩展名判断是否为视频文件
+    std::vector<std::string> audioExtensions = {".mp3", ".wav", ".flac", ".ape", ".aac"};
+    for (const std::string &extension: audioExtensions) {
+        if (filename.find(extension) != std::string::npos) {
+            return true;
+        }
+    }
+    return false;
+}
 
 void mytools::get_file_size(string path) {
     error_code ec{};
@@ -48,52 +80,35 @@ void mytools::delete_files(const string &path, string name, int depth) {
 }
 
 
-bool mytools::isImageFile(const std::string &filename) {
-    // 根据文件扩展名判断是否为图像文件
-    std::vector<std::string> imageExtensions = {".jpg", ".jpeg", ".png", ".bmp", ".gif"};
-    for (const std::string &extension: imageExtensions) {
-        if (filename.find(extension) != std::string::npos) {
-            return true;
-        }
-    }
-    return false;
-}
-
-bool mytools::isVideoFile(const std::string &filename) {
-    // 根据文件扩展名判断是否为视频文件
-    std::vector<std::string> videoExtensions = {".mp4", ".avi", ".mkv", ".mov", ".wmv"};
-    for (const std::string &extension: videoExtensions) {
-        if (filename.find(extension) != std::string::npos) {
-            return true;
-        }
-    }
-    return false;
-}
 
 // 统计一个文件夹下的图片和视频的数量
-void mytools::count_imgs_and_videos(const string &folderPath, string option) {
+void mytools::count_imgs_videos_and_audio(const string &folderPath, string option) {
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
         if (isImageFile(entry.path().filename().string())) {
             imageCount++;
         } else if (isVideoFile(entry.path().filename().string())) {
             videoCount++;
+        } else if (isAudioFile(entry.path().filename().string())) {
+            audioCount++;
         }
     }
     cout << "图片的数量是: " << imageCount << endl;
     cout << "视频的数量是: " << videoCount << endl;
+    cout << "音频的数量是: " << audioCount << endl;
 
     if (option == "txt") {
-        string txtFileName;
+        string txtFileName= folderPath + "\\" ;
         // 指定要创建的文件名
-        if (imageCount == 0 && videoCount != 0) {
-            txtFileName = folderPath + "\\" + to_string(videoCount) + "V.txt";
-        } else if (videoCount == 0 && imageCount != 0) {
-            txtFileName = folderPath + "\\" + to_string(imageCount) + "P.txt";
+        if (imageCount !=0) {
+            txtFileName += to_string(imageCount) + "P";
         }
-        if (imageCount != 0 && videoCount != 0) {
-            txtFileName = folderPath + "\\" + to_string(imageCount) + "P_" + to_string(videoCount) + "V.txt";
+        if (videoCount != 0) {
+            txtFileName += to_string(videoCount) + "V";
         }
-
+        if (audioCount != 0) {
+            txtFileName += to_string(audioCount) + "A";
+        }
+        txtFileName += ".txt";
         try {
             fs::path fileToCreate(txtFileName);
             if (!fs::exists(fileToCreate)) {
@@ -102,6 +117,7 @@ void mytools::count_imgs_and_videos(const string &folderPath, string option) {
                 if (outputFile.is_open()) { // 检查文件是否成功打开
                     outputFile << "图片的数量是: " << imageCount << "\n";
                     outputFile << "视频的数量是: " << videoCount << "\n";
+                    outputFile << "音频的数量是: " << videoCount << "\n";
                     outputFile.close();
                     std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
                 } else {
@@ -114,6 +130,7 @@ void mytools::count_imgs_and_videos(const string &folderPath, string option) {
                 if (outputFile.is_open()) { // 检查文件是否成功打开
                     outputFile << "图片的数量是: " << imageCount << "\n";
                     outputFile << "视频的数量是: " << videoCount << "\n";
+                    outputFile << "音频的数量是: " << videoCount << "\n";
                     outputFile.close();
                     std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
                 } else {
@@ -127,15 +144,15 @@ void mytools::count_imgs_and_videos(const string &folderPath, string option) {
     if (option == "copy") {
         string textToCopy;
         // 指定要创建的文件名
-        if (imageCount == 0 && videoCount != 0) {
-            textToCopy = to_string(videoCount) + "V";
-        } else if (videoCount == 0 && imageCount != 0) {
-            textToCopy = to_string(imageCount) + "P";
+        if (imageCount !=0) {
+            textToCopy += to_string(imageCount) + "P";
         }
-        if (imageCount != 0 && videoCount != 0) {
-            textToCopy = to_string(imageCount) + "P_" + to_string(videoCount) + "V";
+        if (videoCount != 0) {
+            textToCopy += to_string(videoCount) + "V";
         }
-        cout << textToCopy << endl;
+        if (audioCount != 0) {
+            textToCopy += to_string(audioCount) + "A";
+        }
 
         if (OpenClipboard(nullptr)) {
             // 清空剪贴板内容
@@ -165,14 +182,14 @@ void mytools::count_imgs_and_videos(const string &folderPath, string option) {
         }
     }
     if(option == ""){
-        if (imageCount == 0 && videoCount != 0) {
-            folder_info[1] = to_string(videoCount) + "V";
-        } else if (videoCount == 0 && imageCount != 0) {
+        if (imageCount!=0) {
             folder_info[0] = to_string(imageCount) + "P";
         }
-        if (imageCount != 0 && videoCount != 0) {
-            folder_info[0]=(to_string(imageCount)+"P");
-            folder_info[1]=(to_string(videoCount)+"V");
+        if (videoCount!=0) {
+            folder_info[1] = to_string(videoCount) + "V";
+        }
+        if (audioCount!=0) {
+            folder_info[2] = to_string(audioCount) + "A";
         }
     }
 }
@@ -191,22 +208,22 @@ void mytools::get_folder_size(const std::string &folderPath) {
         cout << "文件夹的大小是: " << (Size /= 1024) << "GB" << endl;
         isMB = false;
     }
-    folder_info[2]=(to_string(Size)+(isMB?"MB":"GB"));
+    folder_info[3]=(to_string(Size)+(isMB?"MB":"GB"));
 }
 
 void mytools::get_folder_info(const std::string &folderPath) {
     cout << "文件夹的路径是: " << folderPath << endl;
     cout << "文件夹的名称是: " << fs::path(folderPath).filename() << endl;
-    count_imgs_and_videos(folderPath);
+    count_imgs_videos_and_audio(folderPath);
     get_folder_size(folderPath);
     string textToCopy;
-    if(folder_info[0]==""){
-        textToCopy = "["+ folder_info[1] + "_" + folder_info[2]+"]";
-    }else if(folder_info[1]=="") {
-        textToCopy = "[" + folder_info[0] + "_" + folder_info[2] + "]";
-    }else {
-        textToCopy = "[" + folder_info[0] + "_" + folder_info[1] + "_" + folder_info[2] + "]";
+    for (int i = 0; i < folder_info.size(); ++i) {
+        if (folder_info[i] != "") {
+            textToCopy += folder_info[i] + " ";
+        }
     }
+    textToCopy.erase(textToCopy.end()-1);
+    textToCopy = "["+textToCopy+"]";
 
     if (OpenClipboard(nullptr)) {
         // 清空剪贴板内容
