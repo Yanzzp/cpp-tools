@@ -1,3 +1,3 @@
-E:/MyCodeProject/CLionProjects/CppTools/cmake-build-debug/CMakeFiles/CppTools.dir
-E:/MyCodeProject/CLionProjects/CppTools/cmake-build-debug/CMakeFiles/edit_cache.dir
-E:/MyCodeProject/CLionProjects/CppTools/cmake-build-debug/CMakeFiles/rebuild_cache.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/CppTools.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/edit_cache.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/rebuild_cache.dir

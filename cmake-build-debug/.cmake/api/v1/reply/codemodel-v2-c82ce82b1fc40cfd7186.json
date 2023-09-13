@@ -49,8 +49,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/MyCodeProject/CLionProjects/CppTools/cmake-build-debug",
-		"source" : "E:/MyCodeProject/CLionProjects/CppTools"
+		"build" : "E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug",
+		"source" : "E:/MyCodeProject/CLionProjects/cpp-tools"
 	},
 	"version" : 
 	{

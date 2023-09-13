@@ -19,18 +19,25 @@ private:
     int imageCount = 0;
     int videoCount = 0;
 
+    std::vector<std::string> folder_info = {"", "", ""};
+    uintmax_t folderSize = 0;
+
     bool isImageFile(const std::string &filename);
 
     bool isVideoFile(const std::string &filename);
+
+    void get_file_size(string path);
 
 public:
     void print_all_files(const string &folderPath, int depth = 0);
 
     void delete_files(const string &folderPath, string name, int depth = 0);
 
-    void count_imgs_and_videos(const string &folderPath, string option);
+    void count_imgs_and_videos(const string &folderPath, string option="");
 
+    void get_folder_size(const string &folderPath);
 
+    void get_folder_info(const string &folderPath);
 };
 
 

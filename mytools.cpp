@@ -1,5 +1,16 @@
 #include "mytools.h"
 
+
+void mytools::get_file_size(string path) {
+    error_code ec{};
+    auto size = std::filesystem::file_size(path, ec);
+    if (ec == error_code{})
+        folderSize += size;
+    else
+        cout << "Error accessing file '" << path
+             << "' message: " << ec.message() << endl;
+}
+
 // 打印一个文件夹下的所有文件的路径
 void mytools::print_all_files(const std::string &path, int depth) {
     for (const auto &entry: fs::directory_iterator(path)) {
@@ -153,6 +164,75 @@ void mytools::count_imgs_and_videos(const string &folderPath, string option) {
             std::cerr << "无法打开剪贴板。" << std::endl;
         }
     }
+    if(option == ""){
+        if (imageCount == 0 && videoCount != 0) {
+            folder_info[1] = to_string(videoCount) + "V";
+        } else if (videoCount == 0 && imageCount != 0) {
+            folder_info[0] = to_string(imageCount) + "P";
+        }
+        if (imageCount != 0 && videoCount != 0) {
+            folder_info[0]=(to_string(imageCount)+"P");
+            folder_info[1]=(to_string(videoCount)+"V");
+        }
+    }
+}
 
+void mytools::get_folder_size(const std::string &folderPath) {
+    for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
+        if (entry.is_regular_file()) {
+            get_file_size(entry.path().string());
+        }
+    }
+    uintmax_t Size = this->folderSize/1024/1024;
+    bool isMB = true;
+    if (Size < 1024){
+        cout << "文件夹的大小是: " << Size << "MB" << endl;
+    }else{
+        cout << "文件夹的大小是: " << (Size /= 1024) << "GB" << endl;
+        isMB = false;
+    }
+    folder_info[2]=(to_string(Size)+(isMB?"MB":"GB"));
+}
+
+void mytools::get_folder_info(const std::string &folderPath) {
+    cout << "文件夹的路径是: " << folderPath << endl;
+    cout << "文件夹的名称是: " << fs::path(folderPath).filename() << endl;
+    count_imgs_and_videos(folderPath);
+    get_folder_size(folderPath);
+    string textToCopy;
+    if(folder_info[0]==""){
+        textToCopy = "["+ folder_info[1] + "_" + folder_info[2]+"]";
+    }else if(folder_info[1]=="") {
+        textToCopy = "[" + folder_info[0] + "_" + folder_info[2] + "]";
+    }else {
+        textToCopy = "[" + folder_info[0] + "_" + folder_info[1] + "_" + folder_info[2] + "]";
+    }
+
+    if (OpenClipboard(nullptr)) {
+        // 清空剪贴板内容
+        EmptyClipboard();
+        // 获取字符串的长度，包括 null 终止字符
+        size_t textSize = textToCopy.size() + 1;
+        // 分配全局内存并将字符串复制进去
+        HGLOBAL hClipboardData = GlobalAlloc(GMEM_MOVEABLE, textSize);
+        if (hClipboardData != nullptr) {
+            char *pClipboardText = static_cast<char *>(GlobalLock(hClipboardData));
+            if (pClipboardText != nullptr) {
+                strcpy_s(pClipboardText, textSize, textToCopy.c_str());
+                GlobalUnlock(hClipboardData);
+
+                // 将数据设置到剪贴板
+                SetClipboardData(CF_TEXT, hClipboardData);
+            } else {
+                std::cerr << "无法锁定全局内存。" << std::endl;
+            }
+        } else {
+            std::cerr << "无法分配全局内存。" << std::endl;
+        }
+
+        CloseClipboard();
+    } else {
+        std::cerr << "无法打开剪贴板。" << std::endl;
+    }
 }
 

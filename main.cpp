@@ -4,17 +4,6 @@
 using namespace std;
 
 
-int64_t GetFolderSize(const fs::path& folderPath) {
-    int64_t size = 0;
-
-    for (const auto& entry : fs::recursive_directory_iterator(folderPath)) {
-        if (fs::is_regular_file(entry)) {
-            size += fs::file_size(entry);
-        }
-    }
-
-    return size;
-}
 
 int main(){
 
@@ -24,7 +13,7 @@ int main(){
 //    tools.countFiles("");
 //    tools.printFiles("");
 //    tools.count_imgs_and_videos("F:\\未分类\\BLUECAKE Hikari - Vol.04 BAD DOCTOR Succubus (+RED.Ver)  149P", "copy");
-    cout << GetFolderSize("E:\\MyCodeProject\\CLionProjects\\CppTools\\CMakeLists.txt") << endl;
+    tools.get_folder_info("E:\\BaiduNetdiskDownload\\ASMR\\林三岁 453V合集[丝袜 调教 足交 高跟鞋]");
     return 0;
 }
 
