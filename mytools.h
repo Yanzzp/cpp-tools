@@ -8,6 +8,7 @@
 #include <fstream>
 #include <filesystem> // 包含文件系统库，用于处理文件和目录操作
 #include <Windows.h>
+#include <Python.h>
 
 #define txt "txt"
 #define copy "copy"
@@ -38,6 +39,8 @@ private:
     void get_file_size(string path);
 
 public:
+    string translate(string text, string from, string to, bool isPrint = false);
+
     void print_all_files(const string &folderPath, int depth = 0);
 
     void delete_files(const string &folderPath, string name, int depth = 0);
@@ -47,6 +50,8 @@ public:
     void get_folder_size(const string &folderPath);
 
     void get_folder_info(const string &folderPath);
+
+
 };
 
 

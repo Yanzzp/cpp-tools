@@ -436,4 +436,131 @@ CMakeFiles/CppTools.dir/mytools.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/sec_api/stralign_s.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/winsvc.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/mcx.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/imm.h
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/imm.h \
+ C:/Users/11057/miniconda3/include/Python.h \
+ C:/Users/11057/miniconda3/include/patchlevel.h \
+ C:/Users/11057/miniconda3/include/pyconfig.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/io.h \
+ C:/Users/11057/miniconda3/include/pymacconfig.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/assert.h \
+ C:/Users/11057/miniconda3/include/pyport.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/inttypes.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/math.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/math.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/specfun.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/gamma.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/special_function_util.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/bessel_function.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/beta_function.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/ell_integral.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/exp_integral.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/hypergeometric.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/legendre_function.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/modified_bessel_func.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/poly_hermite.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/poly_laguerre.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/riemann_zeta.tcc \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/sys/stat.h \
+ C:/Users/11057/miniconda3/include/exports.h \
+ C:/Users/11057/miniconda3/include/pymacro.h \
+ C:/Users/11057/miniconda3/include/pymath.h \
+ C:/Users/11057/miniconda3/include/pymem.h \
+ C:/Users/11057/miniconda3/include/cpython/pymem.h \
+ C:/Users/11057/miniconda3/include/pytypedefs.h \
+ C:/Users/11057/miniconda3/include/pybuffer.h \
+ C:/Users/11057/miniconda3/include/object.h \
+ C:/Users/11057/miniconda3/include/cpython/object.h \
+ C:/Users/11057/miniconda3/include/objimpl.h \
+ C:/Users/11057/miniconda3/include/cpython/objimpl.h \
+ C:/Users/11057/miniconda3/include/typeslots.h \
+ C:/Users/11057/miniconda3/include/pyhash.h \
+ C:/Users/11057/miniconda3/include/cpython/pydebug.h \
+ C:/Users/11057/miniconda3/include/bytearrayobject.h \
+ C:/Users/11057/miniconda3/include/cpython/bytearrayobject.h \
+ C:/Users/11057/miniconda3/include/bytesobject.h \
+ C:/Users/11057/miniconda3/include/cpython/bytesobject.h \
+ C:/Users/11057/miniconda3/include/unicodeobject.h \
+ C:/Users/11057/miniconda3/include/cpython/unicodeobject.h \
+ C:/Users/11057/miniconda3/include/longobject.h \
+ C:/Users/11057/miniconda3/include/cpython/longobject.h \
+ C:/Users/11057/miniconda3/include/cpython/longintrepr.h \
+ C:/Users/11057/miniconda3/include/boolobject.h \
+ C:/Users/11057/miniconda3/include/floatobject.h \
+ C:/Users/11057/miniconda3/include/cpython/floatobject.h \
+ C:/Users/11057/miniconda3/include/complexobject.h \
+ C:/Users/11057/miniconda3/include/cpython/complexobject.h \
+ C:/Users/11057/miniconda3/include/rangeobject.h \
+ C:/Users/11057/miniconda3/include/memoryobject.h \
+ C:/Users/11057/miniconda3/include/tupleobject.h \
+ C:/Users/11057/miniconda3/include/cpython/tupleobject.h \
+ C:/Users/11057/miniconda3/include/listobject.h \
+ C:/Users/11057/miniconda3/include/cpython/listobject.h \
+ C:/Users/11057/miniconda3/include/dictobject.h \
+ C:/Users/11057/miniconda3/include/cpython/dictobject.h \
+ C:/Users/11057/miniconda3/include/cpython/odictobject.h \
+ C:/Users/11057/miniconda3/include/enumobject.h \
+ C:/Users/11057/miniconda3/include/setobject.h \
+ C:/Users/11057/miniconda3/include/cpython/setobject.h \
+ C:/Users/11057/miniconda3/include/methodobject.h \
+ C:/Users/11057/miniconda3/include/cpython/methodobject.h \
+ C:/Users/11057/miniconda3/include/moduleobject.h \
+ C:/Users/11057/miniconda3/include/cpython/funcobject.h \
+ C:/Users/11057/miniconda3/include/cpython/classobject.h \
+ C:/Users/11057/miniconda3/include/fileobject.h \
+ C:/Users/11057/miniconda3/include/cpython/fileobject.h \
+ C:/Users/11057/miniconda3/include/pycapsule.h \
+ C:/Users/11057/miniconda3/include/cpython/code.h \
+ C:/Users/11057/miniconda3/include/pyframe.h \
+ C:/Users/11057/miniconda3/include/cpython/pyframe.h \
+ C:/Users/11057/miniconda3/include/traceback.h \
+ C:/Users/11057/miniconda3/include/cpython/traceback.h \
+ C:/Users/11057/miniconda3/include/sliceobject.h \
+ C:/Users/11057/miniconda3/include/cpython/cellobject.h \
+ C:/Users/11057/miniconda3/include/iterobject.h \
+ C:/Users/11057/miniconda3/include/cpython/initconfig.h \
+ C:/Users/11057/miniconda3/include/pystate.h \
+ C:/Users/11057/miniconda3/include/cpython/pystate.h \
+ C:/Users/11057/miniconda3/include/cpython/genobject.h \
+ C:/Users/11057/miniconda3/include/descrobject.h \
+ C:/Users/11057/miniconda3/include/cpython/descrobject.h \
+ C:/Users/11057/miniconda3/include/genericaliasobject.h \
+ C:/Users/11057/miniconda3/include/warnings.h \
+ C:/Users/11057/miniconda3/include/cpython/warnings.h \
+ C:/Users/11057/miniconda3/include/weakrefobject.h \
+ C:/Users/11057/miniconda3/include/cpython/weakrefobject.h \
+ C:/Users/11057/miniconda3/include/structseq.h \
+ C:/Users/11057/miniconda3/include/cpython/picklebufobject.h \
+ C:/Users/11057/miniconda3/include/cpython/pytime.h \
+ C:/Users/11057/miniconda3/include/codecs.h \
+ C:/Users/11057/miniconda3/include/pyerrors.h \
+ C:/Users/11057/miniconda3/include/cpython/pyerrors.h \
+ C:/Users/11057/miniconda3/include/pythread.h \
+ C:/Users/11057/miniconda3/include/cpython/pythread.h \
+ C:/Users/11057/miniconda3/include/cpython/context.h \
+ C:/Users/11057/miniconda3/include/modsupport.h \
+ C:/Users/11057/miniconda3/include/cpython/modsupport.h \
+ C:/Users/11057/miniconda3/include/compile.h \
+ C:/Users/11057/miniconda3/include/cpython/compile.h \
+ C:/Users/11057/miniconda3/include/pythonrun.h \
+ C:/Users/11057/miniconda3/include/cpython/pythonrun.h \
+ C:/Users/11057/miniconda3/include/pylifecycle.h \
+ C:/Users/11057/miniconda3/include/cpython/pylifecycle.h \
+ C:/Users/11057/miniconda3/include/ceval.h \
+ C:/Users/11057/miniconda3/include/cpython/ceval.h \
+ C:/Users/11057/miniconda3/include/sysmodule.h \
+ C:/Users/11057/miniconda3/include/cpython/sysmodule.h \
+ C:/Users/11057/miniconda3/include/osmodule.h \
+ C:/Users/11057/miniconda3/include/intrcheck.h \
+ C:/Users/11057/miniconda3/include/import.h \
+ C:/Users/11057/miniconda3/include/cpython/import.h \
+ C:/Users/11057/miniconda3/include/abstract.h \
+ C:/Users/11057/miniconda3/include/cpython/abstract.h \
+ C:/Users/11057/miniconda3/include/bltinmodule.h \
+ C:/Users/11057/miniconda3/include/cpython/pyctype.h \
+ C:/Users/11057/miniconda3/include/pystrtod.h \
+ C:/Users/11057/miniconda3/include/pystrcmp.h \
+ C:/Users/11057/miniconda3/include/fileutils.h \
+ C:/Users/11057/miniconda3/include/cpython/fileutils.h \
+ C:/Users/11057/miniconda3/include/cpython/pyfpe.h \
+ C:/Users/11057/miniconda3/include/tracemalloc.h

@@ -1,5 +1,5 @@
 #include "mytools.h"
-
+// 判断是否为图像文件
 bool mytools::isImageFile(const std::string &filename) {
     // 根据文件扩展名判断是否为图像文件
     std::vector<std::string> imageExtensions = {".jpg", ".jpeg", ".png", ".bmp", ".gif"};
@@ -10,7 +10,7 @@ bool mytools::isImageFile(const std::string &filename) {
     }
     return false;
 }
-
+// 判断是否为视频文件
 bool mytools::isVideoFile(const std::string &filename) {
     // 根据文件扩展名判断是否为视频文件
     std::vector<std::string> videoExtensions = {".mp4", ".avi", ".mkv", ".mov", ".wmv"};
@@ -21,7 +21,7 @@ bool mytools::isVideoFile(const std::string &filename) {
     }
     return false;
 }
-
+// 判断是否为音频文件
 bool mytools::isAudioFile(const std::string &filename) {
     // 根据文件扩展名判断是否为视频文件
     std::vector<std::string> audioExtensions = {".mp3", ".wav", ".flac", ".ape", ".aac"};
@@ -33,14 +33,65 @@ bool mytools::isAudioFile(const std::string &filename) {
     return false;
 }
 
+string mytools::translate(string text, string from, string to,bool isPrint) {
+    Py_Initialize();
+
+    PyObject *sysPath = PySys_GetObject("path");
+    PyList_Append(sysPath, PyUnicode_DecodeFSDefault("E:\\MyCodeProject\\CLionProjects\\cpp-tools"));
+
+    PyObject *pModule = PyImport_ImportModule("translate");
+
+    if (pModule != NULL) {
+        // 获取模块中的函数
+        PyObject *pDict = PyModule_GetDict(pModule);
+        PyObject *pFunc = PyDict_GetItemString(pDict, "translate");
+
+        if (PyCallable_Check(pFunc)) {
+            // 调用Python函数
+            PyObject *pArgs = PyTuple_Pack(3, PyUnicode_DecodeFSDefault(text.c_str()),
+                                           PyUnicode_DecodeFSDefault(from.c_str()),
+                                           PyUnicode_DecodeFSDefault(to.c_str()));
+            PyObject *pValue = PyObject_CallObject(pFunc, pArgs);
+            Py_DECREF(pArgs);
+
+            if (pValue != NULL) {
+                // 处理Python函数的返回值
+                if (PyUnicode_Check(pValue)) {
+                    const char *result = PyUnicode_AsUTF8(pValue);
+                    if (isPrint)
+                        cout << result << endl;
+                    return result;
+                } else {
+                    std::cerr << "函数返回的不是字符串。" << std::endl;
+                }
+                Py_DECREF(pValue);
+            } else {
+                PyErr_Print();
+            }
+        } else {
+            PyErr_Print();
+        }
+        Py_DECREF(pModule);
+    } else {
+        PyErr_Print();
+    }
+
+    // 结束Python解释器
+    Py_Finalize();
+}
+
+// 获取文件的大小
 void mytools::get_file_size(string path) {
     error_code ec{};
     auto size = std::filesystem::file_size(path, ec);
-    if (ec == error_code{})
+    if (ec == error_code{}){
         folderSize += size;
-    else
+    }
+    else{
         cout << "Error accessing file '" << path
-             << "' message: " << ec.message() << endl;
+        << "' message: " << ec.message() << endl;
+    }
+
 }
 
 // 打印一个文件夹下的所有文件的路径
@@ -79,8 +130,6 @@ void mytools::delete_files(const string &path, string name, int depth) {
 
 }
 
-
-
 // 统计一个文件夹下的图片和视频的数量
 void mytools::count_imgs_videos_and_audio(const string &folderPath, string option) {
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
@@ -97,9 +146,9 @@ void mytools::count_imgs_videos_and_audio(const string &folderPath, string optio
     cout << "音频的数量是: " << audioCount << endl;
 
     if (option == "txt") {
-        string txtFileName= folderPath + "\\" ;
+        string txtFileName = folderPath + "\\";
         // 指定要创建的文件名
-        if (imageCount !=0) {
+        if (imageCount != 0) {
             txtFileName += to_string(imageCount) + "P";
         }
         if (videoCount != 0) {
@@ -144,7 +193,7 @@ void mytools::count_imgs_videos_and_audio(const string &folderPath, string optio
     if (option == "copy") {
         string textToCopy;
         // 指定要创建的文件名
-        if (imageCount !=0) {
+        if (imageCount != 0) {
             textToCopy += to_string(imageCount) + "P";
         }
         if (videoCount != 0) {
@@ -181,36 +230,38 @@ void mytools::count_imgs_videos_and_audio(const string &folderPath, string optio
             std::cerr << "无法打开剪贴板。" << std::endl;
         }
     }
-    if(option == ""){
-        if (imageCount!=0) {
+    if (option == "") {
+        if (imageCount != 0) {
             folder_info[0] = to_string(imageCount) + "P";
         }
-        if (videoCount!=0) {
+        if (videoCount != 0) {
             folder_info[1] = to_string(videoCount) + "V";
         }
-        if (audioCount!=0) {
+        if (audioCount != 0) {
             folder_info[2] = to_string(audioCount) + "A";
         }
     }
 }
 
+// 统计一个文件夹的大小
 void mytools::get_folder_size(const std::string &folderPath) {
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
         if (entry.is_regular_file()) {
             get_file_size(entry.path().string());
         }
     }
-    uintmax_t Size = this->folderSize/1024/1024;
+    uintmax_t Size = this->folderSize / 1024 / 1024;
     bool isMB = true;
-    if (Size < 1024){
+    if (Size < 1024) {
         cout << "文件夹的大小是: " << Size << "MB" << endl;
-    }else{
+    } else {
         cout << "文件夹的大小是: " << (Size /= 1024) << "GB" << endl;
         isMB = false;
     }
-    folder_info[3]=(to_string(Size)+(isMB?"MB":"GB"));
+    folder_info[3] = (to_string(Size) + (isMB ? "MB" : "GB"));
 }
 
+// 获取文件夹的信息
 void mytools::get_folder_info(const std::string &folderPath) {
     cout << "文件夹的路径是: " << folderPath << endl;
     cout << "文件夹的名称是: " << fs::path(folderPath).filename() << endl;
@@ -222,8 +273,8 @@ void mytools::get_folder_info(const std::string &folderPath) {
             textToCopy += folder_info[i] + " ";
         }
     }
-    textToCopy.erase(textToCopy.end()-1);
-    textToCopy = "["+textToCopy+"]";
+    textToCopy.erase(textToCopy.end() - 1);
+    textToCopy = "[" + textToCopy + "]";
 
     if (OpenClipboard(nullptr)) {
         // 清空剪贴板内容
@@ -252,4 +303,5 @@ void mytools::get_folder_info(const std::string &folderPath) {
         std::cerr << "无法打开剪贴板。" << std::endl;
     }
 }
+
 
