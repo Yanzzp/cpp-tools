@@ -11,7 +11,7 @@
 
 
 #define txt "txt"
-#define copy "copy"
+#define COPY "copy"
 
 
 using namespace std;

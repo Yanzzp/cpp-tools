@@ -33,52 +33,6 @@ bool mytools::isAudioFile(const std::string &filename) {
     return false;
 }
 
-string mytools::translate(string text, string from, string to,bool isPrint) {
-    Py_Initialize();
-
-    PyObject *sysPath = PySys_GetObject("path");
-    PyList_Append(sysPath, PyUnicode_DecodeFSDefault("E:\\MyCodeProject\\CLionProjects\\cpp-tools"));
-
-    PyObject *pModule = PyImport_ImportModule("translate");
-
-    if (pModule != NULL) {
-        // 获取模块中的函数
-        PyObject *pDict = PyModule_GetDict(pModule);
-        PyObject *pFunc = PyDict_GetItemString(pDict, "translate");
-
-        if (PyCallable_Check(pFunc)) {
-            // 调用Python函数
-            PyObject *pArgs = PyTuple_Pack(3, PyUnicode_DecodeFSDefault(text.c_str()),
-                                           PyUnicode_DecodeFSDefault(from.c_str()),
-                                           PyUnicode_DecodeFSDefault(to.c_str()));
-            PyObject *pValue = PyObject_CallObject(pFunc, pArgs);
-            Py_DECREF(pArgs);
-
-            if (pValue != NULL) {
-                // 处理Python函数的返回值
-                if (PyUnicode_Check(pValue)) {
-                    const char *result = PyUnicode_AsUTF8(pValue);
-                    if (isPrint)
-                        cout << result << endl;
-                    return result;
-                } else {
-                    std::cerr << "函数返回的不是字符串。" << std::endl;
-                }
-                Py_DECREF(pValue);
-            } else {
-                PyErr_Print();
-            }
-        } else {
-            PyErr_Print();
-        }
-        Py_DECREF(pModule);
-    } else {
-        PyErr_Print();
-    }
-
-    // 结束Python解释器
-    Py_Finalize();
-}
 
 // 获取文件的大小
 void mytools::get_file_size(string path) {

@@ -437,15 +437,22 @@ CMakeFiles/CppTools.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/winsvc.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/mcx.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/imm.h \
- C:/Users/11057/miniconda3/include/Python.h \
- C:/Users/11057/miniconda3/include/patchlevel.h \
- C:/Users/11057/miniconda3/include/pyconfig.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/io.h \
- C:/Users/11057/miniconda3/include/pymacconfig.h \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/Jieba.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/QuerySegment.hpp \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/set \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_tree.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/node_handle.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_set.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multiset.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/erase_if.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cassert \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/assert.h \
- C:/Users/11057/miniconda3/include/pyport.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/inttypes.h \
- C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/math.h \
+ E:/MyCodeProject/CLionProjects/cpp-tools/limonp/Logging.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/DictTrie.hpp \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/map \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_map.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_multimap.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cstring \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/cmath \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/math.h \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/specfun.h \
@@ -461,106 +468,38 @@ CMakeFiles/CppTools.dir/main.cpp.obj: \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/poly_hermite.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/poly_laguerre.tcc \
  C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/tr1/riemann_zeta.tcc \
- C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/sys/stat.h \
- C:/Users/11057/miniconda3/include/exports.h \
- C:/Users/11057/miniconda3/include/pymacro.h \
- C:/Users/11057/miniconda3/include/pymath.h \
- C:/Users/11057/miniconda3/include/pymem.h \
- C:/Users/11057/miniconda3/include/cpython/pymem.h \
- C:/Users/11057/miniconda3/include/pytypedefs.h \
- C:/Users/11057/miniconda3/include/pybuffer.h \
- C:/Users/11057/miniconda3/include/object.h \
- C:/Users/11057/miniconda3/include/cpython/object.h \
- C:/Users/11057/miniconda3/include/objimpl.h \
- C:/Users/11057/miniconda3/include/cpython/objimpl.h \
- C:/Users/11057/miniconda3/include/typeslots.h \
- C:/Users/11057/miniconda3/include/pyhash.h \
- C:/Users/11057/miniconda3/include/cpython/pydebug.h \
- C:/Users/11057/miniconda3/include/bytearrayobject.h \
- C:/Users/11057/miniconda3/include/cpython/bytearrayobject.h \
- C:/Users/11057/miniconda3/include/bytesobject.h \
- C:/Users/11057/miniconda3/include/cpython/bytesobject.h \
- C:/Users/11057/miniconda3/include/unicodeobject.h \
- C:/Users/11057/miniconda3/include/cpython/unicodeobject.h \
- C:/Users/11057/miniconda3/include/longobject.h \
- C:/Users/11057/miniconda3/include/cpython/longobject.h \
- C:/Users/11057/miniconda3/include/cpython/longintrepr.h \
- C:/Users/11057/miniconda3/include/boolobject.h \
- C:/Users/11057/miniconda3/include/floatobject.h \
- C:/Users/11057/miniconda3/include/cpython/floatobject.h \
- C:/Users/11057/miniconda3/include/complexobject.h \
- C:/Users/11057/miniconda3/include/cpython/complexobject.h \
- C:/Users/11057/miniconda3/include/rangeobject.h \
- C:/Users/11057/miniconda3/include/memoryobject.h \
- C:/Users/11057/miniconda3/include/tupleobject.h \
- C:/Users/11057/miniconda3/include/cpython/tupleobject.h \
- C:/Users/11057/miniconda3/include/listobject.h \
- C:/Users/11057/miniconda3/include/cpython/listobject.h \
- C:/Users/11057/miniconda3/include/dictobject.h \
- C:/Users/11057/miniconda3/include/cpython/dictobject.h \
- C:/Users/11057/miniconda3/include/cpython/odictobject.h \
- C:/Users/11057/miniconda3/include/enumobject.h \
- C:/Users/11057/miniconda3/include/setobject.h \
- C:/Users/11057/miniconda3/include/cpython/setobject.h \
- C:/Users/11057/miniconda3/include/methodobject.h \
- C:/Users/11057/miniconda3/include/cpython/methodobject.h \
- C:/Users/11057/miniconda3/include/moduleobject.h \
- C:/Users/11057/miniconda3/include/cpython/funcobject.h \
- C:/Users/11057/miniconda3/include/cpython/classobject.h \
- C:/Users/11057/miniconda3/include/fileobject.h \
- C:/Users/11057/miniconda3/include/cpython/fileobject.h \
- C:/Users/11057/miniconda3/include/pycapsule.h \
- C:/Users/11057/miniconda3/include/cpython/code.h \
- C:/Users/11057/miniconda3/include/pyframe.h \
- C:/Users/11057/miniconda3/include/cpython/pyframe.h \
- C:/Users/11057/miniconda3/include/traceback.h \
- C:/Users/11057/miniconda3/include/cpython/traceback.h \
- C:/Users/11057/miniconda3/include/sliceobject.h \
- C:/Users/11057/miniconda3/include/cpython/cellobject.h \
- C:/Users/11057/miniconda3/include/iterobject.h \
- C:/Users/11057/miniconda3/include/cpython/initconfig.h \
- C:/Users/11057/miniconda3/include/pystate.h \
- C:/Users/11057/miniconda3/include/cpython/pystate.h \
- C:/Users/11057/miniconda3/include/cpython/genobject.h \
- C:/Users/11057/miniconda3/include/descrobject.h \
- C:/Users/11057/miniconda3/include/cpython/descrobject.h \
- C:/Users/11057/miniconda3/include/genericaliasobject.h \
- C:/Users/11057/miniconda3/include/warnings.h \
- C:/Users/11057/miniconda3/include/cpython/warnings.h \
- C:/Users/11057/miniconda3/include/weakrefobject.h \
- C:/Users/11057/miniconda3/include/cpython/weakrefobject.h \
- C:/Users/11057/miniconda3/include/structseq.h \
- C:/Users/11057/miniconda3/include/cpython/picklebufobject.h \
- C:/Users/11057/miniconda3/include/cpython/pytime.h \
- C:/Users/11057/miniconda3/include/codecs.h \
- C:/Users/11057/miniconda3/include/pyerrors.h \
- C:/Users/11057/miniconda3/include/cpython/pyerrors.h \
- C:/Users/11057/miniconda3/include/pythread.h \
- C:/Users/11057/miniconda3/include/cpython/pythread.h \
- C:/Users/11057/miniconda3/include/cpython/context.h \
- C:/Users/11057/miniconda3/include/modsupport.h \
- C:/Users/11057/miniconda3/include/cpython/modsupport.h \
- C:/Users/11057/miniconda3/include/compile.h \
- C:/Users/11057/miniconda3/include/cpython/compile.h \
- C:/Users/11057/miniconda3/include/pythonrun.h \
- C:/Users/11057/miniconda3/include/cpython/pythonrun.h \
- C:/Users/11057/miniconda3/include/pylifecycle.h \
- C:/Users/11057/miniconda3/include/cpython/pylifecycle.h \
- C:/Users/11057/miniconda3/include/ceval.h \
- C:/Users/11057/miniconda3/include/cpython/ceval.h \
- C:/Users/11057/miniconda3/include/sysmodule.h \
- C:/Users/11057/miniconda3/include/cpython/sysmodule.h \
- C:/Users/11057/miniconda3/include/osmodule.h \
- C:/Users/11057/miniconda3/include/intrcheck.h \
- C:/Users/11057/miniconda3/include/import.h \
- C:/Users/11057/miniconda3/include/cpython/import.h \
- C:/Users/11057/miniconda3/include/abstract.h \
- C:/Users/11057/miniconda3/include/cpython/abstract.h \
- C:/Users/11057/miniconda3/include/bltinmodule.h \
- C:/Users/11057/miniconda3/include/cpython/pyctype.h \
- C:/Users/11057/miniconda3/include/pystrtod.h \
- C:/Users/11057/miniconda3/include/pystrcmp.h \
- C:/Users/11057/miniconda3/include/fileutils.h \
- C:/Users/11057/miniconda3/include/cpython/fileutils.h \
- C:/Users/11057/miniconda3/include/cpython/pyfpe.h \
- C:/Users/11057/miniconda3/include/tracemalloc.h
+ E:/MyCodeProject/CLionProjects/cpp-tools/limonp/StringUtil.hpp \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/x86_64-w64-mingw32/include/memory.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/functional \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/std_function.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_map \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_map.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/hashtable_policy.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/enable_special_members.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/array \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/compare \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/iterator \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stream_iterator.h \
+ E:/MyCodeProject/CLionProjects/cpp-tools/limonp/StdExtension.hpp \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/unordered_set \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/unordered_set.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/deque \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_deque.h \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/deque.tcc \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/Unicode.hpp \
+ E:/MyCodeProject/CLionProjects/cpp-tools/limonp/LocalVector.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/Trie.hpp \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/queue \
+ C:/Program\ Files/JetBrains/CLion\ 2023.1.5/bin/mingw/lib/gcc/x86_64-w64-mingw32/13.1.0/include/c++/bits/stl_queue.h \
+ E:/MyCodeProject/CLionProjects/cpp-tools/limonp/StdExtension.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/SegmentBase.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/PreFilter.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/FullSegment.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/MixSegment.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/MPSegment.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/SegmentTagged.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/PosTagger.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/HMMSegment.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/HMMModel.hpp \
+ E:\MyCodeProject\CLionProjects\cpp-tools\cppjieba/KeywordExtractor.hpp
