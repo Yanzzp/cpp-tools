@@ -8,7 +8,7 @@
 #include <fstream>
 #include <filesystem> // 包含文件系统库，用于处理文件和目录操作
 #include <Windows.h>
-#include <Python.h>
+
 
 #define txt "txt"
 #define copy "copy"
