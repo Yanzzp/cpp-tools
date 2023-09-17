@@ -28,7 +28,7 @@ ADD_TEST(NAME ./test/test.run COMMAND ./test/test.run)
 ADD_TEST(NAME ./load_test COMMAND ./load_test)
 ADD_TEST(NAME ./demo COMMAND ./demo)
 
-add_executable(main main.cpp
+add_executable(cpp-tools main.cpp
         mytools.cpp
         mytools.h
         )

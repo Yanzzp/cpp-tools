@@ -9,6 +9,7 @@
 #include <filesystem> // 包含文件系统库，用于处理文件和目录操作
 #include <Windows.h>
 
+#include "cppjieba/Jieba.cpp"
 
 #define txt "txt"
 #define COPY "copy"
@@ -26,6 +27,12 @@ private:
     int imageCount = 0;
     int videoCount = 0;
     int audioCount = 0;
+
+    const char* const DICT_PATH = "../dict/jieba.dict.utf8";
+    const char* const HMM_PATH = "../dict/hmm_model.utf8";
+    const char* const USER_DICT_PATH = "../dict/user.dict.utf8";
+    const char* const IDF_PATH = "../dict/idf.utf8";
+    const char* const STOP_WORD_PATH = "../dict/stop_words.utf8";
 
     std::vector<std::string> folder_info = {"", "", "", ""};
     uintmax_t folderSize = 0;
@@ -47,9 +54,14 @@ public:
 
     void count_imgs_videos_and_audio(const string &folderPath, string option = "");
 
-    void get_folder_size(const string &folderPath,bool isPrint = false);
+    void get_folder_size(const string &folderPath, bool isPrint = false);
 
     void get_folder_info(const string &folderPath);
+
+    void change_files_extension(const string &folderPath, string newExtension, string oldExtension = "",
+                                bool isChange = false, bool option = false);
+
+    void create_txt_file(const string &folderPath);
 };
 
 

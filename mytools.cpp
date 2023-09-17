@@ -1,5 +1,6 @@
 #include "mytools.h"
 
+
 // 判断是否为图像文件
 bool mytools::isImageFile(const std::string &filename) {
     // 根据文件扩展名判断是否为图像文件
@@ -269,6 +270,64 @@ void mytools::get_folder_info(const std::string &folderPath) {
     } else {
         std::cerr << "无法打开剪贴板。" << std::endl;
     }
+}
+
+void mytools::change_files_extension(const string &folderPath, string newExtension, string oldExtension, bool isChange,
+                                     bool option) {
+    if (option == true) {
+        for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
+            if (entry.is_regular_file()) {
+                string fileName = entry.path().filename().string();
+                string fileExtension = fs::path(fileName).extension().string();
+                fileExtension.erase(0, 1);
+                if (fileExtension == oldExtension) {
+                    // 只有当文件的扩展名等于oldExtension时才执行以下操作。
+                    string oldFileName = entry.path().string();
+                    string newFileName = oldFileName;
+                    newFileName.replace(newFileName.end() - oldExtension.size(), newFileName.end(), newExtension);
+
+                    if (isChange) {
+                        fs::rename(oldFileName, newFileName);
+                    }
+                    cout << oldFileName << " -> " << newFileName << endl;
+                }
+            }
+        }
+    } else {
+        for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
+            if (entry.is_regular_file()) {
+                string fileName = entry.path().filename().string();
+                string fileExtension = fs::path(fileName).extension().string();
+                fileExtension.erase(0, 1);
+                cout << fileExtension << endl;
+                string oldFileName = entry.path().string();
+                string newFileName = oldFileName;
+                newFileName.replace(newFileName.end() - oldExtension.size(), newFileName.end(), newExtension);
+                if (isChange) {
+                    fs::rename(oldFileName, newFileName);
+                }
+                cout << oldFileName << " -> " << newFileName << endl;
+            }
+        }
+    }
+}
+
+void mytools::create_txt_file(const string &folderPath) {
+    cppjieba::Jieba jieba(DICT_PATH,
+                          HMM_PATH,
+                          USER_DICT_PATH,
+                          IDF_PATH,
+                          STOP_WORD_PATH);
+    vector<string> words;
+    vector<cppjieba::Word> jiebawords;
+    string s;
+    string result;
+
+    s = "我今天真的很开心";
+    cout << s << endl;
+    cout << "[demo] Cut With HMM" << endl;
+    jieba.Cut(s, words, true);
+    cout << limonp::Join(words.begin(), words.end(), "/") << endl;
 }
 
 

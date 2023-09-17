@@ -1,4 +1,4 @@
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/main.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/cpp-tools.dir
 E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/test.dir
 E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/edit_cache.dir
 E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/rebuild_cache.dir
