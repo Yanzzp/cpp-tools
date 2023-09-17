@@ -64,6 +64,16 @@ CMAKE_BINARY_DIR = E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug
 #=============================================================================
 # Targets provided globally by CMake.
 
+# Special rule for the target test
+test:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
+	"C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process $(ARGS)
+.PHONY : test
+
+# Special rule for the target test
+test/fast: test
+.PHONY : test/fast
+
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
@@ -116,24 +126,76 @@ depend:
 .PHONY : depend
 
 #=============================================================================
-# Target rules for targets named CppTools
+# Target rules for targets named main
 
 # Build rule for target.
-CppTools: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 CppTools
-.PHONY : CppTools
+main: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 main
+.PHONY : main
 
 # fast build rule for target.
-CppTools/fast:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CppTools.dir\build.make CMakeFiles/CppTools.dir/build
-.PHONY : CppTools/fast
+main/fast:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/build
+.PHONY : main/fast
+
+#=============================================================================
+# Target rules for targets named gtest
+
+# Build rule for target.
+gtest: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 gtest
+.PHONY : gtest
+
+# fast build rule for target.
+gtest/fast:
+	$(MAKE) $(MAKESILENT) -f deps\gtest\CMakeFiles\gtest.dir\build.make deps/gtest/CMakeFiles/gtest.dir/build
+.PHONY : gtest/fast
+
+#=============================================================================
+# Target rules for targets named demo
+
+# Build rule for target.
+demo: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 demo
+.PHONY : demo
+
+# fast build rule for target.
+demo/fast:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\demo.dir\build.make test/CMakeFiles/demo.dir/build
+.PHONY : demo/fast
+
+#=============================================================================
+# Target rules for targets named load_test
+
+# Build rule for target.
+load_test: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 load_test
+.PHONY : load_test
+
+# fast build rule for target.
+load_test/fast:
+	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\load_test.dir\build.make test/CMakeFiles/load_test.dir/build
+.PHONY : load_test/fast
+
+#=============================================================================
+# Target rules for targets named test.run
+
+# Build rule for target.
+test.run: cmake_check_build_system
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test.run
+.PHONY : test.run
+
+# fast build rule for target.
+test.run/fast:
+	$(MAKE) $(MAKESILENT) -f test\unittest\CMakeFiles\test.run.dir\build.make test/unittest/CMakeFiles/test.run.dir/build
+.PHONY : test.run/fast
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
 
 # target to build an object file
 main.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CppTools.dir\build.make CMakeFiles/CppTools.dir/main.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.obj
 .PHONY : main.cpp.obj
 
 main.i: main.cpp.i
@@ -141,7 +203,7 @@ main.i: main.cpp.i
 
 # target to preprocess a source file
 main.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CppTools.dir\build.make CMakeFiles/CppTools.dir/main.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.i
 .PHONY : main.cpp.i
 
 main.s: main.cpp.s
@@ -149,7 +211,7 @@ main.s: main.cpp.s
 
 # target to generate assembly for a file
 main.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CppTools.dir\build.make CMakeFiles/CppTools.dir/main.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/main.cpp.s
 .PHONY : main.cpp.s
 
 mytools.obj: mytools.cpp.obj
@@ -157,7 +219,7 @@ mytools.obj: mytools.cpp.obj
 
 # target to build an object file
 mytools.cpp.obj:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CppTools.dir\build.make CMakeFiles/CppTools.dir/mytools.cpp.obj
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/mytools.cpp.obj
 .PHONY : mytools.cpp.obj
 
 mytools.i: mytools.cpp.i
@@ -165,7 +227,7 @@ mytools.i: mytools.cpp.i
 
 # target to preprocess a source file
 mytools.cpp.i:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CppTools.dir\build.make CMakeFiles/CppTools.dir/mytools.cpp.i
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/mytools.cpp.i
 .PHONY : mytools.cpp.i
 
 mytools.s: mytools.cpp.s
@@ -173,7 +235,7 @@ mytools.s: mytools.cpp.s
 
 # target to generate assembly for a file
 mytools.cpp.s:
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\CppTools.dir\build.make CMakeFiles/CppTools.dir/mytools.cpp.s
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\main.dir\build.make CMakeFiles/main.dir/mytools.cpp.s
 .PHONY : mytools.cpp.s
 
 # Help Target
@@ -184,7 +246,12 @@ help:
 	@echo ... depend
 	@echo ... edit_cache
 	@echo ... rebuild_cache
-	@echo ... CppTools
+	@echo ... test
+	@echo ... demo
+	@echo ... gtest
+	@echo ... load_test
+	@echo ... main
+	@echo ... test.run
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

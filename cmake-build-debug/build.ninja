@@ -39,52 +39,66 @@ include CMakeFiles/rules.ninja
 #############################################
 # Logical path to working directory; prefix for absolute paths.
 
-cmake_ninja_workdir = E$:/MyCodeProject/CLionProjects/CppTools/cmake-build-debug/
+cmake_ninja_workdir = D$:/Edge下载/jieba_test/cmake-build-debug/
 # =============================================================================
-# Object build statements for EXECUTABLE target CppTools
+# Object build statements for EXECUTABLE target main
 
 
 #############################################
-# Order-only phony target for CppTools
+# Order-only phony target for main
 
-build cmake_object_order_depends_target_CppTools: phony || CMakeFiles/CppTools.dir
+build cmake_object_order_depends_target_main: phony || CMakeFiles/main.dir
 
-build CMakeFiles/CppTools.dir/main.cpp.obj: CXX_COMPILER__CppTools_unscanned_Debug E$:/MyCodeProject/CLionProjects/CppTools/main.cpp || cmake_object_order_depends_target_CppTools
-  DEP_FILE = CMakeFiles\CppTools.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\CppTools.dir
-  OBJECT_FILE_DIR = CMakeFiles\CppTools.dir
+build CMakeFiles/main.dir/main.cpp.obj: CXX_COMPILER__main_unscanned_Debug D$:/Edge下载/jieba_test/main.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles\main.dir\main.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir
 
-build CMakeFiles/CppTools.dir/mytools.cpp.obj: CXX_COMPILER__CppTools_unscanned_Debug E$:/MyCodeProject/CLionProjects/CppTools/mytools.cpp || cmake_object_order_depends_target_CppTools
-  DEP_FILE = CMakeFiles\CppTools.dir\mytools.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always
-  OBJECT_DIR = CMakeFiles\CppTools.dir
-  OBJECT_FILE_DIR = CMakeFiles\CppTools.dir
+build CMakeFiles/main.dir/mytools.cpp.obj: CXX_COMPILER__main_unscanned_Debug D$:/Edge下载/jieba_test/mytools.cpp || cmake_object_order_depends_target_main
+  DEP_FILE = CMakeFiles\main.dir\mytools.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include
+  OBJECT_DIR = CMakeFiles\main.dir
+  OBJECT_FILE_DIR = CMakeFiles\main.dir
 
 
 # =============================================================================
-# Link build statements for EXECUTABLE target CppTools
+# Link build statements for EXECUTABLE target main
 
 
 #############################################
-# Link the executable CppTools.exe
+# Link the executable main.exe
 
-build CppTools.exe: CXX_EXECUTABLE_LINKER__CppTools_Debug CMakeFiles/CppTools.dir/main.cpp.obj CMakeFiles/CppTools.dir/mytools.cpp.obj
+build main.exe: CXX_EXECUTABLE_LINKER__main_Debug CMakeFiles/main.dir/main.cpp.obj CMakeFiles/main.dir/mytools.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = CMakeFiles\CppTools.dir
+  OBJECT_DIR = CMakeFiles\main.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = CppTools.exe
-  TARGET_IMPLIB = libCppTools.dll.a
-  TARGET_PDB = CppTools.exe.dbg
+  TARGET_FILE = main.exe
+  TARGET_IMPLIB = libmain.dll.a
+  TARGET_PDB = main.exe.dbg
+
+
+#############################################
+# Utility command for test
+
+build CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test: phony CMakeFiles/test.util
 
 
 #############################################
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\CppTools\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -95,7 +109,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\CppTools\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\CppTools -BE:\MyCodeProject\CLionProjects\CppTools\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\Edge下载\jieba_test -BD:\Edge下载\jieba_test\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -103,9 +117,387 @@ build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
 build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 
 # =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/Edge下载/jieba_test/CMakeLists.txt
+# =============================================================================
+
+
+#############################################
+# Utility command for test
+
+build deps/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\deps && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build deps/test: phony deps/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build deps/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\deps && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build deps/edit_cache: phony deps/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build deps/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\deps && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\Edge下载\jieba_test -BD:\Edge下载\jieba_test\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build deps/rebuild_cache: phony deps/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/Edge下载/jieba_test/deps/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Order-only phony target for gtest
+
+build cmake_object_order_depends_target_gtest: phony || deps/gtest/CMakeFiles/gtest.dir
+
+build deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_unscanned_Debug D$:/Edge下载/jieba_test/deps/gtest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
+  DEP_FILE = deps\gtest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include -ID:/Edge下载/jieba_test/deps/gtest/. -ID:/Edge下载/jieba_test/deps/gtest/include
+  OBJECT_DIR = deps\gtest\CMakeFiles\gtest.dir
+  OBJECT_FILE_DIR = deps\gtest\CMakeFiles\gtest.dir\src
+
+
+# =============================================================================
+# Link build statements for STATIC_LIBRARY target gtest
+
+
+#############################################
+# Link the static library deps\gtest\libgtest.a
+
+build deps/gtest/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
+  LANGUAGE_COMPILE_FLAGS = -g
+  OBJECT_DIR = deps\gtest\CMakeFiles\gtest.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = deps\gtest\libgtest.a
+  TARGET_PDB = gtest.a.dbg
+
+
+#############################################
+# Utility command for test
+
+build deps/gtest/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\deps\gtest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build deps/gtest/test: phony deps/gtest/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build deps/gtest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\deps\gtest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build deps/gtest/edit_cache: phony deps/gtest/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build deps/gtest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\deps\gtest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\Edge下载\jieba_test -BD:\Edge下载\jieba_test\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build deps/gtest/rebuild_cache: phony deps/gtest/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/Edge下载/jieba_test/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target demo
+
+
+#############################################
+# Order-only phony target for demo
+
+build cmake_object_order_depends_target_demo: phony || test/CMakeFiles/demo.dir
+
+build test/CMakeFiles/demo.dir/demo.cpp.obj: CXX_COMPILER__demo_unscanned_Debug D$:/Edge下载/jieba_test/test/demo.cpp || cmake_object_order_depends_target_demo
+  DEP_FILE = test\CMakeFiles\demo.dir\demo.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include
+  OBJECT_DIR = test\CMakeFiles\demo.dir
+  OBJECT_FILE_DIR = test\CMakeFiles\demo.dir
+
+build test/CMakeFiles/demo.dir/__/main.cpp.obj: CXX_COMPILER__demo_unscanned_Debug D$:/Edge下载/jieba_test/main.cpp || cmake_object_order_depends_target_demo
+  DEP_FILE = test\CMakeFiles\demo.dir\__\main.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include
+  OBJECT_DIR = test\CMakeFiles\demo.dir
+  OBJECT_FILE_DIR = test\CMakeFiles\demo.dir\__
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target demo
+
+
+#############################################
+# Link the executable demo.exe
+
+build demo.exe: CXX_EXECUTABLE_LINKER__demo_Debug test/CMakeFiles/demo.dir/demo.cpp.obj test/CMakeFiles/demo.dir/__/main.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = test\CMakeFiles\demo.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = demo.exe
+  TARGET_IMPLIB = libdemo.dll.a
+  TARGET_PDB = demo.exe.dbg
+
+# =============================================================================
+# Object build statements for EXECUTABLE target load_test
+
+
+#############################################
+# Order-only phony target for load_test
+
+build cmake_object_order_depends_target_load_test: phony || test/CMakeFiles/load_test.dir
+
+build test/CMakeFiles/load_test.dir/load_test.cpp.obj: CXX_COMPILER__load_test_unscanned_Debug D$:/Edge下载/jieba_test/test/load_test.cpp || cmake_object_order_depends_target_load_test
+  DEP_FILE = test\CMakeFiles\load_test.dir\load_test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include
+  OBJECT_DIR = test\CMakeFiles\load_test.dir
+  OBJECT_FILE_DIR = test\CMakeFiles\load_test.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target load_test
+
+
+#############################################
+# Link the executable load_test.exe
+
+build load_test.exe: CXX_EXECUTABLE_LINKER__load_test_Debug test/CMakeFiles/load_test.dir/load_test.cpp.obj
+  FLAGS = -g
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = test\CMakeFiles\load_test.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = load_test.exe
+  TARGET_IMPLIB = libload_test.dll.a
+  TARGET_PDB = load_test.exe.dbg
+
+
+#############################################
+# Utility command for test
+
+build test/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\test && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/test: phony test/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\test && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\test && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\Edge下载\jieba_test -BD:\Edge下载\jieba_test\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
+# Write statements declared in CMakeLists.txt:
+# D:/Edge下载/jieba_test/test/CMakeLists.txt
+# =============================================================================
+
+# =============================================================================
+# Object build statements for EXECUTABLE target test.run
+
+
+#############################################
+# Order-only phony target for test.run
+
+build cmake_object_order_depends_target_test.run: phony || cmake_object_order_depends_target_gtest
+
+build test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug D$:/Edge下载/jieba_test/test/unittest/gtest_main.cpp || cmake_object_order_depends_target_test.run
+  DEFINES = -DLOGGING_LEVEL=LL_WARNING
+  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\gtest_main.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include -ID:/Edge下载/jieba_test/deps/gtest/include
+  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+
+build test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug D$:/Edge下载/jieba_test/test/unittest/keyword_extractor_test.cpp || cmake_object_order_depends_target_test.run
+  DEFINES = -DLOGGING_LEVEL=LL_WARNING
+  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\keyword_extractor_test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include -ID:/Edge下载/jieba_test/deps/gtest/include
+  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+
+build test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug D$:/Edge下载/jieba_test/test/unittest/trie_test.cpp || cmake_object_order_depends_target_test.run
+  DEFINES = -DLOGGING_LEVEL=LL_WARNING
+  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\trie_test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include -ID:/Edge下载/jieba_test/deps/gtest/include
+  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+
+build test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug D$:/Edge下载/jieba_test/test/unittest/segments_test.cpp || cmake_object_order_depends_target_test.run
+  DEFINES = -DLOGGING_LEVEL=LL_WARNING
+  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\segments_test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include -ID:/Edge下载/jieba_test/deps/gtest/include
+  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+
+build test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug D$:/Edge下载/jieba_test/test/unittest/pos_tagger_test.cpp || cmake_object_order_depends_target_test.run
+  DEFINES = -DLOGGING_LEVEL=LL_WARNING
+  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\pos_tagger_test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include -ID:/Edge下载/jieba_test/deps/gtest/include
+  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+
+build test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug D$:/Edge下载/jieba_test/test/unittest/jieba_test.cpp || cmake_object_order_depends_target_test.run
+  DEFINES = -DLOGGING_LEVEL=LL_WARNING
+  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\jieba_test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include -ID:/Edge下载/jieba_test/deps/gtest/include
+  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+
+build test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug D$:/Edge下载/jieba_test/test/unittest/pre_filter_test.cpp || cmake_object_order_depends_target_test.run
+  DEFINES = -DLOGGING_LEVEL=LL_WARNING
+  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\pre_filter_test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include -ID:/Edge下载/jieba_test/deps/gtest/include
+  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+
+build test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug D$:/Edge下载/jieba_test/test/unittest/unicode_test.cpp || cmake_object_order_depends_target_test.run
+  DEFINES = -DLOGGING_LEVEL=LL_WARNING
+  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\unicode_test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include -ID:/Edge下载/jieba_test/deps/gtest/include
+  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+
+build test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug D$:/Edge下载/jieba_test/test/unittest/textrank_test.cpp || cmake_object_order_depends_target_test.run
+  DEFINES = -DLOGGING_LEVEL=LL_WARNING
+  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\textrank_test.cpp.obj.d
+  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  INCLUDES = -ID:/Edge下载/jieba_test/deps/limonp/include -ID:/Edge下载/jieba_test/include -ID:/Edge下载/jieba_test/deps/gtest/include
+  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+
+
+# =============================================================================
+# Link build statements for EXECUTABLE target test.run
+
+
+#############################################
+# Link the executable test\test.run.exe
+
+build test/test.run.exe: CXX_EXECUTABLE_LINKER__test.2erun_Debug test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj | deps/gtest/libgtest.a || deps/gtest/libgtest.a
+  FLAGS = -g
+  LINK_LIBRARIES = deps/gtest/libgtest.a  -lpthread  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  POST_BUILD = cd .
+  PRE_LINK = cd .
+  TARGET_FILE = test\test.run.exe
+  TARGET_IMPLIB = test\libtest.run.dll.a
+  TARGET_PDB = test.run.exe.dbg
+
+
+#############################################
+# Utility command for test
+
+build test/unittest/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\test\unittest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  DESC = Running tests...
+  pool = console
+  restat = 1
+
+build test/unittest/test: phony test/unittest/CMakeFiles/test.util
+
+
+#############################################
+# Utility command for edit_cache
+
+build test/unittest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\test\unittest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  DESC = No interactive CMake dialog available...
+  restat = 1
+
+build test/unittest/edit_cache: phony test/unittest/CMakeFiles/edit_cache.util
+
+
+#############################################
+# Utility command for rebuild_cache
+
+build test/unittest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D D:\Edge下载\jieba_test\cmake-build-debug\test\unittest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SD:\Edge下载\jieba_test -BD:\Edge下载\jieba_test\cmake-build-debug"
+  DESC = Running CMake to regenerate build system...
+  pool = console
+  restat = 1
+
+build test/unittest/rebuild_cache: phony test/unittest/CMakeFiles/rebuild_cache.util
+
+# =============================================================================
 # Target aliases.
 
-build CppTools: phony CppTools.exe
+build demo: phony demo.exe
+
+build gtest: phony deps/gtest/libgtest.a
+
+build libgtest.a: phony deps/gtest/libgtest.a
+
+build load_test: phony load_test.exe
+
+build main: phony main.exe
+
+build test.run: phony test/test.run.exe
+
+build test.run.exe: phony test/test.run.exe
 
 # =============================================================================
 # Folder targets.
@@ -113,9 +505,37 @@ build CppTools: phony CppTools.exe
 # =============================================================================
 
 #############################################
-# Folder: E:/MyCodeProject/CLionProjects/CppTools/cmake-build-debug
+# Folder: D:/Edge下载/jieba_test/cmake-build-debug
 
-build all: phony CppTools.exe
+build all: phony main.exe deps/all test/all
+
+# =============================================================================
+
+#############################################
+# Folder: D:/Edge下载/jieba_test/cmake-build-debug/deps
+
+build deps/all: phony deps/gtest/all
+
+# =============================================================================
+
+#############################################
+# Folder: D:/Edge下载/jieba_test/cmake-build-debug/deps/gtest
+
+build deps/gtest/all: phony deps/gtest/libgtest.a
+
+# =============================================================================
+
+#############################################
+# Folder: D:/Edge下载/jieba_test/cmake-build-debug/test
+
+build test/all: phony demo.exe load_test.exe test/unittest/all
+
+# =============================================================================
+
+#############################################
+# Folder: D:/Edge下载/jieba_test/cmake-build-debug/test/unittest
+
+build test/unittest/all: phony test/test.run.exe
 
 # =============================================================================
 # Built-in targets
@@ -124,14 +544,14 @@ build all: phony CppTools.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake E$:/MyCodeProject/CLionProjects/CppTools/CMakeLists.txt
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake D$:/Edge下载/jieba_test/CMakeLists.txt D$:/Edge下载/jieba_test/deps/CMakeLists.txt D$:/Edge下载/jieba_test/deps/gtest/CMakeLists.txt D$:/Edge下载/jieba_test/test/CMakeLists.txt D$:/Edge下载/jieba_test/test/unittest/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.1/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake E$:/MyCodeProject/CLionProjects/CppTools/CMakeLists.txt: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake D$:/Edge下载/jieba_test/CMakeLists.txt D$:/Edge下载/jieba_test/deps/CMakeLists.txt D$:/Edge下载/jieba_test/deps/gtest/CMakeLists.txt D$:/Edge下载/jieba_test/test/CMakeLists.txt D$:/Edge下载/jieba_test/test/unittest/CMakeLists.txt: phony
 
 
 #############################################

@@ -36,7 +36,7 @@ private:
 
     bool isAudioFile(const std::string &filename);
 
-    void get_file_size(string path);
+    uintmax_t get_file_size(string path);
 
 public:
     string translate(string text, string from, string to, bool isPrint = false);
@@ -47,11 +47,9 @@ public:
 
     void count_imgs_videos_and_audio(const string &folderPath, string option = "");
 
-    void get_folder_size(const string &folderPath);
+    void get_folder_size(const string &folderPath,bool isPrint = false);
 
     void get_folder_info(const string &folderPath);
-
-
 };
 
 

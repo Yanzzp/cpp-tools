@@ -1,4 +1,5 @@
 #include "mytools.h"
+
 // 判断是否为图像文件
 bool mytools::isImageFile(const std::string &filename) {
     // 根据文件扩展名判断是否为图像文件
@@ -10,6 +11,7 @@ bool mytools::isImageFile(const std::string &filename) {
     }
     return false;
 }
+
 // 判断是否为视频文件
 bool mytools::isVideoFile(const std::string &filename) {
     // 根据文件扩展名判断是否为视频文件
@@ -21,6 +23,7 @@ bool mytools::isVideoFile(const std::string &filename) {
     }
     return false;
 }
+
 // 判断是否为音频文件
 bool mytools::isAudioFile(const std::string &filename) {
     // 根据文件扩展名判断是否为视频文件
@@ -35,17 +38,16 @@ bool mytools::isAudioFile(const std::string &filename) {
 
 
 // 获取文件的大小
-void mytools::get_file_size(string path) {
+uintmax_t mytools::get_file_size(string path) {
     error_code ec{};
     auto size = std::filesystem::file_size(path, ec);
-    if (ec == error_code{}){
+    if (ec == error_code{}) {
         folderSize += size;
-    }
-    else{
+    } else {
         cout << "Error accessing file '" << path
-        << "' message: " << ec.message() << endl;
+             << "' message: " << ec.message() << endl;
     }
-
+    return size;
 }
 
 // 打印一个文件夹下的所有文件的路径
@@ -198,10 +200,20 @@ void mytools::count_imgs_videos_and_audio(const string &folderPath, string optio
 }
 
 // 统计一个文件夹的大小
-void mytools::get_folder_size(const std::string &folderPath) {
+void mytools::get_folder_size(const std::string &folderPath, bool isPrint) {
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
         if (entry.is_regular_file()) {
-            get_file_size(entry.path().string());
+            uintmax_t fileSize = get_file_size(entry.path().string());
+            if (isPrint) {
+                uintmax_t printSize = fileSize / 1024 / 1024;
+                bool isMB = true;
+                if (printSize < 1024) {
+                    cout << entry.path().string() << " 的大小是: " << printSize << "MB" << endl;
+                } else {
+                    cout << entry.path().string() << " 的大小是: " << (printSize /= 1024) << "GB" << endl;
+                    isMB = false;
+                }
+            }
         }
     }
     uintmax_t Size = this->folderSize / 1024 / 1024;
@@ -214,6 +226,7 @@ void mytools::get_folder_size(const std::string &folderPath) {
     }
     folder_info[3] = (to_string(Size) + (isMB ? "MB" : "GB"));
 }
+
 
 // 获取文件夹的信息
 void mytools::get_folder_info(const std::string &folderPath) {
