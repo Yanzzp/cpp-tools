@@ -43,10 +43,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -73,135 +73,135 @@ test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj: test/unittest/CMakeFil
 test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/gtest_main.cpp
 test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj: test/unittest/CMakeFiles/test.run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj -MF CMakeFiles\test.run.dir\gtest_main.cpp.obj.d -o CMakeFiles\test.run.dir\gtest_main.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\gtest_main.cpp
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj -MF CMakeFiles\test.run.dir\gtest_main.cpp.obj.d -o CMakeFiles\test.run.dir\gtest_main.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\gtest_main.cpp
 
 test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.run.dir/gtest_main.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\gtest_main.cpp > CMakeFiles\test.run.dir\gtest_main.cpp.i
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\gtest_main.cpp > CMakeFiles\test.run.dir\gtest_main.cpp.i
 
 test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.run.dir/gtest_main.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\gtest_main.cpp -o CMakeFiles\test.run.dir\gtest_main.cpp.s
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\gtest_main.cpp -o CMakeFiles\test.run.dir\gtest_main.cpp.s
 
 test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/flags.make
 test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/includes_CXX.rsp
 test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/keyword_extractor_test.cpp
 test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj -MF CMakeFiles\test.run.dir\keyword_extractor_test.cpp.obj.d -o CMakeFiles\test.run.dir\keyword_extractor_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\keyword_extractor_test.cpp
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj -MF CMakeFiles\test.run.dir\keyword_extractor_test.cpp.obj.d -o CMakeFiles\test.run.dir\keyword_extractor_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\keyword_extractor_test.cpp
 
 test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.run.dir/keyword_extractor_test.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\keyword_extractor_test.cpp > CMakeFiles\test.run.dir\keyword_extractor_test.cpp.i
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\keyword_extractor_test.cpp > CMakeFiles\test.run.dir\keyword_extractor_test.cpp.i
 
 test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.run.dir/keyword_extractor_test.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\keyword_extractor_test.cpp -o CMakeFiles\test.run.dir\keyword_extractor_test.cpp.s
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\keyword_extractor_test.cpp -o CMakeFiles\test.run.dir\keyword_extractor_test.cpp.s
 
 test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/flags.make
 test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/includes_CXX.rsp
 test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/trie_test.cpp
 test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Building CXX object test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj -MF CMakeFiles\test.run.dir\trie_test.cpp.obj.d -o CMakeFiles\test.run.dir\trie_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\trie_test.cpp
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj -MF CMakeFiles\test.run.dir\trie_test.cpp.obj.d -o CMakeFiles\test.run.dir\trie_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\trie_test.cpp
 
 test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.run.dir/trie_test.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\trie_test.cpp > CMakeFiles\test.run.dir\trie_test.cpp.i
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\trie_test.cpp > CMakeFiles\test.run.dir\trie_test.cpp.i
 
 test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.run.dir/trie_test.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\trie_test.cpp -o CMakeFiles\test.run.dir\trie_test.cpp.s
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\trie_test.cpp -o CMakeFiles\test.run.dir\trie_test.cpp.s
 
 test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/flags.make
 test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/includes_CXX.rsp
 test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/segments_test.cpp
 test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_4) "Building CXX object test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj -MF CMakeFiles\test.run.dir\segments_test.cpp.obj.d -o CMakeFiles\test.run.dir\segments_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\segments_test.cpp
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj -MF CMakeFiles\test.run.dir\segments_test.cpp.obj.d -o CMakeFiles\test.run.dir\segments_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\segments_test.cpp
 
 test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.run.dir/segments_test.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\segments_test.cpp > CMakeFiles\test.run.dir\segments_test.cpp.i
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\segments_test.cpp > CMakeFiles\test.run.dir\segments_test.cpp.i
 
 test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.run.dir/segments_test.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\segments_test.cpp -o CMakeFiles\test.run.dir\segments_test.cpp.s
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\segments_test.cpp -o CMakeFiles\test.run.dir\segments_test.cpp.s
 
 test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/flags.make
 test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/includes_CXX.rsp
 test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/pos_tagger_test.cpp
 test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_5) "Building CXX object test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj -MF CMakeFiles\test.run.dir\pos_tagger_test.cpp.obj.d -o CMakeFiles\test.run.dir\pos_tagger_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pos_tagger_test.cpp
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj -MF CMakeFiles\test.run.dir\pos_tagger_test.cpp.obj.d -o CMakeFiles\test.run.dir\pos_tagger_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pos_tagger_test.cpp
 
 test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.run.dir/pos_tagger_test.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pos_tagger_test.cpp > CMakeFiles\test.run.dir\pos_tagger_test.cpp.i
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pos_tagger_test.cpp > CMakeFiles\test.run.dir\pos_tagger_test.cpp.i
 
 test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.run.dir/pos_tagger_test.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pos_tagger_test.cpp -o CMakeFiles\test.run.dir\pos_tagger_test.cpp.s
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pos_tagger_test.cpp -o CMakeFiles\test.run.dir\pos_tagger_test.cpp.s
 
 test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/flags.make
 test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/includes_CXX.rsp
 test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/jieba_test.cpp
 test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_6) "Building CXX object test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj -MF CMakeFiles\test.run.dir\jieba_test.cpp.obj.d -o CMakeFiles\test.run.dir\jieba_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\jieba_test.cpp
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj -MF CMakeFiles\test.run.dir\jieba_test.cpp.obj.d -o CMakeFiles\test.run.dir\jieba_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\jieba_test.cpp
 
 test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.run.dir/jieba_test.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\jieba_test.cpp > CMakeFiles\test.run.dir\jieba_test.cpp.i
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\jieba_test.cpp > CMakeFiles\test.run.dir\jieba_test.cpp.i
 
 test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.run.dir/jieba_test.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\jieba_test.cpp -o CMakeFiles\test.run.dir\jieba_test.cpp.s
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\jieba_test.cpp -o CMakeFiles\test.run.dir\jieba_test.cpp.s
 
 test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/flags.make
 test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/includes_CXX.rsp
 test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/pre_filter_test.cpp
 test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_7) "Building CXX object test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj -MF CMakeFiles\test.run.dir\pre_filter_test.cpp.obj.d -o CMakeFiles\test.run.dir\pre_filter_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pre_filter_test.cpp
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj -MF CMakeFiles\test.run.dir\pre_filter_test.cpp.obj.d -o CMakeFiles\test.run.dir\pre_filter_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pre_filter_test.cpp
 
 test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.run.dir/pre_filter_test.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pre_filter_test.cpp > CMakeFiles\test.run.dir\pre_filter_test.cpp.i
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pre_filter_test.cpp > CMakeFiles\test.run.dir\pre_filter_test.cpp.i
 
 test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.run.dir/pre_filter_test.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pre_filter_test.cpp -o CMakeFiles\test.run.dir\pre_filter_test.cpp.s
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\pre_filter_test.cpp -o CMakeFiles\test.run.dir\pre_filter_test.cpp.s
 
 test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/flags.make
 test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/includes_CXX.rsp
 test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/unicode_test.cpp
 test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_8) "Building CXX object test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj -MF CMakeFiles\test.run.dir\unicode_test.cpp.obj.d -o CMakeFiles\test.run.dir\unicode_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\unicode_test.cpp
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj -MF CMakeFiles\test.run.dir\unicode_test.cpp.obj.d -o CMakeFiles\test.run.dir\unicode_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\unicode_test.cpp
 
 test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.run.dir/unicode_test.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\unicode_test.cpp > CMakeFiles\test.run.dir\unicode_test.cpp.i
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\unicode_test.cpp > CMakeFiles\test.run.dir\unicode_test.cpp.i
 
 test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.run.dir/unicode_test.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\unicode_test.cpp -o CMakeFiles\test.run.dir\unicode_test.cpp.s
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\unicode_test.cpp -o CMakeFiles\test.run.dir\unicode_test.cpp.s
 
 test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/flags.make
 test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/includes_CXX.rsp
 test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/textrank_test.cpp
 test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj: test/unittest/CMakeFiles/test.run.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_9) "Building CXX object test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj -MF CMakeFiles\test.run.dir\textrank_test.cpp.obj.d -o CMakeFiles\test.run.dir\textrank_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\textrank_test.cpp
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj -MF CMakeFiles\test.run.dir\textrank_test.cpp.obj.d -o CMakeFiles\test.run.dir\textrank_test.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\textrank_test.cpp
 
 test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/test.run.dir/textrank_test.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\textrank_test.cpp > CMakeFiles\test.run.dir\textrank_test.cpp.i
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\textrank_test.cpp > CMakeFiles\test.run.dir\textrank_test.cpp.i
 
 test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/test.run.dir/textrank_test.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\textrank_test.cpp -o CMakeFiles\test.run.dir\textrank_test.cpp.s
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\unittest\textrank_test.cpp -o CMakeFiles\test.run.dir\textrank_test.cpp.s
 
 # Object files for target test.run
 test_run_OBJECTS = \

@@ -47,10 +47,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	"C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process $(ARGS)
+	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -77,7 +77,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,7 +87,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -153,30 +153,6 @@ load_test/fast:
 	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f test\CMakeFiles\load_test.dir\build.make test/CMakeFiles/load_test.dir/build
 .PHONY : load_test/fast
 
-__/main.obj: __/main.cpp.obj
-.PHONY : __/main.obj
-
-# target to build an object file
-__/main.cpp.obj:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f test\CMakeFiles\demo.dir\build.make test/CMakeFiles/demo.dir/__/main.cpp.obj
-.PHONY : __/main.cpp.obj
-
-__/main.i: __/main.cpp.i
-.PHONY : __/main.i
-
-# target to preprocess a source file
-__/main.cpp.i:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f test\CMakeFiles\demo.dir\build.make test/CMakeFiles/demo.dir/__/main.cpp.i
-.PHONY : __/main.cpp.i
-
-__/main.s: __/main.cpp.s
-.PHONY : __/main.s
-
-# target to generate assembly for a file
-__/main.cpp.s:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f test\CMakeFiles\demo.dir\build.make test/CMakeFiles/demo.dir/__/main.cpp.s
-.PHONY : __/main.cpp.s
-
 demo.obj: demo.cpp.obj
 .PHONY : demo.obj
 
@@ -236,9 +212,6 @@ help:
 	@echo ... test
 	@echo ... demo
 	@echo ... load_test
-	@echo ... __/main.obj
-	@echo ... __/main.i
-	@echo ... __/main.s
 	@echo ... demo.obj
 	@echo ... demo.i
 	@echo ... demo.s

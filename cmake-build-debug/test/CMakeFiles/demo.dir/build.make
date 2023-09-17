@@ -43,10 +43,10 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
@@ -73,46 +73,29 @@ test/CMakeFiles/demo.dir/demo.cpp.obj: test/CMakeFiles/demo.dir/includes_CXX.rsp
 test/CMakeFiles/demo.dir/demo.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/test/demo.cpp
 test/CMakeFiles/demo.dir/demo.cpp.obj: test/CMakeFiles/demo.dir/compiler_depend.ts
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object test/CMakeFiles/demo.dir/demo.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/demo.dir/demo.cpp.obj -MF CMakeFiles\demo.dir\demo.cpp.obj.d -o CMakeFiles\demo.dir\demo.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\demo.cpp
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/demo.dir/demo.cpp.obj -MF CMakeFiles\demo.dir\demo.cpp.obj.d -o CMakeFiles\demo.dir\demo.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\test\demo.cpp
 
 test/CMakeFiles/demo.dir/demo.cpp.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo.dir/demo.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\demo.cpp > CMakeFiles\demo.dir\demo.cpp.i
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\test\demo.cpp > CMakeFiles\demo.dir\demo.cpp.i
 
 test/CMakeFiles/demo.dir/demo.cpp.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/demo.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\demo.cpp -o CMakeFiles\demo.dir\demo.cpp.s
-
-test/CMakeFiles/demo.dir/__/main.cpp.obj: test/CMakeFiles/demo.dir/flags.make
-test/CMakeFiles/demo.dir/__/main.cpp.obj: test/CMakeFiles/demo.dir/includes_CXX.rsp
-test/CMakeFiles/demo.dir/__/main.cpp.obj: E:/MyCodeProject/CLionProjects/cpp-tools/main.cpp
-test/CMakeFiles/demo.dir/__/main.cpp.obj: test/CMakeFiles/demo.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Building CXX object test/CMakeFiles/demo.dir/__/main.cpp.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT test/CMakeFiles/demo.dir/__/main.cpp.obj -MF CMakeFiles\demo.dir\__\main.cpp.obj.d -o CMakeFiles\demo.dir\__\main.cpp.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\main.cpp
-
-test/CMakeFiles/demo.dir/__/main.cpp.i: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/demo.dir/__/main.cpp.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\main.cpp > CMakeFiles\demo.dir\__\main.cpp.i
-
-test/CMakeFiles/demo.dir/__/main.cpp.s: cmake_force
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/demo.dir/__/main.cpp.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && C:\PROGRA~1\JETBRA~1\CLION2~1.5\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\main.cpp -o CMakeFiles\demo.dir\__\main.cpp.s
+	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && C:\PROGRA~1\JETBRA~1\CLION2~1.1\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\test\demo.cpp -o CMakeFiles\demo.dir\demo.cpp.s
 
 # Object files for target demo
 demo_OBJECTS = \
-"CMakeFiles/demo.dir/demo.cpp.obj" \
-"CMakeFiles/demo.dir/__/main.cpp.obj"
+"CMakeFiles/demo.dir/demo.cpp.obj"
 
 # External object files for target demo
 demo_EXTERNAL_OBJECTS =
 
 demo.exe: test/CMakeFiles/demo.dir/demo.cpp.obj
-demo.exe: test/CMakeFiles/demo.dir/__/main.cpp.obj
 demo.exe: test/CMakeFiles/demo.dir/build.make
 demo.exe: test/CMakeFiles/demo.dir/linkLibs.rsp
 demo.exe: test/CMakeFiles/demo.dir/objects1.rsp
 demo.exe: test/CMakeFiles/demo.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_3) "Linking CXX executable ..\demo.exe"
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX executable ..\demo.exe"
 	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\demo.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.

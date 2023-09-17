@@ -31,4 +31,5 @@ ADD_TEST(NAME ./demo COMMAND ./demo)
 add_executable(cpp-tools main.cpp
         mytools.cpp
         mytools.h
-        )
+
+)

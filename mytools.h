@@ -8,6 +8,7 @@
 #include <fstream>
 #include <filesystem> // 包含文件系统库，用于处理文件和目录操作
 #include <Windows.h>
+#include <regex>
 
 #include "cppjieba/Jieba.cpp"
 
@@ -61,7 +62,7 @@ public:
     void change_files_extension(const string &folderPath, string newExtension, string oldExtension = "",
                                 bool isChange = false, bool option = false);
 
-    void create_txt_file(const string &folderPath);
+    void find_pornographic(const string &folderPath,string Name);
 };
 
 
