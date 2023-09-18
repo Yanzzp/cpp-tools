@@ -62,7 +62,7 @@ public:
     void change_files_extension(const string &folderPath, string newExtension, string oldExtension = "",
                                 bool isChange = false, bool option = false);
 
-    void find_pornographic(const string &folderPath,string Name);
+    void find_name(const string &folderPath, string Name);
 
     void move_files_to_main_folder(const string &folderPath,bool isMove = false);
 

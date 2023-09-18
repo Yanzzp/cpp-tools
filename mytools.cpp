@@ -312,7 +312,7 @@ void mytools::change_files_extension(const string &folderPath, string newExtensi
     }
 }
 
-void mytools::find_pornographic(const string &folderPath,string Name) {
+void mytools::find_name(const string &folderPath, string Name) {
     cppjieba::Jieba jieba(DICT_PATH,
                           HMM_PATH,
                           USER_DICT_PATH,
