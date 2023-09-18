@@ -354,4 +354,19 @@ void mytools::find_pornographic(const string &folderPath,string Name) {
     }
 }
 
+void mytools::move_files_to_main_folder(const string &folderPath, bool isMove) {
+    for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
+        if (entry.is_regular_file()) {
+            if(isMove){
+                try {
+                    fs::rename(entry.path(),folderPath/entry.path().filename());
+                    cout << entry.path().filename() << "成功移动到" << folderPath<< endl;
+                } catch (const std::exception& ex) {
+                    cerr << "文件移动失败：" << ex.what() << std::endl;
+                }
+            }
+        }
+    }
+}
+
 

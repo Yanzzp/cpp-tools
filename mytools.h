@@ -63,6 +63,9 @@ public:
                                 bool isChange = false, bool option = false);
 
     void find_pornographic(const string &folderPath,string Name);
+
+    void move_files_to_main_folder(const string &folderPath,bool isMove = false);
+
 };
 
 

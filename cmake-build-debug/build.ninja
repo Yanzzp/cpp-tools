@@ -259,15 +259,6 @@ build test/CMakeFiles/demo.dir/demo.cpp.obj: CXX_COMPILER__demo_unscanned_Debug 
   TARGET_COMPILE_PDB = test\CMakeFiles\demo.dir\
   TARGET_PDB = demo.pdb
 
-build test/CMakeFiles/demo.dir/__/main.cpp.obj: CXX_COMPILER__demo_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/main.cpp || cmake_object_order_depends_target_demo
-  DEP_FILE = test\CMakeFiles\demo.dir\__\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include
-  OBJECT_DIR = test\CMakeFiles\demo.dir
-  OBJECT_FILE_DIR = test\CMakeFiles\demo.dir\__
-  TARGET_COMPILE_PDB = test\CMakeFiles\demo.dir\
-  TARGET_PDB = demo.pdb
-
 
 # =============================================================================
 # Link build statements for EXECUTABLE target demo
@@ -276,7 +267,7 @@ build test/CMakeFiles/demo.dir/__/main.cpp.obj: CXX_COMPILER__demo_unscanned_Deb
 #############################################
 # Link the executable demo.exe
 
-build demo.exe: CXX_EXECUTABLE_LINKER__demo_Debug test/CMakeFiles/demo.dir/demo.cpp.obj test/CMakeFiles/demo.dir/__/main.cpp.obj
+build demo.exe: CXX_EXECUTABLE_LINKER__demo_Debug test/CMakeFiles/demo.dir/demo.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = test\CMakeFiles\demo.dir
