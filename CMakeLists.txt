@@ -33,13 +33,18 @@ ADD_TEST(NAME ./demo COMMAND ./demo)
 
 #include_directories(E:/MyCodeProject/CLionProjects/cpp-tools/SDL)
 
-
-
-
+set(OpenCV_DIR D:/zpplibrary/opencv/install)
+find_package(OpenCV REQUIRED)
 add_executable(cpp-tools main.cpp
         mytools.cpp
         mytools.h
 )
+
+include_directories(${OpenCV_INCLUDE_DIRS})
+target_link_libraries(cpp-tools ${OpenCV_LIBS})
+
+
+
 #target_link_libraries(
 #        cpp-tools
 #        avcodec

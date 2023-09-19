@@ -146,6 +146,36 @@
 			"path" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake"
 		},
 		{
+			"isExternal" : true,
+			"path" : "D:/zpplibrary/opencv/install/OpenCVConfig-version.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/zpplibrary/opencv/install/OpenCVConfig.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/zpplibrary/opencv/install/x64/mingw/lib/OpenCVConfig.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPackageHandleStandardArgs.cmake"
+		},
+		{
+			"isCMake" : true,
+			"isExternal" : true,
+			"path" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/FindPackageMessage.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/zpplibrary/opencv/install/x64/mingw/lib/OpenCVModules.cmake"
+		},
+		{
+			"isExternal" : true,
+			"path" : "D:/zpplibrary/opencv/install/x64/mingw/lib/OpenCVModules-release.cmake"
+		},
+		{
 			"path" : "jieba/deps/CMakeLists.txt"
 		},
 		{

@@ -248,6 +248,9 @@ CppTools_IS_TOP_LEVEL:STATIC=ON
 //Value Computed by CMake
 CppTools_SOURCE_DIR:STATIC=E:/MyCodeProject/CLionProjects/cpp-tools
 
+//The directory containing a CMake configuration file for OpenCV.
+OpenCV_DIR:PATH=OpenCV_DIR-NOTFOUND
+
 //Path to a library.
 PYTHON_DEBUG_LIBRARY:FILEPATH=PYTHON_DEBUG_LIBRARY-NOTFOUND
 
@@ -259,6 +262,15 @@ PYTHON_LIBRARY:FILEPATH=C:/Users/11057/miniconda3/libs/python311.lib
 
 //Path to a library.
 PYTHON_LIBRARY_DEBUG:FILEPATH=PYTHON_LIBRARY_DEBUG-NOTFOUND
+
+//Value Computed by CMake
+cpp-tools_BINARY_DIR:STATIC=E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug
+
+//Value Computed by CMake
+cpp-tools_IS_TOP_LEVEL:STATIC=ON
+
+//Value Computed by CMake
+cpp-tools_SOURCE_DIR:STATIC=E:/MyCodeProject/CLionProjects/cpp-tools
 
 
 ########################
@@ -417,6 +429,8 @@ CMAKE_STATIC_LINKER_FLAGS_RELWITHDEBINFO-ADVANCED:INTERNAL=1
 CMAKE_STRIP-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: CMAKE_VERBOSE_MAKEFILE
 CMAKE_VERBOSE_MAKEFILE-ADVANCED:INTERNAL=1
+//Details about finding OpenCV
+FIND_PACKAGE_MESSAGE_DETAILS_OpenCV:INTERNAL=[D:/zpplibrary/opencv/install][v4.5.3()]
 //Details about finding Python3
 FIND_PACKAGE_MESSAGE_DETAILS_Python3:INTERNAL=[C:/Users/11057/miniconda3/python.exe][C:/Users/11057/miniconda3/libs/python311.lib][C:/Users/11057/miniconda3/include][cfound components: Interpreter Development Development.Module Development.Embed ][v3.11.4(3.11)]
 //Details about finding PythonLibs
