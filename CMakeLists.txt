@@ -28,8 +28,24 @@ ADD_TEST(NAME ./test/test.run COMMAND ./test/test.run)
 ADD_TEST(NAME ./load_test COMMAND ./load_test)
 ADD_TEST(NAME ./demo COMMAND ./demo)
 
+include_directories(D:/ffmpeg-win64-shared/include)
+link_directories(D:/ffmpeg-win64-shared/lib)
+
+
 add_executable(cpp-tools main.cpp
         mytools.cpp
         mytools.h
-
+        FFmpegToolBox.cpp
+        FFmpegToolBox.h
+)
+target_link_libraries(
+        cpp-tools
+        avcodec
+        avdevice
+        avfilter
+        avformat
+        avutil
+        postproc
+        swresample
+        swscale
 )

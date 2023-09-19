@@ -38,16 +38,16 @@ private:
     std::vector<std::string> folder_info = {"", "", "", ""};
     uintmax_t folderSize = 0;
 
-    bool isImageFile(const std::string &filename);
+    static bool isImageFile(const std::string &filename);
 
-    bool isVideoFile(const std::string &filename);
+    static bool isVideoFile(const std::string &filename);
 
-    bool isAudioFile(const std::string &filename);
+    static bool isAudioFile(const std::string &filename);
 
     uintmax_t get_file_size(string path);
 
 public:
-    string translate(string text, string from, string to, bool isPrint = false);
+    friend class FFmpegToolBox;
 
     void print_all_files(const string &folderPath, int depth = 0);
 
