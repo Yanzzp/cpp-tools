@@ -1,9 +1,22 @@
-"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug "-DCMAKE_MAKE_PROGRAM=C:/Program Files/JetBrains/CLion 2023.2.2/bin/ninja/win/x64/ninja.exe" -G Ninja -S E:\MyCodeProject\CLionProjects\cpp-tools -B E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug
+"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - MinGW Makefiles" -S E:\MyCodeProject\CLionProjects\cpp-tools -B E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug
+-- The C compiler identification is GNU 8.1.0
+-- The CXX compiler identification is GNU 8.1.0
+-- Detecting C compiler ABI info
+-- Detecting C compiler ABI info - done
+-- Check for working C compiler: D:/zppLibrary/mingw64/bin/gcc.exe - skipped
+-- Detecting C compile features
+-- Detecting C compile features - done
+-- Detecting CXX compiler ABI info
+-- Detecting CXX compiler ABI info - done
+-- Check for working CXX compiler: D:/zppLibrary/mingw64/bin/c++.exe - skipped
+-- Detecting CXX compile features
+-- Detecting CXX compile features - done
 -- OpenCV ARCH: x64
 -- OpenCV RUNTIME: mingw
 -- OpenCV STATIC: OFF
--- Found OpenCV 4.5.3 in D:/zpplibrary/opencv/install/x64/mingw/lib
--- You might need to add D:\zpplibrary\opencv\install\x64\mingw\bin to your PATH to be able to run your applications.
--- Configuring done (0.1s)
+-- Found OpenCV: D:/zppLibrary/opencv/install (found version "4.5.3") 
+-- Found OpenCV 4.5.3 in D:/zppLibrary/opencv/install/x64/mingw/lib
+-- You might need to add D:/zppLibrary/opencv/install/x64/mingw/bin to your PATH to be able to run your applications.
+-- Configuring done (1.2s)
 -- Generating done (0.0s)
 -- Build files have been written to: E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug

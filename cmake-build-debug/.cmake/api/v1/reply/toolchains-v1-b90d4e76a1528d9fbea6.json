@@ -10,16 +10,16 @@
 				{
 					"includeDirectories" : 
 					[
-						"D:/zpplibrary/mingw-w64/lib/gcc/x86_64-w64-mingw32/12.2.0/include",
-						"D:/zpplibrary/mingw-w64/lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed",
-						"D:/zpplibrary/mingw-w64/x86_64-w64-mingw32/include"
+						"D:/zppLibrary/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+						"D:/zppLibrary/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed",
+						"D:/zppLibrary/mingw64/x86_64-w64-mingw32/include"
 					],
 					"linkDirectories" : 
 					[
-						"D:/zpplibrary/mingw-w64/lib/gcc/x86_64-w64-mingw32/12.2.0",
-						"D:/zpplibrary/mingw-w64/lib/gcc",
-						"D:/zpplibrary/mingw-w64/x86_64-w64-mingw32/lib",
-						"D:/zpplibrary/mingw-w64/lib"
+						"D:/zppLibrary/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0",
+						"D:/zppLibrary/mingw64/lib/gcc",
+						"D:/zppLibrary/mingw64/x86_64-w64-mingw32/lib",
+						"D:/zppLibrary/mingw64/lib"
 					],
 					"linkFrameworkDirectories" : [],
 					"linkLibraries" : 
@@ -28,7 +28,6 @@
 						"gcc",
 						"moldname",
 						"mingwex",
-						"kernel32",
 						"pthread",
 						"advapi32",
 						"shell32",
@@ -38,12 +37,11 @@
 						"mingw32",
 						"gcc",
 						"moldname",
-						"mingwex",
-						"kernel32"
+						"mingwex"
 					]
 				},
-				"path" : "D:/zpplibrary/mingw-w64/bin/gcc.exe",
-				"version" : "12.2.0"
+				"path" : "D:/zppLibrary/mingw64/bin/gcc.exe",
+				"version" : "8.1.0"
 			},
 			"language" : "C",
 			"sourceFileExtensions" : 
@@ -60,19 +58,19 @@
 				{
 					"includeDirectories" : 
 					[
-						"D:/zpplibrary/mingw-w64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++",
-						"D:/zpplibrary/mingw-w64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/x86_64-w64-mingw32",
-						"D:/zpplibrary/mingw-w64/lib/gcc/x86_64-w64-mingw32/12.2.0/include/c++/backward",
-						"D:/zpplibrary/mingw-w64/lib/gcc/x86_64-w64-mingw32/12.2.0/include",
-						"D:/zpplibrary/mingw-w64/lib/gcc/x86_64-w64-mingw32/12.2.0/include-fixed",
-						"D:/zpplibrary/mingw-w64/x86_64-w64-mingw32/include"
+						"D:/zppLibrary/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++",
+						"D:/zppLibrary/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/x86_64-w64-mingw32",
+						"D:/zppLibrary/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include/c++/backward",
+						"D:/zppLibrary/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include",
+						"D:/zppLibrary/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0/include-fixed",
+						"D:/zppLibrary/mingw64/x86_64-w64-mingw32/include"
 					],
 					"linkDirectories" : 
 					[
-						"D:/zpplibrary/mingw-w64/lib/gcc/x86_64-w64-mingw32/12.2.0",
-						"D:/zpplibrary/mingw-w64/lib/gcc",
-						"D:/zpplibrary/mingw-w64/x86_64-w64-mingw32/lib",
-						"D:/zpplibrary/mingw-w64/lib"
+						"D:/zppLibrary/mingw64/lib/gcc/x86_64-w64-mingw32/8.1.0",
+						"D:/zppLibrary/mingw64/lib/gcc",
+						"D:/zppLibrary/mingw64/x86_64-w64-mingw32/lib",
+						"D:/zppLibrary/mingw64/lib"
 					],
 					"linkFrameworkDirectories" : [],
 					"linkLibraries" : 
@@ -83,7 +81,6 @@
 						"gcc",
 						"moldname",
 						"mingwex",
-						"kernel32",
 						"pthread",
 						"advapi32",
 						"shell32",
@@ -94,12 +91,11 @@
 						"gcc_s",
 						"gcc",
 						"moldname",
-						"mingwex",
-						"kernel32"
+						"mingwex"
 					]
 				},
-				"path" : "D:/zpplibrary/mingw-w64/bin/c++.exe",
-				"version" : "12.2.0"
+				"path" : "D:/zppLibrary/mingw64/bin/c++.exe",
+				"version" : "8.1.0"
 			},
 			"language" : "CXX",
 			"sourceFileExtensions" : 
@@ -121,7 +117,7 @@
 			"compiler" : 
 			{
 				"implicit" : {},
-				"path" : "D:/zpplibrary/mingw-w64/bin/windres.exe"
+				"path" : "D:/zppLibrary/mingw64/bin/windres.exe"
 			},
 			"language" : "RC",
 			"sourceFileExtensions" : 

@@ -131,7 +131,7 @@
 			},
 			{
 				"backtrace" : 2,
-				"fragment" : "jieba\\deps\\gtest\\libgtest.a",
+				"fragment" : "..\\..\\deps\\gtest\\libgtest.a",
 				"role" : "libraries"
 			},
 			{

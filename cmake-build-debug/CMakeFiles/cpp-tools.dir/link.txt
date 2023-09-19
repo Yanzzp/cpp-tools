@@ -1,0 +1,3 @@
+"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\cpp-tools.dir/objects.a
+D:\zppLibrary\mingw64\bin\ar.exe qc CMakeFiles\cpp-tools.dir/objects.a @CMakeFiles\cpp-tools.dir\objects1.rsp
+D:\zppLibrary\mingw64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\cpp-tools.dir/objects.a -Wl,--no-whole-archive -o cpp-tools.exe -Wl,--out-implib,libcpp-tools.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\cpp-tools.dir\linkLibs.rsp

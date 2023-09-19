@@ -101,7 +101,7 @@
 						3,
 						4
 					],
-					"name" : "CppTools",
+					"name" : "cpp-tools",
 					"targetIndexes" : 
 					[
 						0,
@@ -117,7 +117,7 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "cpp-tools::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cpp-tools-Debug-b05ed787f5c88254672d.json",
+					"jsonFile" : "target-cpp-tools-Debug-c78656e5c9d6319ef2b4.json",
 					"name" : "cpp-tools",
 					"projectIndex" : 0
 				},
@@ -145,7 +145,7 @@
 				{
 					"directoryIndex" : 4,
 					"id" : "test.run::@3f9d8acab1290fa6a358",
-					"jsonFile" : "target-test.run-Debug-4222900c042b6393980c.json",
+					"jsonFile" : "target-test.run-Debug-a2a14b98d65b0946b937.json",
 					"name" : "test.run",
 					"projectIndex" : 0
 				}
