@@ -33,6 +33,9 @@ ADD_TEST(NAME ./demo COMMAND ./demo)
 
 #include_directories(E:/MyCodeProject/CLionProjects/cpp-tools/SDL)
 
+
+
+
 add_executable(cpp-tools main.cpp
         mytools.cpp
         mytools.h

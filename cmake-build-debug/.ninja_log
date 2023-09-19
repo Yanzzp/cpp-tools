@@ -1,16 +1,12 @@
 # ninja log v5
 4	5115	7166259131906650	test/CMakeFiles/demo.dir/demo.cpp.obj	e044e0c81fa6e4b5
 5189	5367	7166243413836855	CPPJIEBA.exe	bfa5646687939418
-7981	8216	7168243985497861	cpp-tools.exe	8d554912f870a678
+917	1225	7168338254824032	cpp-tools.exe	9f8b8b563f32a5e2
 75	254	7166260411537245	demo.exe	ae2e415bb77ca208
 4	5306	7166240432702008	test/CMakeFiles/load_test.dir/load_test.cpp.obj	e391d52e8a52734
-11	3456	7168243937973459	CMakeFiles/cpp-tools.dir/main.cpp.obj	57caac5b345b5b41
-1	167	7168245864039706	build.ninja	c987aab22acce410
+3	916	7168338251788322	CMakeFiles/cpp-tools.dir/main.cpp.obj	d20adc73f3ca275c
+0	115	7168339634870002	build.ninja	df7aa99a814c5971
 5309	5489	7166240434570590	load_test.exe	cbed063979a7f356
 8223	8420	7166248217530855	main.exe	a7a752f20e39eaab
-5	7981	7168243983081359	CMakeFiles/cpp-tools.dir/mytools.cpp.obj	7a4bbe27fe200f32
+5	7257	7168332555056076	CMakeFiles/cpp-tools.dir/mytools.cpp.obj	9bc5789e2018a8b3
 4	75	7166260409799244	test/CMakeFiles/demo.dir/__/main.cpp.obj	cc45dc26d2b27edf
-12	3807	7168072181857811	CMakeFiles/cpp-tools.dir/FFmpegToolBox.cpp.obj	73dc2d3907b44e30
-5	3398	7168246004912166	CMakeFiles/cpp-tools.dir/main.cpp.obj	ff487d3c15e9280
-12	8113	7168246051955556	CMakeFiles/cpp-tools.dir/mytools.cpp.obj	b9d1a3a4faaf3be1
-8117	8345	7168246054345829	cpp-tools.exe	8d554912f870a678

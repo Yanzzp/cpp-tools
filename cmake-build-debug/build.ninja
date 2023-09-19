@@ -52,14 +52,14 @@ build cmake_object_order_depends_target_cpp-tools: phony || CMakeFiles/cpp-tools
 build CMakeFiles/cpp-tools.dir/main.cpp.obj: CXX_COMPILER__cpp-tools_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/main.cpp || cmake_object_order_depends_target_cpp-tools
   DEP_FILE = CMakeFiles\cpp-tools.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IC:/Users/11057/miniconda3/include
   OBJECT_DIR = CMakeFiles\cpp-tools.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp-tools.dir
 
 build CMakeFiles/cpp-tools.dir/mytools.cpp.obj: CXX_COMPILER__cpp-tools_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/mytools.cpp || cmake_object_order_depends_target_cpp-tools
   DEP_FILE = CMakeFiles\cpp-tools.dir\mytools.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IC:/Users/11057/miniconda3/include
   OBJECT_DIR = CMakeFiles\cpp-tools.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp-tools.dir
 
@@ -71,9 +71,9 @@ build CMakeFiles/cpp-tools.dir/mytools.cpp.obj: CXX_COMPILER__cpp-tools_unscanne
 #############################################
 # Link the executable cpp-tools.exe
 
-build cpp-tools.exe: CXX_EXECUTABLE_LINKER__cpp-tools_Debug CMakeFiles/cpp-tools.dir/main.cpp.obj CMakeFiles/cpp-tools.dir/mytools.cpp.obj
+build cpp-tools.exe: CXX_EXECUTABLE_LINKER__cpp-tools_Debug CMakeFiles/cpp-tools.dir/main.cpp.obj CMakeFiles/cpp-tools.dir/mytools.cpp.obj | C$:/Users/11057/miniconda3/libs/python311.lib
   FLAGS = -g
-  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  LINK_LIBRARIES = C:/Users/11057/miniconda3/libs/python311.lib  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cpp-tools.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
