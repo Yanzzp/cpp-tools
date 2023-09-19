@@ -52,21 +52,14 @@ build cmake_object_order_depends_target_cpp-tools: phony || CMakeFiles/cpp-tools
 build CMakeFiles/cpp-tools.dir/main.cpp.obj: CXX_COMPILER__cpp-tools_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/main.cpp || cmake_object_order_depends_target_cpp-tools
   DEP_FILE = CMakeFiles\cpp-tools.dir\main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -ID:/ffmpeg-win64-shared/include
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include
   OBJECT_DIR = CMakeFiles\cpp-tools.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp-tools.dir
 
 build CMakeFiles/cpp-tools.dir/mytools.cpp.obj: CXX_COMPILER__cpp-tools_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/mytools.cpp || cmake_object_order_depends_target_cpp-tools
   DEP_FILE = CMakeFiles\cpp-tools.dir\mytools.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -ID:/ffmpeg-win64-shared/include
-  OBJECT_DIR = CMakeFiles\cpp-tools.dir
-  OBJECT_FILE_DIR = CMakeFiles\cpp-tools.dir
-
-build CMakeFiles/cpp-tools.dir/FFmpegToolBox.cpp.obj: CXX_COMPILER__cpp-tools_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/FFmpegToolBox.cpp || cmake_object_order_depends_target_cpp-tools
-  DEP_FILE = CMakeFiles\cpp-tools.dir\FFmpegToolBox.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -ID:/ffmpeg-win64-shared/include
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include
   OBJECT_DIR = CMakeFiles\cpp-tools.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp-tools.dir
 
@@ -78,10 +71,9 @@ build CMakeFiles/cpp-tools.dir/FFmpegToolBox.cpp.obj: CXX_COMPILER__cpp-tools_un
 #############################################
 # Link the executable cpp-tools.exe
 
-build cpp-tools.exe: CXX_EXECUTABLE_LINKER__cpp-tools_Debug CMakeFiles/cpp-tools.dir/main.cpp.obj CMakeFiles/cpp-tools.dir/mytools.cpp.obj CMakeFiles/cpp-tools.dir/FFmpegToolBox.cpp.obj
+build cpp-tools.exe: CXX_EXECUTABLE_LINKER__cpp-tools_Debug CMakeFiles/cpp-tools.dir/main.cpp.obj CMakeFiles/cpp-tools.dir/mytools.cpp.obj
   FLAGS = -g
-  LINK_LIBRARIES = -lavcodec  -lavdevice  -lavfilter  -lavformat  -lavutil  -lpostproc  -lswresample  -lswscale  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  LINK_PATH = -LD:/ffmpeg-win64-shared/lib
+  LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
   OBJECT_DIR = CMakeFiles\cpp-tools.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
@@ -94,7 +86,7 @@ build cpp-tools.exe: CXX_EXECUTABLE_LINKER__cpp-tools_Debug CMakeFiles/cpp-tools
 # Utility command for test
 
 build CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
   DESC = Running tests...
   pool = console
   restat = 1
@@ -106,7 +98,7 @@ build test: phony CMakeFiles/test.util
 # Utility command for edit_cache
 
 build CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
@@ -117,7 +109,7 @@ build edit_cache: phony CMakeFiles/edit_cache.util
 # Utility command for rebuild_cache
 
 build CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\cpp-tools -BE:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug"
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\cpp-tools -BE:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
@@ -133,40 +125,40 @@ build rebuild_cache: phony CMakeFiles/rebuild_cache.util
 #############################################
 # Utility command for test
 
-build deps/CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\deps && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+build jieba/deps/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
   DESC = Running tests...
   pool = console
   restat = 1
 
-build deps/test: phony deps/CMakeFiles/test.util
+build jieba/deps/test: phony jieba/deps/CMakeFiles/test.util
 
 
 #############################################
 # Utility command for edit_cache
 
-build deps/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\deps && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+build jieba/deps/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build deps/edit_cache: phony deps/CMakeFiles/edit_cache.util
+build jieba/deps/edit_cache: phony jieba/deps/CMakeFiles/edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build deps/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\deps && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\cpp-tools -BE:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug"
+build jieba/deps/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\cpp-tools -BE:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build deps/rebuild_cache: phony deps/CMakeFiles/rebuild_cache.util
+build jieba/deps/rebuild_cache: phony jieba/deps/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# E:/MyCodeProject/CLionProjects/cpp-tools/deps/CMakeLists.txt
+# E:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -176,14 +168,14 @@ build deps/rebuild_cache: phony deps/CMakeFiles/rebuild_cache.util
 #############################################
 # Order-only phony target for gtest
 
-build cmake_object_order_depends_target_gtest: phony || deps/gtest/CMakeFiles/gtest.dir
+build cmake_object_order_depends_target_gtest: phony || jieba/deps/gtest/CMakeFiles/gtest.dir
 
-build deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
-  DEP_FILE = deps\gtest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d
+build jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
+  DEP_FILE = jieba\deps\gtest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/. -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/include
-  OBJECT_DIR = deps\gtest\CMakeFiles\gtest.dir
-  OBJECT_FILE_DIR = deps\gtest\CMakeFiles\gtest.dir\src
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/. -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/include
+  OBJECT_DIR = jieba\deps\gtest\CMakeFiles\gtest.dir
+  OBJECT_FILE_DIR = jieba\deps\gtest\CMakeFiles\gtest.dir\src
 
 
 # =============================================================================
@@ -191,50 +183,50 @@ build deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_
 
 
 #############################################
-# Link the static library deps\gtest\libgtest.a
+# Link the static library jieba\deps\gtest\libgtest.a
 
-build deps/gtest/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
+build jieba/deps/gtest/libgtest.a: CXX_STATIC_LIBRARY_LINKER__gtest_Debug jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
   LANGUAGE_COMPILE_FLAGS = -g
-  OBJECT_DIR = deps\gtest\CMakeFiles\gtest.dir
+  OBJECT_DIR = jieba\deps\gtest\CMakeFiles\gtest.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
-  TARGET_FILE = deps\gtest\libgtest.a
+  TARGET_FILE = jieba\deps\gtest\libgtest.a
   TARGET_PDB = gtest.a.dbg
 
 
 #############################################
 # Utility command for test
 
-build deps/gtest/CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\deps\gtest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+build jieba/deps/gtest/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
   DESC = Running tests...
   pool = console
   restat = 1
 
-build deps/gtest/test: phony deps/gtest/CMakeFiles/test.util
+build jieba/deps/gtest/test: phony jieba/deps/gtest/CMakeFiles/test.util
 
 
 #############################################
 # Utility command for edit_cache
 
-build deps/gtest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\deps\gtest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+build jieba/deps/gtest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build deps/gtest/edit_cache: phony deps/gtest/CMakeFiles/edit_cache.util
+build jieba/deps/gtest/edit_cache: phony jieba/deps/gtest/CMakeFiles/edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build deps/gtest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\deps\gtest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\cpp-tools -BE:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug"
+build jieba/deps/gtest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\cpp-tools -BE:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build deps/gtest/rebuild_cache: phony deps/gtest/CMakeFiles/rebuild_cache.util
+build jieba/deps/gtest/rebuild_cache: phony jieba/deps/gtest/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
@@ -248,14 +240,14 @@ build deps/gtest/rebuild_cache: phony deps/gtest/CMakeFiles/rebuild_cache.util
 #############################################
 # Order-only phony target for demo
 
-build cmake_object_order_depends_target_demo: phony || test/CMakeFiles/demo.dir
+build cmake_object_order_depends_target_demo: phony || jieba/test/CMakeFiles/demo.dir
 
-build test/CMakeFiles/demo.dir/demo.cpp.obj: CXX_COMPILER__demo_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/demo.cpp || cmake_object_order_depends_target_demo
-  DEP_FILE = test\CMakeFiles\demo.dir\demo.cpp.obj.d
+build jieba/test/CMakeFiles/demo.dir/demo.cpp.obj: CXX_COMPILER__demo_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/demo.cpp || cmake_object_order_depends_target_demo
+  DEP_FILE = jieba\test\CMakeFiles\demo.dir\demo.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include
-  OBJECT_DIR = test\CMakeFiles\demo.dir
-  OBJECT_FILE_DIR = test\CMakeFiles\demo.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include
+  OBJECT_DIR = jieba\test\CMakeFiles\demo.dir
+  OBJECT_FILE_DIR = jieba\test\CMakeFiles\demo.dir
 
 
 # =============================================================================
@@ -265,10 +257,10 @@ build test/CMakeFiles/demo.dir/demo.cpp.obj: CXX_COMPILER__demo_unscanned_Debug 
 #############################################
 # Link the executable demo.exe
 
-build demo.exe: CXX_EXECUTABLE_LINKER__demo_Debug test/CMakeFiles/demo.dir/demo.cpp.obj
+build demo.exe: CXX_EXECUTABLE_LINKER__demo_Debug jieba/test/CMakeFiles/demo.dir/demo.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = test\CMakeFiles\demo.dir
+  OBJECT_DIR = jieba\test\CMakeFiles\demo.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
   TARGET_FILE = demo.exe
@@ -282,14 +274,14 @@ build demo.exe: CXX_EXECUTABLE_LINKER__demo_Debug test/CMakeFiles/demo.dir/demo.
 #############################################
 # Order-only phony target for load_test
 
-build cmake_object_order_depends_target_load_test: phony || test/CMakeFiles/load_test.dir
+build cmake_object_order_depends_target_load_test: phony || jieba/test/CMakeFiles/load_test.dir
 
-build test/CMakeFiles/load_test.dir/load_test.cpp.obj: CXX_COMPILER__load_test_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/load_test.cpp || cmake_object_order_depends_target_load_test
-  DEP_FILE = test\CMakeFiles\load_test.dir\load_test.cpp.obj.d
+build jieba/test/CMakeFiles/load_test.dir/load_test.cpp.obj: CXX_COMPILER__load_test_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/load_test.cpp || cmake_object_order_depends_target_load_test
+  DEP_FILE = jieba\test\CMakeFiles\load_test.dir\load_test.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include
-  OBJECT_DIR = test\CMakeFiles\load_test.dir
-  OBJECT_FILE_DIR = test\CMakeFiles\load_test.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include
+  OBJECT_DIR = jieba\test\CMakeFiles\load_test.dir
+  OBJECT_FILE_DIR = jieba\test\CMakeFiles\load_test.dir
 
 
 # =============================================================================
@@ -299,10 +291,10 @@ build test/CMakeFiles/load_test.dir/load_test.cpp.obj: CXX_COMPILER__load_test_u
 #############################################
 # Link the executable load_test.exe
 
-build load_test.exe: CXX_EXECUTABLE_LINKER__load_test_Debug test/CMakeFiles/load_test.dir/load_test.cpp.obj
+build load_test.exe: CXX_EXECUTABLE_LINKER__load_test_Debug jieba/test/CMakeFiles/load_test.dir/load_test.cpp.obj
   FLAGS = -g
   LINK_LIBRARIES = -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = test\CMakeFiles\load_test.dir
+  OBJECT_DIR = jieba\test\CMakeFiles\load_test.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
   TARGET_FILE = load_test.exe
@@ -313,40 +305,40 @@ build load_test.exe: CXX_EXECUTABLE_LINKER__load_test_Debug test/CMakeFiles/load
 #############################################
 # Utility command for test
 
-build test/CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+build jieba/test/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\test && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
   DESC = Running tests...
   pool = console
   restat = 1
 
-build test/test: phony test/CMakeFiles/test.util
+build jieba/test/test: phony jieba/test/CMakeFiles/test.util
 
 
 #############################################
 # Utility command for edit_cache
 
-build test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+build jieba/test/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\test && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build test/edit_cache: phony test/CMakeFiles/edit_cache.util
+build jieba/test/edit_cache: phony jieba/test/CMakeFiles/edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\cpp-tools -BE:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug"
+build jieba/test/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\test && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\cpp-tools -BE:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
+build jieba/test/rebuild_cache: phony jieba/test/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Write statements declared in CMakeLists.txt:
-# E:/MyCodeProject/CLionProjects/cpp-tools/test/CMakeLists.txt
+# E:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/CMakeLists.txt
 # =============================================================================
 
 # =============================================================================
@@ -358,77 +350,77 @@ build test/rebuild_cache: phony test/CMakeFiles/rebuild_cache.util
 
 build cmake_object_order_depends_target_test.run: phony || cmake_object_order_depends_target_gtest
 
-build test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/gtest_main.cpp || cmake_object_order_depends_target_test.run
+build jieba/test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/gtest_main.cpp || cmake_object_order_depends_target_test.run
   DEFINES = -DLOGGING_LEVEL=LL_WARNING
-  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\gtest_main.cpp.obj.d
+  DEP_FILE = jieba\test\unittest\CMakeFiles\test.run.dir\gtest_main.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/include
-  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
-  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/../../deps/gtest/include
+  OBJECT_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
 
-build test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/keyword_extractor_test.cpp || cmake_object_order_depends_target_test.run
+build jieba/test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/keyword_extractor_test.cpp || cmake_object_order_depends_target_test.run
   DEFINES = -DLOGGING_LEVEL=LL_WARNING
-  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\keyword_extractor_test.cpp.obj.d
+  DEP_FILE = jieba\test\unittest\CMakeFiles\test.run.dir\keyword_extractor_test.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/include
-  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
-  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/../../deps/gtest/include
+  OBJECT_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
 
-build test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/trie_test.cpp || cmake_object_order_depends_target_test.run
+build jieba/test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/trie_test.cpp || cmake_object_order_depends_target_test.run
   DEFINES = -DLOGGING_LEVEL=LL_WARNING
-  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\trie_test.cpp.obj.d
+  DEP_FILE = jieba\test\unittest\CMakeFiles\test.run.dir\trie_test.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/include
-  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
-  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/../../deps/gtest/include
+  OBJECT_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
 
-build test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/segments_test.cpp || cmake_object_order_depends_target_test.run
+build jieba/test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/segments_test.cpp || cmake_object_order_depends_target_test.run
   DEFINES = -DLOGGING_LEVEL=LL_WARNING
-  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\segments_test.cpp.obj.d
+  DEP_FILE = jieba\test\unittest\CMakeFiles\test.run.dir\segments_test.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/include
-  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
-  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/../../deps/gtest/include
+  OBJECT_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
 
-build test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/pos_tagger_test.cpp || cmake_object_order_depends_target_test.run
+build jieba/test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/pos_tagger_test.cpp || cmake_object_order_depends_target_test.run
   DEFINES = -DLOGGING_LEVEL=LL_WARNING
-  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\pos_tagger_test.cpp.obj.d
+  DEP_FILE = jieba\test\unittest\CMakeFiles\test.run.dir\pos_tagger_test.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/include
-  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
-  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/../../deps/gtest/include
+  OBJECT_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
 
-build test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/jieba_test.cpp || cmake_object_order_depends_target_test.run
+build jieba/test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/jieba_test.cpp || cmake_object_order_depends_target_test.run
   DEFINES = -DLOGGING_LEVEL=LL_WARNING
-  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\jieba_test.cpp.obj.d
+  DEP_FILE = jieba\test\unittest\CMakeFiles\test.run.dir\jieba_test.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/include
-  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
-  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/../../deps/gtest/include
+  OBJECT_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
 
-build test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/pre_filter_test.cpp || cmake_object_order_depends_target_test.run
+build jieba/test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/pre_filter_test.cpp || cmake_object_order_depends_target_test.run
   DEFINES = -DLOGGING_LEVEL=LL_WARNING
-  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\pre_filter_test.cpp.obj.d
+  DEP_FILE = jieba\test\unittest\CMakeFiles\test.run.dir\pre_filter_test.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/include
-  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
-  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/../../deps/gtest/include
+  OBJECT_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
 
-build test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/unicode_test.cpp || cmake_object_order_depends_target_test.run
+build jieba/test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/unicode_test.cpp || cmake_object_order_depends_target_test.run
   DEFINES = -DLOGGING_LEVEL=LL_WARNING
-  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\unicode_test.cpp.obj.d
+  DEP_FILE = jieba\test\unittest\CMakeFiles\test.run.dir\unicode_test.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/include
-  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
-  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/../../deps/gtest/include
+  OBJECT_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
 
-build test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/textrank_test.cpp || cmake_object_order_depends_target_test.run
+build jieba/test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj: CXX_COMPILER__test.2erun_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/textrank_test.cpp || cmake_object_order_depends_target_test.run
   DEFINES = -DLOGGING_LEVEL=LL_WARNING
-  DEP_FILE = test\unittest\CMakeFiles\test.run.dir\textrank_test.cpp.obj.d
+  DEP_FILE = jieba\test\unittest\CMakeFiles\test.run.dir\textrank_test.cpp.obj.d
   FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
-  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/include -IE:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/include
-  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
-  OBJECT_FILE_DIR = test\unittest\CMakeFiles\test.run.dir
+  INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/../../deps/gtest/include
+  OBJECT_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
+  OBJECT_FILE_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
 
 
 # =============================================================================
@@ -438,10 +430,10 @@ build test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj: CXX_COMPILER_
 #############################################
 # Link the executable test\test.run.exe
 
-build test/test.run.exe: CXX_EXECUTABLE_LINKER__test.2erun_Debug test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj | deps/gtest/libgtest.a || deps/gtest/libgtest.a
+build test/test.run.exe: CXX_EXECUTABLE_LINKER__test.2erun_Debug jieba/test/unittest/CMakeFiles/test.run.dir/gtest_main.cpp.obj jieba/test/unittest/CMakeFiles/test.run.dir/keyword_extractor_test.cpp.obj jieba/test/unittest/CMakeFiles/test.run.dir/trie_test.cpp.obj jieba/test/unittest/CMakeFiles/test.run.dir/segments_test.cpp.obj jieba/test/unittest/CMakeFiles/test.run.dir/pos_tagger_test.cpp.obj jieba/test/unittest/CMakeFiles/test.run.dir/jieba_test.cpp.obj jieba/test/unittest/CMakeFiles/test.run.dir/pre_filter_test.cpp.obj jieba/test/unittest/CMakeFiles/test.run.dir/unicode_test.cpp.obj jieba/test/unittest/CMakeFiles/test.run.dir/textrank_test.cpp.obj | jieba/deps/gtest/libgtest.a || jieba/deps/gtest/libgtest.a
   FLAGS = -g
-  LINK_LIBRARIES = deps/gtest/libgtest.a  -lpthread  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
-  OBJECT_DIR = test\unittest\CMakeFiles\test.run.dir
+  LINK_LIBRARIES = jieba/deps/gtest/libgtest.a  -lpthread  -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32
+  OBJECT_DIR = jieba\test\unittest\CMakeFiles\test.run.dir
   POST_BUILD = cd .
   PRE_LINK = cd .
   TARGET_FILE = test\test.run.exe
@@ -452,36 +444,36 @@ build test/test.run.exe: CXX_EXECUTABLE_LINKER__test.2erun_Debug test/unittest/C
 #############################################
 # Utility command for test
 
-build test/unittest/CMakeFiles/test.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
+build jieba/test/unittest/CMakeFiles/test.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\test\unittest && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process "
   DESC = Running tests...
   pool = console
   restat = 1
 
-build test/unittest/test: phony test/unittest/CMakeFiles/test.util
+build jieba/test/unittest/test: phony jieba/test/unittest/CMakeFiles/test.util
 
 
 #############################################
 # Utility command for edit_cache
 
-build test/unittest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
+build jieba/test/unittest/CMakeFiles/edit_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\test\unittest && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available.""
   DESC = No interactive CMake dialog available...
   restat = 1
 
-build test/unittest/edit_cache: phony test/unittest/CMakeFiles/edit_cache.util
+build jieba/test/unittest/edit_cache: phony jieba/test/unittest/CMakeFiles/edit_cache.util
 
 
 #############################################
 # Utility command for rebuild_cache
 
-build test/unittest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
-  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\test\unittest && "C:\Program Files\JetBrains\CLion 2023.1.5\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\cpp-tools -BE:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug"
+build jieba/test/unittest/CMakeFiles/rebuild_cache.util: CUSTOM_COMMAND
+  COMMAND = cmd.exe /C "cd /D E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\test\unittest && "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -SE:\MyCodeProject\CLionProjects\cpp-tools -BE:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug"
   DESC = Running CMake to regenerate build system...
   pool = console
   restat = 1
 
-build test/unittest/rebuild_cache: phony test/unittest/CMakeFiles/rebuild_cache.util
+build jieba/test/unittest/rebuild_cache: phony jieba/test/unittest/CMakeFiles/rebuild_cache.util
 
 # =============================================================================
 # Target aliases.
@@ -490,9 +482,9 @@ build cpp-tools: phony cpp-tools.exe
 
 build demo: phony demo.exe
 
-build gtest: phony deps/gtest/libgtest.a
+build gtest: phony jieba/deps/gtest/libgtest.a
 
-build libgtest.a: phony deps/gtest/libgtest.a
+build libgtest.a: phony jieba/deps/gtest/libgtest.a
 
 build load_test: phony load_test.exe
 
@@ -508,35 +500,35 @@ build test.run.exe: phony test/test.run.exe
 #############################################
 # Folder: E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug
 
-build all: phony cpp-tools.exe deps/all test/all
+build all: phony cpp-tools.exe jieba/deps/all jieba/test/all
 
 # =============================================================================
 
 #############################################
-# Folder: E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/deps
+# Folder: E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps
 
-build deps/all: phony deps/gtest/all
-
-# =============================================================================
-
-#############################################
-# Folder: E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/deps/gtest
-
-build deps/gtest/all: phony deps/gtest/libgtest.a
+build jieba/deps/all: phony jieba/deps/gtest/all
 
 # =============================================================================
 
 #############################################
-# Folder: E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/test
+# Folder: E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/gtest
 
-build test/all: phony demo.exe load_test.exe test/unittest/all
+build jieba/deps/gtest/all: phony jieba/deps/gtest/libgtest.a
 
 # =============================================================================
 
 #############################################
-# Folder: E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/test/unittest
+# Folder: E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test
 
-build test/unittest/all: phony test/test.run.exe
+build jieba/test/all: phony demo.exe load_test.exe jieba/test/unittest/all
+
+# =============================================================================
+
+#############################################
+# Folder: E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/unittest
+
+build jieba/test/unittest/all: phony test/test.run.exe
 
 # =============================================================================
 # Built-in targets
@@ -545,14 +537,14 @@ build test/unittest/all: phony test/test.run.exe
 #############################################
 # Re-run CMake if any of its inputs changed.
 
-build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake E$:/MyCodeProject/CLionProjects/cpp-tools/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/deps/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/test/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/CMakeLists.txt
+build build.ninja: RERUN_CMAKE | C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake E$:/MyCodeProject/CLionProjects/cpp-tools/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/CMakeLists.txt
   pool = console
 
 
 #############################################
 # A missing CMake input file is not an error.
 
-build C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.1.5/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake E$:/MyCodeProject/CLionProjects/cpp-tools/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/deps/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/deps/gtest/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/test/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/test/unittest/CMakeLists.txt: phony
+build C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCXXInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeCommonLanguageInclude.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeGenericSystem.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeInitializeConfigs.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeLanguageInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeRCInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInformation.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/CMakeSystemSpecificInitialize.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/CMakeCommonCompilerMacros.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Compiler/GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-C.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX-ABI.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU-CXX.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-GNU.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows-windres.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/Windows.cmake C$:/Program$ Files/JetBrains/CLion$ 2023.2.2/bin/cmake/win/x64/share/cmake-3.26/Modules/Platform/WindowsPaths.cmake CMakeCache.txt CMakeFiles/3.26.4/CMakeCCompiler.cmake CMakeFiles/3.26.4/CMakeCXXCompiler.cmake CMakeFiles/3.26.4/CMakeRCCompiler.cmake CMakeFiles/3.26.4/CMakeSystem.cmake E$:/MyCodeProject/CLionProjects/cpp-tools/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/CMakeLists.txt E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/test/unittest/CMakeLists.txt: phony
 
 
 #############################################

@@ -1,0 +1,113 @@
+{
+	"archive" : {},
+	"artifacts" : 
+	[
+		{
+			"path" : "jieba/deps/gtest/libgtest.a"
+		}
+	],
+	"backtrace" : 1,
+	"backtraceGraph" : 
+	{
+		"commands" : 
+		[
+			"ADD_LIBRARY",
+			"INCLUDE_DIRECTORIES"
+		],
+		"files" : 
+		[
+			"jieba/deps/gtest/CMakeLists.txt",
+			"CMakeLists.txt"
+		],
+		"nodes" : 
+		[
+			{
+				"file" : 0
+			},
+			{
+				"command" : 0,
+				"file" : 0,
+				"line" : 2,
+				"parent" : 0
+			},
+			{
+				"file" : 1
+			},
+			{
+				"command" : 1,
+				"file" : 1,
+				"line" : 6,
+				"parent" : 2
+			},
+			{
+				"command" : 1,
+				"file" : 0,
+				"line" : 1,
+				"parent" : 0
+			}
+		]
+	},
+	"compileGroups" : 
+	[
+		{
+			"compileCommandFragments" : 
+			[
+				{
+					"fragment" : "-g -fdiagnostics-color=always   -O3 -Wall -g"
+				}
+			],
+			"includes" : 
+			[
+				{
+					"backtrace" : 3,
+					"path" : "E:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include"
+				},
+				{
+					"backtrace" : 3,
+					"path" : "E:/MyCodeProject/CLionProjects/cpp-tools/jieba/include"
+				},
+				{
+					"backtrace" : 4,
+					"path" : "E:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/."
+				},
+				{
+					"backtrace" : 4,
+					"path" : "E:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/include"
+				}
+			],
+			"language" : "CXX",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"id" : "gtest::@ca6511d8e72813479340",
+	"name" : "gtest",
+	"nameOnDisk" : "libgtest.a",
+	"paths" : 
+	{
+		"build" : "jieba/deps/gtest",
+		"source" : "jieba/deps/gtest"
+	},
+	"sourceGroups" : 
+	[
+		{
+			"name" : "Source Files",
+			"sourceIndexes" : 
+			[
+				0
+			]
+		}
+	],
+	"sources" : 
+	[
+		{
+			"backtrace" : 1,
+			"compileGroupIndex" : 0,
+			"path" : "jieba/deps/gtest/src/gtest-all.cc",
+			"sourceGroupIndex" : 0
+		}
+	],
+	"type" : "STATIC_LIBRARY"
+}

@@ -34,17 +34,17 @@ endif()
 
 # Set default install directory permissions.
 if(NOT DEFINED CMAKE_OBJDUMP)
-  set(CMAKE_OBJDUMP "C:/Program Files/JetBrains/CLion 2023.1.5/bin/mingw/bin/objdump.exe")
+  set(CMAKE_OBJDUMP "C:/Program Files/mingw-w64/mingw64/bin/objdump.exe")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/deps/cmake_install.cmake")
+  include("E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/cmake_install.cmake")
 endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/test/cmake_install.cmake")
+  include("E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/cmake_install.cmake")
 endif()
 
 if(CMAKE_INSTALL_COMPONENT)
