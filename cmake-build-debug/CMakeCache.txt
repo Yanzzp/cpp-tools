@@ -157,7 +157,7 @@ CMAKE_PROJECT_DESCRIPTION:STATIC=
 CMAKE_PROJECT_HOMEPAGE_URL:STATIC=
 
 //Value Computed by CMake
-CMAKE_PROJECT_NAME:STATIC=CppTools
+CMAKE_PROJECT_NAME:STATIC=cpp-tools
 
 //Path to a program.
 CMAKE_RANLIB:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ranlib.exe
@@ -240,13 +240,13 @@ CMAKE_STRIP:FILEPATH=C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/str
 CMAKE_VERBOSE_MAKEFILE:BOOL=FALSE
 
 //Value Computed by CMake
-CppTools_BINARY_DIR:STATIC=E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug
+cpp-tools_BINARY_DIR:STATIC=E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug
 
 //Value Computed by CMake
-CppTools_IS_TOP_LEVEL:STATIC=ON
+cpp-tools_IS_TOP_LEVEL:STATIC=ON
 
 //Value Computed by CMake
-CppTools_SOURCE_DIR:STATIC=E:/MyCodeProject/CLionProjects/cpp-tools
+cpp-tools_SOURCE_DIR:STATIC=E:/MyCodeProject/CLionProjects/cpp-tools
 
 
 ########################

@@ -875,7 +875,7 @@
 				}
 			],
 			"type" : "STATIC",
-			"value" : "CppTools"
+			"value" : "cpp-tools"
 		},
 		{
 			"name" : "CMAKE_RANLIB",
@@ -1254,7 +1254,19 @@
 			"value" : "FALSE"
 		},
 		{
-			"name" : "CppTools_BINARY_DIR",
+			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
+			"properties" : 
+			[
+				{
+					"name" : "HELPSTRING",
+					"value" : "linker supports push/pop state"
+				}
+			],
+			"type" : "INTERNAL",
+			"value" : "TRUE"
+		},
+		{
+			"name" : "cpp-tools_BINARY_DIR",
 			"properties" : 
 			[
 				{
@@ -1266,7 +1278,7 @@
 			"value" : "E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug"
 		},
 		{
-			"name" : "CppTools_IS_TOP_LEVEL",
+			"name" : "cpp-tools_IS_TOP_LEVEL",
 			"properties" : 
 			[
 				{
@@ -1278,7 +1290,7 @@
 			"value" : "ON"
 		},
 		{
-			"name" : "CppTools_SOURCE_DIR",
+			"name" : "cpp-tools_SOURCE_DIR",
 			"properties" : 
 			[
 				{
@@ -1288,18 +1300,6 @@
 			],
 			"type" : "STATIC",
 			"value" : "E:/MyCodeProject/CLionProjects/cpp-tools"
-		},
-		{
-			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "linker supports push/pop state"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "TRUE"
 		}
 	],
 	"kind" : "cache",

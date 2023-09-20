@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 3.26)
-project(CppTools)
+project(cpp-tools)
 
 set(CMAKE_CXX_STANDARD 17)
 

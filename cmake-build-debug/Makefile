@@ -148,7 +148,7 @@ gtest: cmake_check_build_system
 
 # fast build rule for target.
 gtest/fast:
-	$(MAKE) $(MAKESILENT) -f deps\gtest\CMakeFiles\gtest.dir\build.make deps/gtest/CMakeFiles/gtest.dir/build
+	$(MAKE) $(MAKESILENT) -f jieba\deps\gtest\CMakeFiles\gtest.dir\build.make jieba/deps/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
 #=============================================================================
@@ -161,7 +161,7 @@ demo: cmake_check_build_system
 
 # fast build rule for target.
 demo/fast:
-	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\demo.dir\build.make test/CMakeFiles/demo.dir/build
+	$(MAKE) $(MAKESILENT) -f jieba\test\CMakeFiles\demo.dir\build.make jieba/test/CMakeFiles/demo.dir/build
 .PHONY : demo/fast
 
 #=============================================================================
@@ -174,7 +174,7 @@ load_test: cmake_check_build_system
 
 # fast build rule for target.
 load_test/fast:
-	$(MAKE) $(MAKESILENT) -f test\CMakeFiles\load_test.dir\build.make test/CMakeFiles/load_test.dir/build
+	$(MAKE) $(MAKESILENT) -f jieba\test\CMakeFiles\load_test.dir\build.make jieba/test/CMakeFiles/load_test.dir/build
 .PHONY : load_test/fast
 
 #=============================================================================
@@ -187,7 +187,7 @@ test.run: cmake_check_build_system
 
 # fast build rule for target.
 test.run/fast:
-	$(MAKE) $(MAKESILENT) -f test\unittest\CMakeFiles\test.run.dir\build.make test/unittest/CMakeFiles/test.run.dir/build
+	$(MAKE) $(MAKESILENT) -f jieba\test\unittest\CMakeFiles\test.run.dir\build.make jieba/test/unittest/CMakeFiles/test.run.dir/build
 .PHONY : test.run/fast
 
 main.obj: main.cpp.obj
