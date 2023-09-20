@@ -1,6 +1,7 @@
 cmake_minimum_required(VERSION 3.26)
 project(CppTools)
 
+set(CMAKE_CXX_STANDARD 17)
 
 
 INCLUDE_DIRECTORIES(jieba/deps/limonp/include
@@ -15,45 +16,42 @@ IF(APPLE) # mac os
     ADD_DEFINITIONS(-std=c++0x)
 endif()
 
-# cmake .. -DENC=GBK
-# IF (DEFINED ENC)
-#     ADD_DEFINITIONS(-DCPPJIEBA_${ENC})
-# ENDIF()
+
 
 ADD_SUBDIRECTORY(jieba/deps)
-ADD_SUBDIRECTORY(jieba/test)
+#ADD_SUBDIRECTORY(jieba/test)
 
 ENABLE_TESTING()
 ADD_TEST(NAME jieba/test/test.run COMMAND jieba/test/test.run)
 ADD_TEST(NAME ./load_test COMMAND ./load_test)
 ADD_TEST(NAME ./demo COMMAND ./demo)
 
-#include_directories(D:/ffmpeg-win64-shared/include)
-#link_directories(D:/ffmpeg-win64-shared/lib)
+include_directories(D:/zpplibrary/ffmpeg-win64-shared/include)
+link_directories(D:/zpplibrary/ffmpeg-win64-shared/lib)
 
 #include_directories(E:/MyCodeProject/CLionProjects/cpp-tools/SDL)
 
-set(OpenCV_DIR D:/zpplibrary/opencv/install)
-find_package(OpenCV REQUIRED)
+
 add_executable(cpp-tools main.cpp
         mytools.cpp
         mytools.h
+        ffmpegTool.cpp
+        ffmpegTool.h
 )
 
-include_directories(${OpenCV_INCLUDE_DIRS})
-target_link_libraries(cpp-tools ${OpenCV_LIBS})
 
 
 
-#target_link_libraries(
-#        cpp-tools
-#        avcodec
-#        avdevice
-#        avfilter
-#        avformat
-#        avutil
-#        postproc
-#        swresample
-#        swscale
-#        mingw32
-#)
+
+target_link_libraries(
+        cpp-tools
+        avcodec
+        avdevice
+        avfilter
+        avformat
+        avutil
+        postproc
+        swresample
+        swscale
+        mingw32
+)

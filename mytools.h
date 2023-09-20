@@ -9,6 +9,7 @@
 #include <filesystem> // 包含文件系统库，用于处理文件和目录操作
 #include <Windows.h>
 #include <regex>
+#include "ffmpegTool.h"
 
 #include "cppjieba/Jieba.cpp"
 
@@ -17,9 +18,9 @@
 
 
 using namespace std;
-namespace fs = filesystem;
+namespace fs = std::filesystem;
 
-using namespace std;
+
 
 class mytools {
 private:
@@ -47,7 +48,7 @@ private:
     uintmax_t get_file_size(string path);
 
 public:
-    friend class FFmpegToolBox;
+    friend class ffmpegTool;
 
     void print_all_files(const string &folderPath, int depth = 0);
 

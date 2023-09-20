@@ -9,12 +9,3 @@ E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/gtest/CMak
 E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/gtest/CMakeFiles/test.dir
 E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/gtest/CMakeFiles/edit_cache.dir
 E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/gtest/CMakeFiles/rebuild_cache.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/CMakeFiles/demo.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/CMakeFiles/load_test.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/CMakeFiles/test.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/CMakeFiles/edit_cache.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/CMakeFiles/rebuild_cache.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/unittest/CMakeFiles/test.run.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/unittest/CMakeFiles/test.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/unittest/CMakeFiles/edit_cache.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/test/unittest/CMakeFiles/rebuild_cache.dir

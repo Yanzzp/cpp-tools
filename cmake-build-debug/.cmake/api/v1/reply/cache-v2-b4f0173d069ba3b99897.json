@@ -15,7 +15,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/addr2line.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/addr2line.exe"
 		},
 		{
 			"name" : "CMAKE_AR",
@@ -31,7 +31,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/ar.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ar.exe"
 		},
 		{
 			"name" : "CMAKE_BUILD_TYPE",
@@ -155,7 +155,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/c++.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/g++.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_AR",
@@ -171,7 +171,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/gcc-ar.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_COMPILER_RANLIB",
@@ -187,7 +187,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/gcc-ranlib.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_CXX_FLAGS",
@@ -299,7 +299,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/gcc.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_AR",
@@ -315,7 +315,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/gcc-ar.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc-ar.exe"
 		},
 		{
 			"name" : "CMAKE_C_COMPILER_RANLIB",
@@ -331,7 +331,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/gcc-ranlib.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/gcc-ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_C_FLAGS",
@@ -443,7 +443,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/dlltool.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/dlltool.exe"
 		},
 		{
 			"name" : "CMAKE_EXECUTABLE_FORMAT",
@@ -675,7 +675,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/ld.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ld.exe"
 		},
 		{
 			"name" : "CMAKE_MAKE_PROGRAM",
@@ -783,7 +783,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/nm.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/nm.exe"
 		},
 		{
 			"name" : "CMAKE_NUMBER_OF_MAKEFILES",
@@ -795,7 +795,7 @@
 				}
 			],
 			"type" : "INTERNAL",
-			"value" : "5"
+			"value" : "3"
 		},
 		{
 			"name" : "CMAKE_OBJCOPY",
@@ -811,7 +811,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/objcopy.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/objcopy.exe"
 		},
 		{
 			"name" : "CMAKE_OBJDUMP",
@@ -827,7 +827,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/objdump.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/objdump.exe"
 		},
 		{
 			"name" : "CMAKE_PLATFORM_INFO_INITIALIZED",
@@ -891,7 +891,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/ranlib.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/ranlib.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER",
@@ -907,7 +907,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/windres.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/windres.exe"
 		},
 		{
 			"name" : "CMAKE_RC_COMPILER_WORKS",
@@ -1015,7 +1015,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/readelf.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/readelf.exe"
 		},
 		{
 			"name" : "CMAKE_ROOT",
@@ -1235,7 +1235,7 @@
 				}
 			],
 			"type" : "FILEPATH",
-			"value" : "D:/zpplibrary/mingw-w64/bin/strip.exe"
+			"value" : "C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/strip.exe"
 		},
 		{
 			"name" : "CMAKE_VERBOSE_MAKEFILE",
@@ -1290,118 +1290,6 @@
 			"value" : "E:/MyCodeProject/CLionProjects/cpp-tools"
 		},
 		{
-			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_OpenCV",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Details about finding OpenCV"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "[D:/zpplibrary/opencv/install][v4.5.3()]"
-		},
-		{
-			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_Python3",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Details about finding Python3"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "[C:/Users/11057/miniconda3/python.exe][C:/Users/11057/miniconda3/libs/python311.lib][C:/Users/11057/miniconda3/include][cfound components: Interpreter Development Development.Module Development.Embed ][v3.11.4(3.11)]"
-		},
-		{
-			"name" : "FIND_PACKAGE_MESSAGE_DETAILS_PythonLibs",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Details about finding PythonLibs"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "[C:/Users/11057/miniconda3/libs/python311.lib][C:/Users/11057/miniconda3/include][v3.11.4()]"
-		},
-		{
-			"name" : "OpenCV_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "The directory containing a CMake configuration file for OpenCV."
-				}
-			],
-			"type" : "PATH",
-			"value" : "OpenCV_DIR-NOTFOUND"
-		},
-		{
-			"name" : "PYTHON_DEBUG_LIBRARY",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "PYTHON_DEBUG_LIBRARY-NOTFOUND"
-		},
-		{
-			"name" : "PYTHON_INCLUDE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a file."
-				}
-			],
-			"type" : "PATH",
-			"value" : "C:/Users/11057/miniconda3/include"
-		},
-		{
-			"name" : "PYTHON_LIBRARY",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "C:/Users/11057/miniconda3/libs/python311.lib"
-		},
-		{
-			"name" : "PYTHON_LIBRARY_DEBUG",
-			"properties" : 
-			[
-				{
-					"name" : "ADVANCED",
-					"value" : "1"
-				},
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "FILEPATH",
-			"value" : "PYTHON_LIBRARY_DEBUG-NOTFOUND"
-		},
-		{
 			"name" : "_CMAKE_LINKER_PUSHPOP_STATE_SUPPORTED",
 			"properties" : 
 			[
@@ -1412,186 +1300,6 @@
 			],
 			"type" : "INTERNAL",
 			"value" : "TRUE"
-		},
-		{
-			"name" : "_Python3_Compiler_REASON_FAILURE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Compiler reason failure"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : ""
-		},
-		{
-			"name" : "_Python3_DEVELOPMENT_EMBED_SIGNATURE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : ""
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "f629f62bf2e876daaf7c3f9e2e0e3a7b"
-		},
-		{
-			"name" : "_Python3_DEVELOPMENT_MODULE_SIGNATURE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : ""
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "f629f62bf2e876daaf7c3f9e2e0e3a7b"
-		},
-		{
-			"name" : "_Python3_Development_REASON_FAILURE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Development reason failure"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : ""
-		},
-		{
-			"name" : "_Python3_EXECUTABLE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a program."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "C:/Users/11057/miniconda3/python.exe"
-		},
-		{
-			"name" : "_Python3_INCLUDE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a file."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "C:/Users/11057/miniconda3/include"
-		},
-		{
-			"name" : "_Python3_INTERPRETER_PROPERTIES",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Python3 Properties"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "Python;3;11;4;64;;cp311-win_amd64;;C:\\Users\\11057\\miniconda3\\Lib;C:\\Users\\11057\\miniconda3\\Lib;C:\\Users\\11057\\miniconda3\\Lib\\site-packages;C:\\Users\\11057\\miniconda3\\Lib\\site-packages"
-		},
-		{
-			"name" : "_Python3_INTERPRETER_SIGNATURE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : ""
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "901c3dbe14b96ecc059497b3fbfc80c8"
-		},
-		{
-			"name" : "_Python3_LIBRARY_DEBUG",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "_Python3_LIBRARY_DEBUG-NOTFOUND"
-		},
-		{
-			"name" : "_Python3_LIBRARY_RELEASE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "C:/Users/11057/miniconda3/libs/python311.lib"
-		},
-		{
-			"name" : "_Python3_NumPy_REASON_FAILURE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "NumPy reason failure"
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : ""
-		},
-		{
-			"name" : "_Python3_RUNTIME_LIBRARY_RELEASE",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Path to a library."
-				}
-			],
-			"type" : "INTERNAL",
-			"value" : "C:/Users/11057/miniconda3/python311.dll"
-		},
-		{
-			"name" : "cpp-tools_BINARY_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug"
-		},
-		{
-			"name" : "cpp-tools_IS_TOP_LEVEL",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "ON"
-		},
-		{
-			"name" : "cpp-tools_SOURCE_DIR",
-			"properties" : 
-			[
-				{
-					"name" : "HELPSTRING",
-					"value" : "Value Computed by CMake"
-				}
-			],
-			"type" : "STATIC",
-			"value" : "E:/MyCodeProject/CLionProjects/cpp-tools"
 		}
 	],
 	"kind" : "cache",
