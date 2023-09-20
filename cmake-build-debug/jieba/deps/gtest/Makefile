@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\MyCodeProject\CLionProjects\cpp-tools
+CMAKE_SOURCE_DIR = D:\zpy\cpp-tools
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug
+CMAKE_BINARY_DIR = D:\zpy\cpp-tools\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process $(ARGS)
+	"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -77,7 +77,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,7 +87,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -96,14 +96,14 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest\\CMakeFiles\progress.marks
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 jieba/deps/gtest/all
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles 0
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(CMAKE_COMMAND) -E cmake_progress_start D:\zpy\cpp-tools\cmake-build-debug\CMakeFiles D:\zpy\cpp-tools\cmake-build-debug\jieba\deps\gtest\\CMakeFiles\progress.marks
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 jieba/deps/gtest/all
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\zpy\cpp-tools\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
 clean:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 jieba/deps/gtest/clean
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 jieba/deps/gtest/clean
 .PHONY : clean
 
 # The main clean target
@@ -112,22 +112,22 @@ clean/fast: clean
 
 # Prepare targets for installation.
 preinstall: all
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 jieba/deps/gtest/preinstall
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 jieba/deps/gtest/preinstall
 .PHONY : preinstall
 
 # Prepare targets for installation.
 preinstall/fast:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 jieba/deps/gtest/preinstall
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 jieba/deps/gtest/preinstall
 .PHONY : preinstall/fast
 
 # clear depends
 depend:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 1
 .PHONY : depend
 
 # Convenience name for target.
 jieba/deps/gtest/CMakeFiles/gtest.dir/rule:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 jieba/deps/gtest/CMakeFiles/gtest.dir/rule
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 jieba/deps/gtest/CMakeFiles/gtest.dir/rule
 .PHONY : jieba/deps/gtest/CMakeFiles/gtest.dir/rule
 
 # Convenience name for target.
@@ -136,7 +136,7 @@ gtest: jieba/deps/gtest/CMakeFiles/gtest.dir/rule
 
 # fast build rule for target.
 gtest/fast:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f jieba\deps\gtest\CMakeFiles\gtest.dir\build.make jieba/deps/gtest/CMakeFiles/gtest.dir/build
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f jieba\deps\gtest\CMakeFiles\gtest.dir\build.make jieba/deps/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
 src/gtest-all.obj: src/gtest-all.cc.obj
@@ -144,7 +144,7 @@ src/gtest-all.obj: src/gtest-all.cc.obj
 
 # target to build an object file
 src/gtest-all.cc.obj:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f jieba\deps\gtest\CMakeFiles\gtest.dir\build.make jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f jieba\deps\gtest\CMakeFiles\gtest.dir\build.make jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
 .PHONY : src/gtest-all.cc.obj
 
 src/gtest-all.i: src/gtest-all.cc.i
@@ -152,7 +152,7 @@ src/gtest-all.i: src/gtest-all.cc.i
 
 # target to preprocess a source file
 src/gtest-all.cc.i:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f jieba\deps\gtest\CMakeFiles\gtest.dir\build.make jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.i
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f jieba\deps\gtest\CMakeFiles\gtest.dir\build.make jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.i
 .PHONY : src/gtest-all.cc.i
 
 src/gtest-all.s: src/gtest-all.cc.s
@@ -160,7 +160,7 @@ src/gtest-all.s: src/gtest-all.cc.s
 
 # target to generate assembly for a file
 src/gtest-all.cc.s:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f jieba\deps\gtest\CMakeFiles\gtest.dir\build.make jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.s
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(MAKE) $(MAKESILENT) -f jieba\deps\gtest\CMakeFiles\gtest.dir\build.make jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.s
 .PHONY : src/gtest-all.cc.s
 
 # Help Target
@@ -187,6 +187,6 @@ help:
 # No rule that depends on this can have commands that come from listfiles
 # because they might be regenerated.
 cmake_check_build_system:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
+	cd /d D:\zpy\cpp-tools\cmake-build-debug && $(CMAKE_COMMAND) -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles\Makefile.cmake 0
 .PHONY : cmake_check_build_system
 

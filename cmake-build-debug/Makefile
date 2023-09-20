@@ -47,19 +47,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\MyCodeProject\CLionProjects\cpp-tools
+CMAKE_SOURCE_DIR = D:\zpy\cpp-tools
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug
+CMAKE_BINARY_DIR = D:\zpy\cpp-tools\cmake-build-debug
 
 #=============================================================================
 # Targets provided globally by CMake.
@@ -67,7 +67,7 @@ CMAKE_BINARY_DIR = E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug
 # Special rule for the target test
 test:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running tests..."
-	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process $(ARGS)
+	"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\ctest.exe" --force-new-ctest-process $(ARGS)
 .PHONY : test
 
 # Special rule for the target test
@@ -77,7 +77,7 @@ test/fast: test
 # Special rule for the target edit_cache
 edit_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "No interactive CMake dialog available..."
-	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available."
+	"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E echo "No interactive CMake dialog available."
 .PHONY : edit_cache
 
 # Special rule for the target edit_cache
@@ -87,7 +87,7 @@ edit_cache/fast: edit_cache
 # Special rule for the target rebuild_cache
 rebuild_cache:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+	"C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" --regenerate-during-build -S$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
 .PHONY : rebuild_cache
 
 # Special rule for the target rebuild_cache
@@ -96,9 +96,9 @@ rebuild_cache/fast: rebuild_cache
 
 # The main all target
 all: cmake_check_build_system
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\\CMakeFiles\progress.marks
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\zpy\cpp-tools\cmake-build-debug\CMakeFiles D:\zpy\cpp-tools\cmake-build-debug\\CMakeFiles\progress.marks
 	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 all
-	$(CMAKE_COMMAND) -E cmake_progress_start E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles 0
+	$(CMAKE_COMMAND) -E cmake_progress_start D:\zpy\cpp-tools\cmake-build-debug\CMakeFiles 0
 .PHONY : all
 
 # The main clean target
@@ -151,44 +151,29 @@ gtest/fast:
 	$(MAKE) $(MAKESILENT) -f jieba\deps\gtest\CMakeFiles\gtest.dir\build.make jieba/deps/gtest/CMakeFiles/gtest.dir/build
 .PHONY : gtest/fast
 
-#=============================================================================
-# Target rules for targets named demo
+ffmpegTool.obj: ffmpegTool.cpp.obj
+.PHONY : ffmpegTool.obj
 
-# Build rule for target.
-demo: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 demo
-.PHONY : demo
+# target to build an object file
+ffmpegTool.cpp.obj:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp-tools.dir\build.make CMakeFiles/cpp-tools.dir/ffmpegTool.cpp.obj
+.PHONY : ffmpegTool.cpp.obj
 
-# fast build rule for target.
-demo/fast:
-	$(MAKE) $(MAKESILENT) -f jieba\test\CMakeFiles\demo.dir\build.make jieba/test/CMakeFiles/demo.dir/build
-.PHONY : demo/fast
+ffmpegTool.i: ffmpegTool.cpp.i
+.PHONY : ffmpegTool.i
 
-#=============================================================================
-# Target rules for targets named load_test
+# target to preprocess a source file
+ffmpegTool.cpp.i:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp-tools.dir\build.make CMakeFiles/cpp-tools.dir/ffmpegTool.cpp.i
+.PHONY : ffmpegTool.cpp.i
 
-# Build rule for target.
-load_test: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 load_test
-.PHONY : load_test
+ffmpegTool.s: ffmpegTool.cpp.s
+.PHONY : ffmpegTool.s
 
-# fast build rule for target.
-load_test/fast:
-	$(MAKE) $(MAKESILENT) -f jieba\test\CMakeFiles\load_test.dir\build.make jieba/test/CMakeFiles/load_test.dir/build
-.PHONY : load_test/fast
-
-#=============================================================================
-# Target rules for targets named test.run
-
-# Build rule for target.
-test.run: cmake_check_build_system
-	$(MAKE) $(MAKESILENT) -f CMakeFiles\Makefile2 test.run
-.PHONY : test.run
-
-# fast build rule for target.
-test.run/fast:
-	$(MAKE) $(MAKESILENT) -f jieba\test\unittest\CMakeFiles\test.run.dir\build.make jieba/test/unittest/CMakeFiles/test.run.dir/build
-.PHONY : test.run/fast
+# target to generate assembly for a file
+ffmpegTool.cpp.s:
+	$(MAKE) $(MAKESILENT) -f CMakeFiles\cpp-tools.dir\build.make CMakeFiles/cpp-tools.dir/ffmpegTool.cpp.s
+.PHONY : ffmpegTool.cpp.s
 
 main.obj: main.cpp.obj
 .PHONY : main.obj
@@ -248,10 +233,10 @@ help:
 	@echo ... rebuild_cache
 	@echo ... test
 	@echo ... cpp-tools
-	@echo ... demo
 	@echo ... gtest
-	@echo ... load_test
-	@echo ... test.run
+	@echo ... ffmpegTool.obj
+	@echo ... ffmpegTool.i
+	@echo ... ffmpegTool.s
 	@echo ... main.obj
 	@echo ... main.i
 	@echo ... main.s

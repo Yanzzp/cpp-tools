@@ -1,2 +1,2 @@
-D:\zppLibrary\mingw64\bin\ar.exe qc libgtest.a "CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
-D:\zppLibrary\mingw64\bin\ranlib.exe libgtest.a
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ar.exe qc libgtest.a "CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
+C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\ranlib.exe libgtest.a

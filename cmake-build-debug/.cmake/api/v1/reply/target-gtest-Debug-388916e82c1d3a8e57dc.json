@@ -60,19 +60,19 @@
 			[
 				{
 					"backtrace" : 3,
-					"path" : "E:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include"
+					"path" : "D:/zpy/cpp-tools/jieba/deps/limonp/include"
 				},
 				{
 					"backtrace" : 3,
-					"path" : "E:/MyCodeProject/CLionProjects/cpp-tools/jieba/include"
+					"path" : "D:/zpy/cpp-tools/jieba/include"
 				},
 				{
 					"backtrace" : 4,
-					"path" : "E:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/."
+					"path" : "D:/zpy/cpp-tools/jieba/deps/gtest/."
 				},
 				{
 					"backtrace" : 4,
-					"path" : "E:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/include"
+					"path" : "D:/zpy/cpp-tools/jieba/deps/gtest/include"
 				}
 			],
 			"language" : "CXX",

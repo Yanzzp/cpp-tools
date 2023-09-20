@@ -8,7 +8,9 @@ set(CMAKE_DEPENDS_LANGUAGES
 
 # The set of dependency files which are needed:
 set(CMAKE_DEPENDS_DEPENDENCY_FILES
-  "D:/zpy/cpp-tools/jieba/deps/gtest/src/gtest-all.cc" "jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj" "gcc" "jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj.d"
+  "D:/zpy/cpp-tools/ffmpegTool.cpp" "CMakeFiles/cpp-tools.dir/ffmpegTool.cpp.obj" "gcc" "CMakeFiles/cpp-tools.dir/ffmpegTool.cpp.obj.d"
+  "D:/zpy/cpp-tools/main.cpp" "CMakeFiles/cpp-tools.dir/main.cpp.obj" "gcc" "CMakeFiles/cpp-tools.dir/main.cpp.obj.d"
+  "D:/zpy/cpp-tools/mytools.cpp" "CMakeFiles/cpp-tools.dir/mytools.cpp.obj" "gcc" "CMakeFiles/cpp-tools.dir/mytools.cpp.obj.d"
   )
 
 # Targets to which this target links which contain Fortran sources.

@@ -76,14 +76,14 @@
 				{
 					"directoryIndex" : 0,
 					"id" : "cpp-tools::@6890427a1f51a3e7e1df",
-					"jsonFile" : "target-cpp-tools-Debug-fdcf34bd2efe8684d470.json",
+					"jsonFile" : "target-cpp-tools-Debug-9076077584bc1a247ac3.json",
 					"name" : "cpp-tools",
 					"projectIndex" : 0
 				},
 				{
 					"directoryIndex" : 2,
 					"id" : "gtest::@ca6511d8e72813479340",
-					"jsonFile" : "target-gtest-Debug-a5595edef170da189eb4.json",
+					"jsonFile" : "target-gtest-Debug-388916e82c1d3a8e57dc.json",
 					"name" : "gtest",
 					"projectIndex" : 0
 				}
@@ -93,8 +93,8 @@
 	"kind" : "codemodel",
 	"paths" : 
 	{
-		"build" : "E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug",
-		"source" : "E:/MyCodeProject/CLionProjects/cpp-tools"
+		"build" : "D:/zpy/cpp-tools/cmake-build-debug",
+		"source" : "D:/zpy/cpp-tools"
 	},
 	"version" : 
 	{

@@ -1,4 +1,4 @@
-# Install script for directory: E:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest
+# Install script for directory: D:/zpy/cpp-tools/jieba/deps/gtest
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)

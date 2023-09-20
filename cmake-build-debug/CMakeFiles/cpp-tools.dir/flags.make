@@ -4,7 +4,7 @@
 # compile CXX with C:/Program Files/JetBrains/CLion 2023.2.2/bin/mingw/bin/g++.exe
 CXX_DEFINES = 
 
-CXX_INCLUDES = @CMakeFiles/gtest.dir/includes_CXX.rsp
+CXX_INCLUDES = @CMakeFiles/cpp-tools.dir/includes_CXX.rsp
 
 CXX_FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
 

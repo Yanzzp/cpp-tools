@@ -43,19 +43,19 @@ cmake_force:
 SHELL = cmd.exe
 
 # The CMake executable.
-CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe"
+CMAKE_COMMAND = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe"
 
 # The command to remove a file.
-RM = "C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
+RM = "C:\Program Files\JetBrains\CLion 2023.2.2\bin\cmake\win\x64\bin\cmake.exe" -E rm -f
 
 # Escaping for special characters.
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = E:\MyCodeProject\CLionProjects\cpp-tools
+CMAKE_SOURCE_DIR = D:\zpy\cpp-tools
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug
+CMAKE_BINARY_DIR = D:\zpy\cpp-tools\cmake-build-debug
 
 # Include any dependencies generated for this target.
 include jieba/deps/gtest/CMakeFiles/gtest.dir/depend.make
@@ -70,18 +70,18 @@ include jieba/deps/gtest/CMakeFiles/gtest.dir/flags.make
 
 jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: jieba/deps/gtest/CMakeFiles/gtest.dir/flags.make
 jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: jieba/deps/gtest/CMakeFiles/gtest.dir/includes_CXX.rsp
-jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: E:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/src/gtest-all.cc
+jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: D:/zpy/cpp-tools/jieba/deps/gtest/src/gtest-all.cc
 jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: jieba/deps/gtest/CMakeFiles/gtest.dir/compiler_depend.ts
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest && D:\zppLibrary\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj -MF CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d -o CMakeFiles\gtest.dir\src\gtest-all.cc.obj -c E:\MyCodeProject\CLionProjects\cpp-tools\jieba\deps\gtest\src\gtest-all.cc
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --progress-dir=D:\zpy\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Building CXX object jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj"
+	cd /d D:\zpy\cpp-tools\cmake-build-debug\jieba\deps\gtest && C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -MD -MT jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj -MF CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d -o CMakeFiles\gtest.dir\src\gtest-all.cc.obj -c D:\zpy\cpp-tools\jieba\deps\gtest\src\gtest-all.cc
 
 jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.i: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Preprocessing CXX source to CMakeFiles/gtest.dir/src/gtest-all.cc.i"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest && D:\zppLibrary\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E E:\MyCodeProject\CLionProjects\cpp-tools\jieba\deps\gtest\src\gtest-all.cc > CMakeFiles\gtest.dir\src\gtest-all.cc.i
+	cd /d D:\zpy\cpp-tools\cmake-build-debug\jieba\deps\gtest && C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -E D:\zpy\cpp-tools\jieba\deps\gtest\src\gtest-all.cc > CMakeFiles\gtest.dir\src\gtest-all.cc.i
 
 jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.s: cmake_force
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green "Compiling CXX source to assembly CMakeFiles/gtest.dir/src/gtest-all.cc.s"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest && D:\zppLibrary\mingw64\bin\c++.exe $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S E:\MyCodeProject\CLionProjects\cpp-tools\jieba\deps\gtest\src\gtest-all.cc -o CMakeFiles\gtest.dir\src\gtest-all.cc.s
+	cd /d D:\zpy\cpp-tools\cmake-build-debug\jieba\deps\gtest && C:\PROGRA~1\JETBRA~1\CLION2~1.2\bin\mingw\bin\G__~1.EXE $(CXX_DEFINES) $(CXX_INCLUDES) $(CXX_FLAGS) -S D:\zpy\cpp-tools\jieba\deps\gtest\src\gtest-all.cc -o CMakeFiles\gtest.dir\src\gtest-all.cc.s
 
 # Object files for target gtest
 gtest_OBJECTS = \
@@ -93,19 +93,19 @@ gtest_EXTERNAL_OBJECTS =
 jieba/deps/gtest/libgtest.a: jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj
 jieba/deps/gtest/libgtest.a: jieba/deps/gtest/CMakeFiles/gtest.dir/build.make
 jieba/deps/gtest/libgtest.a: jieba/deps/gtest/CMakeFiles/gtest.dir/link.txt
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgtest.a"
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest && $(CMAKE_COMMAND) -P CMakeFiles\gtest.dir\cmake_clean_target.cmake
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\gtest.dir\link.txt --verbose=$(VERBOSE)
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --green --bold --progress-dir=D:\zpy\cpp-tools\cmake-build-debug\CMakeFiles --progress-num=$(CMAKE_PROGRESS_2) "Linking CXX static library libgtest.a"
+	cd /d D:\zpy\cpp-tools\cmake-build-debug\jieba\deps\gtest && $(CMAKE_COMMAND) -P CMakeFiles\gtest.dir\cmake_clean_target.cmake
+	cd /d D:\zpy\cpp-tools\cmake-build-debug\jieba\deps\gtest && $(CMAKE_COMMAND) -E cmake_link_script CMakeFiles\gtest.dir\link.txt --verbose=$(VERBOSE)
 
 # Rule to build all files generated by this target.
 jieba/deps/gtest/CMakeFiles/gtest.dir/build: jieba/deps/gtest/libgtest.a
 .PHONY : jieba/deps/gtest/CMakeFiles/gtest.dir/build
 
 jieba/deps/gtest/CMakeFiles/gtest.dir/clean:
-	cd /d E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest && $(CMAKE_COMMAND) -P CMakeFiles\gtest.dir\cmake_clean.cmake
+	cd /d D:\zpy\cpp-tools\cmake-build-debug\jieba\deps\gtest && $(CMAKE_COMMAND) -P CMakeFiles\gtest.dir\cmake_clean.cmake
 .PHONY : jieba/deps/gtest/CMakeFiles/gtest.dir/clean
 
 jieba/deps/gtest/CMakeFiles/gtest.dir/depend:
-	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" E:\MyCodeProject\CLionProjects\cpp-tools E:\MyCodeProject\CLionProjects\cpp-tools\jieba\deps\gtest E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest E:\MyCodeProject\CLionProjects\cpp-tools\cmake-build-debug\jieba\deps\gtest\CMakeFiles\gtest.dir\DependInfo.cmake --color=$(COLOR)
+	$(CMAKE_COMMAND) -E cmake_depends "MinGW Makefiles" D:\zpy\cpp-tools D:\zpy\cpp-tools\jieba\deps\gtest D:\zpy\cpp-tools\cmake-build-debug D:\zpy\cpp-tools\cmake-build-debug\jieba\deps\gtest D:\zpy\cpp-tools\cmake-build-debug\jieba\deps\gtest\CMakeFiles\gtest.dir\DependInfo.cmake --color=$(COLOR)
 .PHONY : jieba/deps/gtest/CMakeFiles/gtest.dir/depend
 
