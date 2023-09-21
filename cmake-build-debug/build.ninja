@@ -51,7 +51,7 @@ build cmake_object_order_depends_target_cpp-tools: phony || CMakeFiles/cpp-tools
 
 build CMakeFiles/cpp-tools.dir/main.cpp.obj: CXX_COMPILER__cpp-tools_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/main.cpp || cmake_object_order_depends_target_cpp-tools
   DEP_FILE = CMakeFiles\cpp-tools.dir\main.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always   -O3 -Wall -g
   INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -ID:/zpplibrary/ffmpeg-win64-shared/include
   OBJECT_DIR = CMakeFiles\cpp-tools.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp-tools.dir
@@ -60,7 +60,7 @@ build CMakeFiles/cpp-tools.dir/main.cpp.obj: CXX_COMPILER__cpp-tools_unscanned_D
 
 build CMakeFiles/cpp-tools.dir/mytools.cpp.obj: CXX_COMPILER__cpp-tools_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/mytools.cpp || cmake_object_order_depends_target_cpp-tools
   DEP_FILE = CMakeFiles\cpp-tools.dir\mytools.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always   -O3 -Wall -g
   INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -ID:/zpplibrary/ffmpeg-win64-shared/include
   OBJECT_DIR = CMakeFiles\cpp-tools.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp-tools.dir
@@ -69,7 +69,7 @@ build CMakeFiles/cpp-tools.dir/mytools.cpp.obj: CXX_COMPILER__cpp-tools_unscanne
 
 build CMakeFiles/cpp-tools.dir/ffmpegTool.cpp.obj: CXX_COMPILER__cpp-tools_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/ffmpegTool.cpp || cmake_object_order_depends_target_cpp-tools
   DEP_FILE = CMakeFiles\cpp-tools.dir\ffmpegTool.cpp.obj.d
-  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always   -O3 -Wall -g
   INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -ID:/zpplibrary/ffmpeg-win64-shared/include
   OBJECT_DIR = CMakeFiles\cpp-tools.dir
   OBJECT_FILE_DIR = CMakeFiles\cpp-tools.dir
@@ -187,7 +187,7 @@ build cmake_object_order_depends_target_gtest: phony || jieba/deps/gtest/CMakeFi
 
 build jieba/deps/gtest/CMakeFiles/gtest.dir/src/gtest-all.cc.obj: CXX_COMPILER__gtest_unscanned_Debug E$:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/src/gtest-all.cc || cmake_object_order_depends_target_gtest
   DEP_FILE = jieba\deps\gtest\CMakeFiles\gtest.dir\src\gtest-all.cc.obj.d
-  FLAGS = -g -fdiagnostics-color=always   -O3 -Wall -g
+  FLAGS = -g -std=gnu++17 -fdiagnostics-color=always   -O3 -Wall -g
   INCLUDES = -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/limonp/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/include -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/. -IE:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps/gtest/include
   OBJECT_DIR = jieba\deps\gtest\CMakeFiles\gtest.dir
   OBJECT_FILE_DIR = jieba\deps\gtest\CMakeFiles\gtest.dir\src

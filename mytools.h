@@ -32,7 +32,7 @@ void get_function_running_time(Func func) {
     auto endTime = std::chrono::high_resolution_clock::now();
     // 计算时间间隔
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
-    std::cout << "函数 "  << " 的执行时间: " << duration.count() << "ms" << std::endl;
+    std::cout << "函数"  << "的执行时间: " << duration.count() << "ms" << std::endl;
 }
 
 
@@ -72,7 +72,7 @@ public:
 
     void count_imgs_videos_and_audio(const string &folderPath, string option = "");
 
-    void get_folder_size(const string &folderPath, bool isPrint = true,bool printAll= false);
+    void get_folder_size(const string &folderPath, bool isPrint = true,bool printAll= false,bool keepData= false);
 
     void get_folder_info(const string &folderPath);
 
@@ -84,9 +84,6 @@ public:
     void move_files_to_main_folder(const string &folderPath,bool isMove = false);
 
     void multithread_get_folder_size(const string &folderPath, bool isPrint = true);
-
-
-
 
 };
 

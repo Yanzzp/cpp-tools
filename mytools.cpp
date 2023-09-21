@@ -202,7 +202,10 @@ void mytools::count_imgs_videos_and_audio(const string &folderPath, string optio
 }
 
 // 统计一个文件夹的大小
-void mytools::get_folder_size(const std::string &folderPath, bool isPrint,bool printAll){
+void mytools::get_folder_size(const std::string &folderPath, bool isPrint, bool printAll, bool keepData) {
+    if (!keepData) {
+        folderSize = 0;
+    }
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
         if (entry.is_regular_file()) {
             uintmax_t fileSize = get_file_size(entry.path().string());
@@ -223,12 +226,12 @@ void mytools::get_folder_size(const std::string &folderPath, bool isPrint,bool p
         Size /= 1024;
         isMB = false;
     }
-        std::cout << std::fixed << std::setprecision(2);
-    if(isPrint){
-        cout << "文件夹的大小是: " << Size << (isMB ? "MB":"GB") << endl;
+    std::cout << std::fixed << std::setprecision(2);
+    if (isPrint) {
+        cout << "文件夹的大小是: " << Size << (isMB ? "MB" : "GB") << endl;
     }
     string store_num = to_string(Size);
-    folder_info[3] = (store_num.substr(0,store_num.find('.')+3) + (isMB ? "MB" : "GB"));
+    folder_info[3] = (store_num.substr(0, store_num.find('.') + 3) + (isMB ? "MB" : "GB"));
 }
 
 
@@ -323,13 +326,13 @@ void mytools::find_name(const string &folderPath, string Name) {
                           STOP_WORD_PATH);
     unordered_set<string> textSet;
     vector<std::string> ignore_list = {" ", "，", "。", "、", "：", "“", "”", "？", "！", "《", "》", "（", "）", "【", "】",
-                                       "——", "—","……", "；", "‘", "[", "]", "'", "-", "(", ")", ",", "+", "_", ".","▌",
+                                       "——", "—", "……", "；", "‘", "[", "]", "'", "-", "(", ")", ",", "+", "_", ".", "▌",
                                        "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
     for (const auto &entry: fs::directory_iterator(folderPath)) {
         if (entry.is_directory()) {
             string folderName = entry.path().filename().string();
             string result;
-            for (char c : folderName) {
+            for (char c: folderName) {
                 std::string char_str(1, c); // 将字符转换为字符串
 
                 // 检查字符是否在ignore_list中
@@ -350,7 +353,7 @@ void mytools::find_name(const string &folderPath, string Name) {
 //    }
     vector<string> words;
     jieba.CutForSearch(Name, words);
-    for(auto word: words) {
+    for (auto word: words) {
         if (textSet.find(word) != textSet.end()) {
             cout << word << endl;
         }
@@ -360,11 +363,11 @@ void mytools::find_name(const string &folderPath, string Name) {
 void mytools::move_files_to_main_folder(const string &folderPath, bool isMove) {
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
         if (entry.is_regular_file()) {
-            if(isMove){
+            if (isMove) {
                 try {
-                    fs::rename(entry.path(),folderPath/entry.path().filename());
-                    cout << entry.path().filename() << "成功移动到" << folderPath<< endl;
-                } catch (const std::exception& ex) {
+                    fs::rename(entry.path(), folderPath / entry.path().filename());
+                    cout << entry.path().filename() << "成功移动到" << folderPath << endl;
+                } catch (const std::exception &ex) {
                     cerr << "文件移动失败：" << ex.what() << std::endl;
                 }
             }
@@ -377,27 +380,27 @@ void mytools::multithread_get_folder_size(const string &folderPath, bool isPrint
     int count = 0;
     for (const auto &entry: fs::directory_iterator(folderPath)) {
         if (entry.is_directory()) {
-            count ++;
+            count++;
         }
     }
-    if(count >= 4){
+    if (count >= 4) {
         cout << "启用多线程计算文件夹大小" << endl;
     }
     std::vector<std::thread> threads;
-    if (count >= 4){
-        for (const auto &entry : fs::directory_iterator(folderPath)) {
+    if (count >= 4) {
+        for (const auto &entry: fs::directory_iterator(folderPath)) {
             if (entry.is_directory()) {
-                threads.emplace_back(&mytools::get_folder_size, this, entry.path().string(), false, false);
-            }else{
+                threads.emplace_back(&mytools::get_folder_size, this, entry.path().string(), false, false,true);
+            } else {
                 get_file_size(entry.path().string());
             }
         }
-    }else{
+    } else {
         get_folder_size(folderPath, false);
     }
 
 
-    for (auto &thread : threads) {
+    for (auto &thread: threads) {
         thread.join();
     }
     std::cout << std::fixed << std::setprecision(2);
