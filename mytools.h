@@ -10,6 +10,9 @@
 #include <Windows.h>
 #include <regex>
 #include "ffmpegTool.h"
+#include "thread"
+#include <chrono>
+#include <mutex>
 
 #include "cppjieba/Jieba.cpp"
 
@@ -21,10 +24,21 @@ using namespace std;
 namespace fs = std::filesystem;
 
 
+template <typename Func>
+void get_function_running_time(Func func) {
+
+    auto startTime = std::chrono::high_resolution_clock::now();
+    func();
+    auto endTime = std::chrono::high_resolution_clock::now();
+    // 计算时间间隔
+    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
+    std::cout << "函数 "  << " 的执行时间: " << duration.count() << "ms" << std::endl;
+}
+
+
 
 class mytools {
 private:
-
 
     int imageCount = 0;
     int videoCount = 0;
@@ -38,6 +52,7 @@ private:
 
     std::vector<std::string> folder_info = {"", "", "", ""};
     uintmax_t folderSize = 0;
+    std::mutex folderSizeMutex;
 
     static bool isImageFile(const std::string &filename);
 
@@ -46,6 +61,7 @@ private:
     static bool isAudioFile(const std::string &filename);
 
     uintmax_t get_file_size(string path);
+
 
 public:
     friend class ffmpegTool;
@@ -56,7 +72,7 @@ public:
 
     void count_imgs_videos_and_audio(const string &folderPath, string option = "");
 
-    void get_folder_size(const string &folderPath, bool isPrint = false);
+    void get_folder_size(const string &folderPath, bool isPrint = true,bool printAll= false);
 
     void get_folder_info(const string &folderPath);
 
@@ -66,6 +82,11 @@ public:
     void find_name(const string &folderPath, string Name);
 
     void move_files_to_main_folder(const string &folderPath,bool isMove = false);
+
+    void multithread_get_folder_size(const string &folderPath, bool isPrint = true);
+
+
+
 
 };
 

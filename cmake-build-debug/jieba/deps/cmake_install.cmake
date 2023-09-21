@@ -1,4 +1,4 @@
-# Install script for directory: D:/zpy/cpp-tools/jieba/deps
+# Install script for directory: E:/MyCodeProject/CLionProjects/cpp-tools/jieba/deps
 
 # Set the install prefix
 if(NOT DEFINED CMAKE_INSTALL_PREFIX)
@@ -39,6 +39,6 @@ endif()
 
 if(NOT CMAKE_INSTALL_LOCAL_ONLY)
   # Include the install script for the subdirectory.
-  include("D:/zpy/cpp-tools/cmake-build-debug/jieba/deps/gtest/cmake_install.cmake")
+  include("E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/gtest/cmake_install.cmake")
 endif()
 

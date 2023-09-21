@@ -40,6 +40,7 @@ bool mytools::isAudioFile(const std::string &filename) {
 
 // 获取文件的大小
 uintmax_t mytools::get_file_size(string path) {
+    std::lock_guard<std::mutex> lockGuard(folderSizeMutex);
     error_code ec{};
     auto size = std::filesystem::file_size(path, ec);
     if (ec == error_code{}) {
@@ -201,31 +202,33 @@ void mytools::count_imgs_videos_and_audio(const string &folderPath, string optio
 }
 
 // 统计一个文件夹的大小
-void mytools::get_folder_size(const std::string &folderPath, bool isPrint) {
+void mytools::get_folder_size(const std::string &folderPath, bool isPrint,bool printAll){
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
         if (entry.is_regular_file()) {
             uintmax_t fileSize = get_file_size(entry.path().string());
-            if (isPrint) {
-                uintmax_t printSize = fileSize / 1024 / 1024;
-                bool isMB = true;
+            if (printAll) {
+                float printSize = static_cast<float>(fileSize) / 1024 / 1024;
+                std::cout << std::fixed << std::setprecision(2);
                 if (printSize < 1024) {
                     cout << entry.path().string() << " 的大小是: " << printSize << "MB" << endl;
                 } else {
                     cout << entry.path().string() << " 的大小是: " << (printSize /= 1024) << "GB" << endl;
-                    isMB = false;
                 }
             }
         }
     }
-    uintmax_t Size = this->folderSize / 1024 / 1024;
+    float Size = static_cast<float>(this->folderSize) / 1024 / 1024;
     bool isMB = true;
-    if (Size < 1024) {
-        cout << "文件夹的大小是: " << Size << "MB" << endl;
-    } else {
-        cout << "文件夹的大小是: " << (Size /= 1024) << "GB" << endl;
+    if (Size > 1024) {
+        Size /= 1024;
         isMB = false;
     }
-    folder_info[3] = (to_string(Size) + (isMB ? "MB" : "GB"));
+        std::cout << std::fixed << std::setprecision(2);
+    if(isPrint){
+        cout << "文件夹的大小是: " << Size << (isMB ? "MB":"GB") << endl;
+    }
+    string store_num = to_string(Size);
+    folder_info[3] = (store_num.substr(0,store_num.find('.')+3) + (isMB ? "MB" : "GB"));
 }
 
 
@@ -368,6 +371,42 @@ void mytools::move_files_to_main_folder(const string &folderPath, bool isMove) {
         }
     }
 }
+
+void mytools::multithread_get_folder_size(const string &folderPath, bool isPrint) {
+    folderSize = 0;
+    int count = 0;
+    for (const auto &entry: fs::directory_iterator(folderPath)) {
+        if (entry.is_directory()) {
+            count ++;
+        }
+    }
+    if(count >= 4){
+        cout << "启用多线程计算文件夹大小" << endl;
+    }
+    std::vector<std::thread> threads;
+    if (count >= 4){
+        for (const auto &entry : fs::directory_iterator(folderPath)) {
+            if (entry.is_directory()) {
+                threads.emplace_back(&mytools::get_folder_size, this, entry.path().string(), false, false);
+            }else{
+                get_file_size(entry.path().string());
+            }
+        }
+    }else{
+        get_folder_size(folderPath, false);
+    }
+
+
+    for (auto &thread : threads) {
+        thread.join();
+    }
+    std::cout << std::fixed << std::setprecision(2);
+    cout << "文件夹的大小是: " << folder_info[3] << endl;
+
+}
+
+
+
 
 
 

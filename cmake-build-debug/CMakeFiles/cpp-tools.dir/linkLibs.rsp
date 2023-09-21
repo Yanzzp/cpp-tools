@@ -1,1 +1,0 @@
-  -L"D:/zpplibrary/ffmpeg-win64-shared/lib"  -lavcodec -lavdevice -lavfilter -lavformat -lavutil -lpostproc -lswresample -lswscale -lmingw32 -lkernel32 -luser32 -lgdi32 -lwinspool -lshell32 -lole32 -loleaut32 -luuid -lcomdlg32 -ladvapi32 
