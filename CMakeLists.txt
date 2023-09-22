@@ -19,6 +19,7 @@ endif()
 
 
 ADD_SUBDIRECTORY(lib/jieba/deps)
+add_subdirectory(lib/glfw)
 #ADD_SUBDIRECTORY(jieba/test)
 
 ENABLE_TESTING()
@@ -40,9 +41,6 @@ add_executable(cpp-tools main.cpp
 )
 
 
-
-
-
 target_link_libraries(
         cpp-tools
         avcodec
@@ -54,4 +52,5 @@ target_link_libraries(
         swresample
         swscale
         mingw32
+        glfw
 )
