@@ -1,3 +1,0 @@
-"C:\Program Files\JetBrains\CLion 2023.2.1\bin\cmake\win\x64\bin\cmake.exe" -E rm -f CMakeFiles\test.run.dir/objects.a
-D:\zppLibrary\mingw64\bin\ar.exe qc CMakeFiles\test.run.dir/objects.a @CMakeFiles\test.run.dir\objects1.rsp
-D:\zppLibrary\mingw64\bin\c++.exe -g -Wl,--whole-archive CMakeFiles\test.run.dir/objects.a -Wl,--no-whole-archive -o ..\..\..\test\test.run.exe -Wl,--out-implib,..\..\..\test\libtest.run.dll.a -Wl,--major-image-version,0,--minor-image-version,0 @CMakeFiles\test.run.dir\linkLibs.rsp
