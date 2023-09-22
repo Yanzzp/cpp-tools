@@ -1,0 +1,104 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"childIndexes" : 
+					[
+						1
+					],
+					"jsonFile" : "directory-.-Debug-d0094a50bb2071803777.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0
+					]
+				},
+				{
+					"build" : "jieba/deps",
+					"childIndexes" : 
+					[
+						2
+					],
+					"jsonFile" : "directory-jieba.deps-Debug-8d7a0beb98cdb27229d1.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 0,
+					"projectIndex" : 0,
+					"source" : "jieba/deps"
+				},
+				{
+					"build" : "jieba/deps/gtest",
+					"jsonFile" : "directory-jieba.deps.gtest-Debug-0a55f8e023cc8be2fab9.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.26"
+					},
+					"parentIndex" : 1,
+					"projectIndex" : 0,
+					"source" : "jieba/deps/gtest",
+					"targetIndexes" : 
+					[
+						1
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0,
+						1,
+						2
+					],
+					"name" : "cpp-tools",
+					"targetIndexes" : 
+					[
+						0,
+						1
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "cpp-tools::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-cpp-tools-Debug-807b8832871d23434f58.json",
+					"name" : "cpp-tools",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 2,
+					"id" : "gtest::@ca6511d8e72813479340",
+					"jsonFile" : "target-gtest-Debug-41a00196151b29f73ea8.json",
+					"name" : "gtest",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug",
+		"source" : "E:/MyCodeProject/CLionProjects/cpp-tools"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 5
+	}
+}

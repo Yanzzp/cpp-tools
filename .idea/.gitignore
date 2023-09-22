@@ -6,3 +6,11 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+
+cmake-build-debug/
+
+# Ignore compiled output
+*.o
+*.out
+*.exe
