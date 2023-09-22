@@ -1,3 +1,4 @@
+#include <iomanip>
 #include "mytools.h"
 
 
@@ -120,7 +121,7 @@ void mytools::count_imgs_videos_and_audio(const string &folderPath, string optio
             fs::path fileToCreate(txtFileName);
             if (!fs::exists(fileToCreate)) {
                 // 文件不存在，创建文件并打开以进行写入
-                std::ofstream outputFile(fileToCreate);
+                std::ofstream outputFile(fileToCreate.string());
                 if (outputFile.is_open()) { // 检查文件是否成功打开
                     outputFile << "图片的数量是: " << imageCount << "\n";
                     outputFile << "视频的数量是: " << videoCount << "\n";
@@ -133,7 +134,7 @@ void mytools::count_imgs_videos_and_audio(const string &folderPath, string optio
             } else {
                 //            std::cerr << "文件 " << txtFileName << " 已经存在。\n";
                 fs::remove(txtFileName);
-                std::ofstream outputFile(fileToCreate);
+                std::ofstream outputFile(fileToCreate.string());
                 if (outputFile.is_open()) { // 检查文件是否成功打开
                     outputFile << "图片的数量是: " << imageCount << "\n";
                     outputFile << "视频的数量是: " << videoCount << "\n";

@@ -2,10 +2,10 @@ E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/cpp-tools.
 E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/test.dir
 E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/edit_cache.dir
 E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/CMakeFiles/rebuild_cache.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/CMakeFiles/test.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/CMakeFiles/edit_cache.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/CMakeFiles/rebuild_cache.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/gtest/CMakeFiles/gtest.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/gtest/CMakeFiles/test.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/gtest/CMakeFiles/edit_cache.dir
-E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/jieba/deps/gtest/CMakeFiles/rebuild_cache.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/lib/jieba/deps/CMakeFiles/test.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/lib/jieba/deps/CMakeFiles/edit_cache.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/lib/jieba/deps/CMakeFiles/rebuild_cache.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/lib/jieba/deps/gtest/CMakeFiles/gtest.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/lib/jieba/deps/gtest/CMakeFiles/test.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/lib/jieba/deps/gtest/CMakeFiles/edit_cache.dir
+E:/MyCodeProject/CLionProjects/cpp-tools/cmake-build-debug/lib/jieba/deps/gtest/CMakeFiles/rebuild_cache.dir

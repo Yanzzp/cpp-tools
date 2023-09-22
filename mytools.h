@@ -9,11 +9,11 @@
 #include <filesystem> // 包含文件系统库，用于处理文件和目录操作
 #include <Windows.h>
 #include <regex>
-#include "ffmpegTool.h"
 #include "thread"
 #include <chrono>
 #include <mutex>
 
+#include "ffmpegTool.h"
 #include "cppjieba/Jieba.cpp"
 
 #define txt "txt"

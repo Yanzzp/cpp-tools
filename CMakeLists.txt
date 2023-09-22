@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.26)
 project(cpp-tools)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
 
 
-INCLUDE_DIRECTORIES(jieba/deps/limonp/include
-        jieba/include)
+INCLUDE_DIRECTORIES(lib/jieba/deps/limonp/include
+        lib/jieba/include)
 
 if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
     set (CMAKE_INSTALL_PREFIX "/usr/local/cppjieba" CACHE PATH "default install path" FORCE )
@@ -18,13 +18,13 @@ endif()
 
 
 
-ADD_SUBDIRECTORY(jieba/deps)
+ADD_SUBDIRECTORY(lib/jieba/deps)
 #ADD_SUBDIRECTORY(jieba/test)
 
 ENABLE_TESTING()
-ADD_TEST(NAME jieba/test/test.run COMMAND jieba/test/test.run)
-ADD_TEST(NAME ./load_test COMMAND ./load_test)
-ADD_TEST(NAME ./demo COMMAND ./demo)
+#ADD_TEST(NAME lib/jieba/test/test.run COMMAND lib/jieba/test/test.run)
+#ADD_TEST(NAME ./load_test COMMAND ./load_test)
+#ADD_TEST(NAME ./demo COMMAND ./demo)
 
 include_directories(D:/zpplibrary/ffmpeg-win64-shared/include)
 link_directories(D:/zpplibrary/ffmpeg-win64-shared/lib)
