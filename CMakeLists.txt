@@ -12,16 +12,18 @@ if (CMAKE_INSTALL_PREFIX_INITIALIZED_TO_DEFAULT)
 endif()
 
 ADD_DEFINITIONS(-O3 -Wall -g)
-IF(APPLE) # mac os
-    ADD_DEFINITIONS(-std=c++0x)
-endif()
 
 
 
 ADD_SUBDIRECTORY(lib/jieba/deps)
 add_subdirectory(lib/glfw)
-#ADD_SUBDIRECTORY(jieba/test)
 
+if (WIN32)
+    list(APPEND EXTRA_LIBS
+        "-lglu32 -lopengl32"
+    )
+    set(CMAKE_EXE_LINKER_FLAGS "-std=c++11 -static-libgcc -static-libstdc++ -static")
+endif ()
 ENABLE_TESTING()
 #ADD_TEST(NAME lib/jieba/test/test.run COMMAND lib/jieba/test/test.run)
 #ADD_TEST(NAME ./load_test COMMAND ./load_test)
@@ -53,4 +55,5 @@ target_link_libraries(
         swscale
         mingw32
         glfw
+        ${EXTRA_LIBS}
 )
