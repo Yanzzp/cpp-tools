@@ -15,7 +15,7 @@ ADD_DEFINITIONS(-O3 -Wall -g)
 
 
 
-ADD_SUBDIRECTORY(lib/jieba/deps)
+add_subdirectory(lib/jieba/deps)
 add_subdirectory(lib/glfw)
 
 if (WIN32)

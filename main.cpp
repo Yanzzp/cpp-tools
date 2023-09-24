@@ -10,6 +10,7 @@ int main() {
     mytools mytools;
     ffmpegTool ffmpeg;
 
+    mytools.change_files_extension()
 
     return 0;
 }
