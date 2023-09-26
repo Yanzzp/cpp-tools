@@ -1,5 +1,7 @@
 #include "ffmpegTool.h"
 
+using namespace std;
+
 extern "C" {
 #include <libavformat/avformat.h>
 }
@@ -7,20 +9,20 @@ extern "C" {
 namespace fs = std::filesystem;
 
 // 自定义错误处理回调函数
-void ffmpegTool::customErrorCallback(void* avcl, int level, const char* fmt, va_list vl) {
+void ffmpegTool::customErrorCallback(void *avcl, int level, const char *fmt, va_list vl) {
     if (level <= AV_LOG_ERROR) {
         char logMessage[1024];
         vsnprintf(logMessage, sizeof(logMessage), fmt, vl);
 
         // 获取传入的视频文件路径
-        std::string videoFilePath = *static_cast<std::string*>(avcl);
+        std::string videoFilePath = *static_cast<std::string *>(avcl);
 
         // 打印视频文件路径和错误消息
         std::cerr << "视频文件: " << videoFilePath << ", FFmpeg Error: " << logMessage << std::endl;
     }
 }
 
-int ffmpegTool::get_single_video_time(const string& filePath, bool isPrint) {
+int ffmpegTool::get_single_video_time(const string &filePath, bool isPrint) {
 
 
     // 设置自定义错误处理回调函数，并传入视频文件路径
@@ -28,7 +30,7 @@ int ffmpegTool::get_single_video_time(const string& filePath, bool isPrint) {
 
 
     fs::path path(filePath);
-    AVFormatContext* formatContext = nullptr;
+    AVFormatContext *formatContext = nullptr;
 
     // 打开视频文件
     if (avformat_open_input(&formatContext, filePath.c_str(), nullptr, nullptr) != 0) {
@@ -56,7 +58,8 @@ int ffmpegTool::get_single_video_time(const string& filePath, bool isPrint) {
 
 
     if (isPrint) {
-        std::cout << path.filename().string() << "  视频时长: " << hours << "时 " << minutes << "分 " << seconds << "秒" << std::endl;
+        std::cout << path.filename().string() << "  视频时长: " << hours << "时 " << minutes << "分 " << seconds << "秒"
+                  << std::endl;
     }
 
     // 关闭视频文件
@@ -65,7 +68,7 @@ int ffmpegTool::get_single_video_time(const string& filePath, bool isPrint) {
 }
 
 void ffmpegTool::get_folder_videos_time(const string &folderPath, bool isPrint) {
-    int videoCount=0;
+    int videoCount = 0;
     for (const auto &entry: fs::directory_iterator(folderPath)) {
         if (mytools::isVideoFile(entry.path().filename().string())) {
             int time = get_single_video_time(entry.path().string(), isPrint);
@@ -76,8 +79,8 @@ void ffmpegTool::get_folder_videos_time(const string &folderPath, bool isPrint) 
 
 }
 
-void ffmpegTool::move_short_videos(const string &folderPath, int maxTime, bool isMove,bool isPrint) {
-    int videoCount=0;
+void ffmpegTool::move_short_videos(const string &folderPath, int maxTime, bool isMove, bool isPrint) {
+    int videoCount = 0;
     try {
         // 要创建的文件夹路径
         fs::path shortPath = folderPath + "\\short";
@@ -88,7 +91,7 @@ void ffmpegTool::move_short_videos(const string &folderPath, int maxTime, bool i
         } else {
             std::cout << "文件夹创建失败或文件夹已存在。" << std::endl;
         }
-    } catch (const std::exception& e) {
+    } catch (const std::exception &e) {
         std::cerr << "文件夹创建失败: " << e.what() << std::endl;
     }
     for (const auto &entry: fs::directory_iterator(folderPath)) {
@@ -99,12 +102,12 @@ void ffmpegTool::move_short_videos(const string &folderPath, int maxTime, bool i
             if (time > maxTime) {
                 continue;
             }
-            try{
+            try {
                 fs::path sourceFolder = entry.path().string();
-                fs::path targetFolder = folderPath + "\\short\\"+entry.path().filename().string();
+                fs::path targetFolder = folderPath + "\\short\\" + entry.path().filename().string();
                 fs::rename(sourceFolder, targetFolder);
-            } catch(const std::exception& e) {
-                std::cerr << entry.path().filename().string()<<"移动失败: " << e.what() << std::endl;
+            } catch (const std::exception &e) {
+                std::cerr << entry.path().filename().string() << "移动失败: " << e.what() << std::endl;
             }
         }
     }

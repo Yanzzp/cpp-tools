@@ -1,5 +1,5 @@
-#ifndef CPPLEARNING_MYTOOLS_H
-#define CPPLEARNING_MYTOOLS_H
+#ifndef CPP_TOOLS_H
+#define CPP_TOOLS_H
 
 #include <iostream> // 包含输入输出流库，用于输出信息到终端
 #include <string> // 包含字符串库，用于处理文件名等字符串操作
@@ -19,12 +19,15 @@
 #define txt "txt"
 #define COPY "copy"
 
+#define get_function_run_time(code_block) \
+    { \
+        get_function_running_time([&]() { \
+            code_block \
+        }); \
+    }
 
-using namespace std;
-namespace fs = std::filesystem;
 
-
-template <typename Func>
+template<typename Func>
 void get_function_running_time(Func func) {
 
     auto startTime = std::chrono::high_resolution_clock::now();
@@ -32,9 +35,8 @@ void get_function_running_time(Func func) {
     auto endTime = std::chrono::high_resolution_clock::now();
     // 计算时间间隔
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
-    std::cout << "函数"  << "的执行时间: " << duration.count() << "ms" << std::endl;
+//    std::cout << "函数" << "的执行时间: " << duration.count() << "ms" << std::endl;
 }
-
 
 
 class mytools {
@@ -44,11 +46,11 @@ private:
     int videoCount = 0;
     int audioCount = 0;
 
-    const char* const DICT_PATH = "../dict/jieba.dict.utf8";
-    const char* const HMM_PATH = "../dict/hmm_model.utf8";
-    const char* const USER_DICT_PATH = "../dict/user.dict.utf8";
-    const char* const IDF_PATH = "../dict/idf.utf8";
-    const char* const STOP_WORD_PATH = "../dict/stop_words.utf8";
+    const char *const DICT_PATH = "../dict/jieba.dict.utf8";
+    const char *const HMM_PATH = "../dict/hmm_model.utf8";
+    const char *const USER_DICT_PATH = "../dict/user.dict.utf8";
+    const char *const IDF_PATH = "../dict/idf.utf8";
+    const char *const STOP_WORD_PATH = "../dict/stop_words.utf8";
 
     std::vector<std::string> folder_info = {"", "", "", ""};
     uintmax_t folderSize = 0;
@@ -60,30 +62,31 @@ private:
 
     static bool isAudioFile(const std::string &filename);
 
-    uintmax_t get_file_size(string path);
+    uintmax_t get_file_size(std::string path);
 
 
 public:
     friend class ffmpegTool;
 
-    void print_all_files(const string &folderPath, int depth = 0);
+    void print_all_files(const std::string &folderPath, int depth = 0);
 
-    void delete_files(const string &folderPath, string name, int depth = 0);
+    void delete_files(const std::string &folderPath, std::string name, int depth = 0);
 
-    void count_imgs_videos_and_audio(const string &folderPath, string option = "");
+    void count_imgs_videos_and_audio(const std::string &folderPath, std::string option = "");
 
-    void get_folder_size(const string &folderPath, bool isPrint = true,bool printAll= false,bool keepData= false);
+    void
+    get_folder_size(const std::string &folderPath, bool isPrint = true, bool printAll = false, bool keepData = false);
 
-    void get_folder_info(const string &folderPath);
+    void get_folder_info(const std::string &folderPath);
 
-    void change_files_extension(const string &folderPath, string newExtension, string oldExtension = "",
+    void change_files_extension(const std::string &folderPath, std::string newExtension, std::string oldExtension = "",
                                 bool isChange = false, bool option = false);
 
-    void find_name(const string &folderPath, string Name);
+    void find_name(const std::string &folderPath, std::string Name);
 
-    void move_files_to_main_folder(const string &folderPath,bool isMove = false);
+    void move_files_to_main_folder(const std::string &folderPath, bool isMove = false);
 
-    void multithread_get_folder_size(const string &folderPath, bool isPrint = true);
+    void multithread_get_folder_size(const std::string &folderPath, bool isPrint = true);
 
 };
 

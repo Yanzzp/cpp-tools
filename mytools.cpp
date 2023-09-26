@@ -1,6 +1,10 @@
 #include <iomanip>
 #include "mytools.h"
 
+using namespace std;
+namespace fs = std::filesystem;
+
+
 
 // 判断是否为图像文件
 bool mytools::isImageFile(const std::string &filename) {
