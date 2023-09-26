@@ -27,6 +27,7 @@
     }
 
 
+
 template<typename Func>
 void get_function_running_time(Func func) {
 
@@ -37,6 +38,7 @@ void get_function_running_time(Func func) {
     auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
 //    std::cout << "函数" << "的执行时间: " << duration.count() << "ms" << std::endl;
 }
+
 
 
 class mytools {
@@ -65,6 +67,7 @@ private:
     uintmax_t get_file_size(std::string path);
 
 
+
 public:
     friend class ffmpegTool;
 
@@ -74,8 +77,7 @@ public:
 
     void count_imgs_videos_and_audio(const std::string &folderPath, std::string option = "");
 
-    void
-    get_folder_size(const std::string &folderPath, bool isPrint = true, bool printAll = false, bool keepData = false);
+    void get_folder_size(const std::string &folderPath, bool isPrint = true, bool printAll = false, bool keepData = false);
 
     void get_folder_info(const std::string &folderPath);
 
@@ -87,6 +89,7 @@ public:
     void move_files_to_main_folder(const std::string &folderPath, bool isMove = false);
 
     void multithread_get_folder_size(const std::string &folderPath, bool isPrint = true);
+
 
 };
 
