@@ -40,6 +40,7 @@ add_executable(cpp-tools main.cpp
         mytools.h
         ffmpegTool.cpp
         ffmpegTool.h
+        multithread.h
 )
 
 
