@@ -7,7 +7,6 @@ void test1213(){
 }
 
 int main() {
-
     complex_multithread_functions(true,true,
                                 []() {
                                     std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 1 << std::endl;
@@ -22,10 +21,7 @@ int main() {
                                     std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 4 << std::endl;
                                 },
                                 test1213
-
     );
-
-
 //    eazy_multithread_functions(
 //            std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 4 << std::endl;
 //            std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 4 << std::endl;
@@ -47,4 +43,5 @@ int main() {
             );
     return 0;
 }
+
 
