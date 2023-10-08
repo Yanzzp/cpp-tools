@@ -1,6 +1,6 @@
 #include <iomanip>
 #include <unordered_set>
-#include "mytools.h"
+#include "MyTools.h"
 
 using namespace std;
 namespace fs = std::filesystem;
@@ -8,7 +8,7 @@ namespace fs = std::filesystem;
 
 
 // 判断是否为图像文件
-bool mytools::isImageFile(const std::string &filename) {
+bool MyTools::isImageFile(const std::string &filename) {
     // 根据文件扩展名判断是否为图像文件
     std::vector<std::string> imageExtensions = {".jpg", ".jpeg", ".png", ".bmp", ".gif"};
     for (const std::string &extension: imageExtensions) {
@@ -20,7 +20,7 @@ bool mytools::isImageFile(const std::string &filename) {
 }
 
 // 判断是否为视频文件
-bool mytools::isVideoFile(const std::string &filename) {
+bool MyTools::isVideoFile(const std::string &filename) {
     // 根据文件扩展名判断是否为视频文件
     std::vector<std::string> videoExtensions = {".mp4", ".avi", ".mkv", ".mov", ".wmv"};
     for (const std::string &extension: videoExtensions) {
@@ -32,7 +32,7 @@ bool mytools::isVideoFile(const std::string &filename) {
 }
 
 // 判断是否为音频文件
-bool mytools::isAudioFile(const std::string &filename) {
+bool MyTools::isAudioFile(const std::string &filename) {
     // 根据文件扩展名判断是否为视频文件
     std::vector<std::string> audioExtensions = {".mp3", ".wav", ".flac", ".ape", ".aac"};
     for (const std::string &extension: audioExtensions) {
@@ -45,7 +45,7 @@ bool mytools::isAudioFile(const std::string &filename) {
 
 
 // 获取文件的大小
-uintmax_t mytools::get_file_size(string path) {
+uintmax_t MyTools::get_file_size(string path) {
     std::lock_guard<std::mutex> lockGuard(folderSizeMutex);
     error_code ec{};
     auto size = std::filesystem::file_size(path, ec);
@@ -59,7 +59,7 @@ uintmax_t mytools::get_file_size(string path) {
 }
 
 // 打印一个文件夹下的所有文件的路径
-void mytools::print_all_files(const std::string &path, int depth) {
+void MyTools::print_all_files(const std::string &path, int depth) {
     for (const auto &entry: fs::directory_iterator(path)) {
         for (int i = 0; i < depth; ++i) {
             std::cout << "    "; // 用缩进表示层级
@@ -76,7 +76,7 @@ void mytools::print_all_files(const std::string &path, int depth) {
 
 
 // 删除一个文件夹含有某个字符串的文件
-void mytools::delete_files(const string &path, string name, int depth) {
+void MyTools::delete_files(const string &path, string name, int depth) {
     for (const auto &entry: fs::directory_iterator(path)) {
         for (int i = 0; i < depth; ++i) {
             std::cout << "    "; // 用缩进表示层级
@@ -95,7 +95,7 @@ void mytools::delete_files(const string &path, string name, int depth) {
 }
 
 // 统计一个文件夹下的图片和视频的数量
-void mytools::count_imgs_videos_and_audio(const string &folderPath, string option) {
+void MyTools::count_imgs_videos_and_audio(const string &folderPath, string option) {
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
         if (isImageFile(entry.path().filename().string())) {
             imageCount++;
@@ -208,7 +208,7 @@ void mytools::count_imgs_videos_and_audio(const string &folderPath, string optio
 }
 
 // 统计一个文件夹的大小
-void mytools::get_folder_size(const std::string &folderPath, bool isPrint, bool printAll, bool keepData) {
+void MyTools::get_folder_size(const std::string &folderPath, bool isPrint, bool printAll, bool keepData) {
     if (!keepData) {
         folderSize = 0;
     }
@@ -242,7 +242,7 @@ void mytools::get_folder_size(const std::string &folderPath, bool isPrint, bool 
 
 
 // 获取文件夹的信息
-void mytools::get_folder_info(const std::string &folderPath) {
+void MyTools::get_folder_info(const std::string &folderPath) {
     cout << "文件夹的路径是: " << folderPath << endl;
     cout << "文件夹的名称是: " << fs::path(folderPath).filename() << endl;
     count_imgs_videos_and_audio(folderPath);
@@ -284,7 +284,7 @@ void mytools::get_folder_info(const std::string &folderPath) {
     }
 }
 
-void mytools::change_files_extension(const string &folderPath, string newExtension, string oldExtension, bool isChange,
+void MyTools::change_files_extension(const string &folderPath, string newExtension, string oldExtension, bool isChange,
                                      bool option) {
     if (option == true) {
         for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
@@ -326,7 +326,7 @@ void mytools::change_files_extension(const string &folderPath, string newExtensi
 
 
 
-void mytools::move_files_to_main_folder(const string &folderPath, bool isMove) {
+void MyTools::move_files_to_main_folder(const string &folderPath, bool isMove) {
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
         if (entry.is_regular_file()) {
             if (isMove) {
@@ -341,7 +341,7 @@ void mytools::move_files_to_main_folder(const string &folderPath, bool isMove) {
     }
 }
 
-void mytools::multithread_get_folder_size(const string &folderPath, bool isPrint) {
+void MyTools::multithread_get_folder_size(const string &folderPath, bool isPrint) {
     folderSize = 0;
     int count = 0;
     for (const auto &entry: fs::directory_iterator(folderPath)) {
@@ -356,7 +356,7 @@ void mytools::multithread_get_folder_size(const string &folderPath, bool isPrint
     if (count >= 4) {
         for (const auto &entry: fs::directory_iterator(folderPath)) {
             if (entry.is_directory()) {
-                threads.emplace_back(&mytools::get_folder_size, this, entry.path().string(), false, false,true);
+                threads.emplace_back(&MyTools::get_folder_size, this, entry.path().string(), false, false, true);
             } else {
                 get_file_size(entry.path().string());
             }

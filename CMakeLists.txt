@@ -8,11 +8,11 @@ find_package(OpenCV CONFIG REQUIRED)
 find_package(FFMPEG REQUIRED)
 
 add_executable(cpp-tools main.cpp
-        mytools.h
-        mytools.cpp
-        ffmpegTool.h
-        ffmpegTool.cpp
-        multithread.h)
+        lib/MyTools.h
+        lib/MyTools.cpp
+        lib/FFmpegTool.h
+        lib/FFmpegTool.cpp
+        lib/multithread.h)
 
 target_link_libraries(cpp-tools PRIVATE ${OpenCV_LIBS})
 target_include_directories(cpp-tools PRIVATE ${FFMPEG_INCLUDE_DIRS})

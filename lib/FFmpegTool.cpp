@@ -1,4 +1,4 @@
-#include "ffmpegTool.h"
+#include "FFmpegTool.h"
 
 using namespace std;
 
@@ -9,7 +9,7 @@ extern "C" {
 namespace fs = std::filesystem;
 
 // 自定义错误处理回调函数
-void ffmpegTool::customErrorCallback(void *avcl, int level, const char *fmt, va_list vl) {
+void FFmpegTool::customErrorCallback(void *avcl, int level, const char *fmt, va_list vl) {
     if (level <= AV_LOG_ERROR) {
         char logMessage[1024];
         vsnprintf(logMessage, sizeof(logMessage), fmt, vl);
@@ -22,7 +22,7 @@ void ffmpegTool::customErrorCallback(void *avcl, int level, const char *fmt, va_
     }
 }
 
-int ffmpegTool::get_single_video_time(const string &filePath, bool isPrint) {
+int FFmpegTool::get_single_video_time(const string &filePath, bool isPrint) {
 
 
     // 设置自定义错误处理回调函数，并传入视频文件路径
@@ -67,10 +67,10 @@ int ffmpegTool::get_single_video_time(const string &filePath, bool isPrint) {
     return returnSeconds;
 }
 
-void ffmpegTool::get_folder_videos_time(const string &folderPath, bool isPrint) {
+void FFmpegTool::get_folder_videos_time(const string &folderPath, bool isPrint) {
     int videoCount = 0;
     for (const auto &entry: fs::directory_iterator(folderPath)) {
-        if (mytools::isVideoFile(entry.path().filename().string())) {
+        if (MyTools::isVideoFile(entry.path().filename().string())) {
             int time = get_single_video_time(entry.path().string(), isPrint);
             videoCount++;
         }
@@ -79,7 +79,7 @@ void ffmpegTool::get_folder_videos_time(const string &folderPath, bool isPrint) 
 
 }
 
-void ffmpegTool::move_short_videos(const string &folderPath, int maxTime, bool isMove, bool isPrint) {
+void FFmpegTool::move_short_videos(const string &folderPath, int maxTime, bool isMove, bool isPrint) {
     int videoCount = 0;
     try {
         // 要创建的文件夹路径
@@ -95,7 +95,7 @@ void ffmpegTool::move_short_videos(const string &folderPath, int maxTime, bool i
         std::cerr << "文件夹创建失败: " << e.what() << std::endl;
     }
     for (const auto &entry: fs::directory_iterator(folderPath)) {
-        if (mytools::isVideoFile(entry.path().filename().string())) {
+        if (MyTools::isVideoFile(entry.path().filename().string())) {
             videoCount++;
             int time = get_single_video_time(entry.path().string(), isPrint);
 

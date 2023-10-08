@@ -1,7 +1,7 @@
 #ifndef CPP_TOOLS_FFMPEGTOOL_H
 #define CPP_TOOLS_FFMPEGTOOL_H
 
-#include "mytools.h"
+#include "MyTools.h"
 
 extern "C" {
 #include <libavformat/avformat.h>
@@ -9,7 +9,7 @@ extern "C" {
 
 
 
-class ffmpegTool {
+class FFmpegTool {
 private:
     static void customErrorCallback(void* avcl, int level, const char* fmt, va_list vl);
 public:

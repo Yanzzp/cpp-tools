@@ -13,7 +13,7 @@
 #include <chrono>   // 包含时间库，用于计算函数运行时间
 #include <mutex>
 
-#include "ffmpegTool.h"
+#include "FFmpegTool.h"
 
 #define txt "txt"
 #define COPY "copy"
@@ -39,7 +39,7 @@ void get_function_running_time(Func func) {
 }
 
 
-class mytools {
+class MyTools {
 private:
 
     int imageCount = 0;
@@ -66,7 +66,7 @@ private:
 
 
 public:
-    friend class ffmpegTool;
+    friend class FFmpegTool;
 
     void print_all_files(const std::string &folderPath, int depth = 0);
 

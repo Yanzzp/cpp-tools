@@ -1,10 +1,10 @@
 #include <iostream>
-#include "mytools.h"
+#include "lib/MyTools.h"
 using namespace std;
 int main() {
 
-    mytools Mytools;
-    Mytools.print_all_files("E:\\MyCodeProject\\CLionProjects\\cppTools");
+    MyTools Mytools;
+    Mytools.print_all_files("E:\\qBittorentDownload");
 
     return 0;
 }
