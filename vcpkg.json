@@ -1,0 +1,24 @@
+{
+  "name" : "test",
+  "version-string" : "1.0.0",
+  "builtin-baseline" : "cc97b4536ae749ec0e4f643488b600b217540fb3",
+  "dependencies" : [ {
+    "name" : "opencv4",
+    "version>=" : "4.8.0#7"
+  },{
+    "name" : "vcpkg-cmake-config",
+    "version>=" : "2022-02-06#1"
+  }, {
+    "name" : "vcpkg-cmake",
+    "version>=" : "2023-05-04"
+  }, {
+    "name" : "vcpkg-get-python-packages",
+    "version>=" : "2023-07-28"
+  }, {
+    "name" : "zlib",
+    "version>=" : "1.3"
+  }, {
+    "name" : "ffmpeg",
+    "version>=" : "6.0"
+  } ]
+}

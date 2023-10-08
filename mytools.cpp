@@ -1,4 +1,5 @@
 #include <iomanip>
+#include <unordered_set>
 #include "mytools.h"
 
 using namespace std;
@@ -323,47 +324,7 @@ void mytools::change_files_extension(const string &folderPath, string newExtensi
     }
 }
 
-void mytools::find_name(const string &folderPath, string Name) {
-    cppjieba::Jieba jieba(DICT_PATH,
-                          HMM_PATH,
-                          USER_DICT_PATH,
-                          IDF_PATH,
-                          STOP_WORD_PATH);
-    unordered_set<string> textSet;
-    vector<std::string> ignore_list = {" ", "，", "。", "、", "：", "“", "”", "？", "！", "《", "》", "（", "）", "【", "】",
-                                       "——", "—", "……", "；", "‘", "[", "]", "'", "-", "(", ")", ",", "+", "_", ".", "▌",
-                                       "0", "1", "2", "3", "4", "5", "6", "7", "8", "9"};
-    for (const auto &entry: fs::directory_iterator(folderPath)) {
-        if (entry.is_directory()) {
-            string folderName = entry.path().filename().string();
-            string result;
-            for (char c: folderName) {
-                std::string char_str(1, c); // 将字符转换为字符串
 
-                // 检查字符是否在ignore_list中
-                if (std::find(ignore_list.begin(), ignore_list.end(), char_str) == ignore_list.end()) {
-                    // 如果字符不在ignore_list中，则添加到结果字符串中
-                    result += char_str;
-                }
-            }
-            vector<string> words;
-            jieba.CutForSearch(result, words);
-            for (auto word: words) {
-                textSet.insert(word);
-            }
-        }
-    }
-//    for (auto text: textSet) {
-//        cout << text << endl;
-//    }
-    vector<string> words;
-    jieba.CutForSearch(Name, words);
-    for (auto word: words) {
-        if (textSet.find(word) != textSet.end()) {
-            cout << word << endl;
-        }
-    }
-}
 
 void mytools::move_files_to_main_folder(const string &folderPath, bool isMove) {
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {

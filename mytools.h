@@ -14,7 +14,6 @@
 #include <mutex>
 
 #include "ffmpegTool.h"
-#include "cppjieba/Jieba.cpp"
 
 #define txt "txt"
 #define COPY "copy"
@@ -82,8 +81,6 @@ public:
 
     void change_files_extension(const std::string &folderPath, std::string newExtension, std::string oldExtension = "",
                                 bool isChange = false, bool option = false);
-
-    void find_name(const std::string &folderPath, std::string Name);
 
     void move_files_to_main_folder(const std::string &folderPath, bool isMove = false);
 
