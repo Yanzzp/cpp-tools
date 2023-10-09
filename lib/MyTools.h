@@ -9,34 +9,18 @@
 #include <filesystem> // 包含文件系统库，用于处理文件和目录操作
 #include <Windows.h>
 #include <regex>
-#include "thread"
+#include <thread>
 #include <chrono>   // 包含时间库，用于计算函数运行时间
 #include <mutex>
 
-#include "FFmpegTool.h"
+#include "multithread.h"
 
 #define txt "txt"
 #define COPY "copy"
 
-#define get_function_run_time(code_block) \
-    { \
-        get_function_running_time([&]() { \
-            code_block \
-        }); \
-    }
+class FFmpegTool;
 
 
-template<typename Func>
-void get_function_running_time(Func func) {
-
-    auto startTime = std::chrono::high_resolution_clock::now();
-
-    func();
-    auto endTime = std::chrono::high_resolution_clock::now();
-    // 计算时间间隔
-    auto duration = std::chrono::duration_cast<std::chrono::milliseconds>(endTime - startTime);
-//    std::cout << "函数" << "的执行时间: " << duration.count() << "ms" << std::endl;
-}
 
 
 class MyTools {
@@ -46,15 +30,10 @@ private:
     int videoCount = 0;
     int audioCount = 0;
 
-    const char *const DICT_PATH = "../dict/jieba.dict.utf8";
-    const char *const HMM_PATH = "../dict/hmm_model.utf8";
-    const char *const USER_DICT_PATH = "../dict/user.dict.utf8";
-    const char *const IDF_PATH = "../dict/idf.utf8";
-    const char *const STOP_WORD_PATH = "../dict/stop_words.utf8";
-
     std::vector<std::string> folder_info = {"", "", "", ""};
+
     uintmax_t folderSize = 0;
-    std::mutex folderSizeMutex;
+    std::mutex fileSizeMutex;
 
     static bool isImageFile(const std::string &filename);
 
@@ -74,17 +53,17 @@ public:
 
     void count_imgs_videos_and_audio(const std::string &folderPath, std::string option = "");
 
-    void
-    get_folder_size(const std::string &folderPath, bool isPrint = true, bool printAll = false, bool keepData = false);
+    void get_folder_size(const std::string &folderPath, bool isPrint = true, bool printAll = false, bool keepData = false);
+
+    void multithread_get_folder_size(const std::string &folderPath, bool isPrint = true);
 
     void get_folder_info(const std::string &folderPath);
 
-    void change_files_extension(const std::string &folderPath, std::string newExtension, std::string oldExtension = "",
+    void change_files_extension(const std::string &folderPath, std:t:sring newExtension, std::string oldExtension = "",
                                 bool isChange = false, bool option = false);
 
     void move_files_to_main_folder(const std::string &folderPath, bool isMove = false);
 
-    void multithread_get_folder_size(const std::string &folderPath, bool isPrint = true);
 };
 
 

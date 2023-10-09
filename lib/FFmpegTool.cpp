@@ -23,12 +23,8 @@ void FFmpegTool::customErrorCallback(void *avcl, int level, const char *fmt, va_
 }
 
 int FFmpegTool::get_single_video_time(const string &filePath, bool isPrint) {
-
-
     // 设置自定义错误处理回调函数，并传入视频文件路径
     av_log_set_callback(customErrorCallback);
-
-
     fs::path path(filePath);
     AVFormatContext *formatContext = nullptr;
 
@@ -37,31 +33,24 @@ int FFmpegTool::get_single_video_time(const string &filePath, bool isPrint) {
         std::cerr << "无法打开视频文件" << std::endl;
         avformat_close_input(&formatContext);
     }
-
     // 获取视频信息
     if (avformat_find_stream_info(formatContext, nullptr) < 0) {
         std::cerr << "无法获取视频信息" << std::endl;
         avformat_close_input(&formatContext);
     }
-
     // 获取视频时长（以微秒为单位）
     int64_t duration = formatContext->duration;
-
     // 转换为秒
     int seconds = static_cast<int>(duration / AV_TIME_BASE);
     int returnSeconds = seconds;
-
     // 将秒转换为时分秒格式
     int hours = seconds / 3600;
     int minutes = (seconds % 3600) / 60;
     seconds = seconds % 60;
-
-
     if (isPrint) {
         std::cout << path.filename().string() << "  视频时长: " << hours << "时 " << minutes << "分 " << seconds << "秒"
                   << std::endl;
     }
-
     // 关闭视频文件
     avformat_close_input(&formatContext);
     return returnSeconds;
@@ -69,6 +58,8 @@ int FFmpegTool::get_single_video_time(const string &filePath, bool isPrint) {
 
 void FFmpegTool::get_folder_videos_time(const string &folderPath, bool isPrint) {
     int videoCount = 0;
+    vector<string> videos;
+    vector<std::thread> threads;
     for (const auto &entry: fs::directory_iterator(folderPath)) {
         if (MyTools::isVideoFile(entry.path().filename().string())) {
             int time = get_single_video_time(entry.path().string(), isPrint);

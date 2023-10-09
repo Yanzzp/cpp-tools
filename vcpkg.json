@@ -5,7 +5,7 @@
   "dependencies" : [ {
     "name" : "opencv4",
     "version>=" : "4.8.0#7"
-  },{
+  }, {
     "name" : "vcpkg-cmake-config",
     "version>=" : "2022-02-06#1"
   }, {
@@ -17,5 +17,8 @@
   }, {
     "name" : "ffmpeg",
     "version>=" : "6.0"
+  }, {
+    "name" : "opencv",
+    "version>=" : "4.8.0"
   } ]
 }

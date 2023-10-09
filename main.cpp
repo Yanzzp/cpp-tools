@@ -1,10 +1,12 @@
-#include <iostream>
-#include "lib/MyTools.h"
+#include "lib/multithread.h"
+#include "lib/FFmpegTool.h"
+
 using namespace std;
+
 int main() {
 
-    MyTools Mytools;
-    Mytools.print_all_files("E:\\qBittorentDownload");
+    FFmpegTool ffmpegTool;
+
 
     return 0;
 }

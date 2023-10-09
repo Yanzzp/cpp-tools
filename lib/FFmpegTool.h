@@ -2,12 +2,13 @@
 #define CPP_TOOLS_FFMPEGTOOL_H
 
 #include "MyTools.h"
-
+#include "multithread.h"
 extern "C" {
 #include <libavformat/avformat.h>
 }
 
 
+class MyTools;
 
 class FFmpegTool {
 private:

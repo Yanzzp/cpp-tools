@@ -26,9 +26,6 @@ void eazy_start_multithread_functions(Func func, bool thread_join) {
     }
 }
 
-
-
-
 template<typename Func>
 void multithread_functions(const std::vector<Func>& funcs, bool thread_join) {
     std::vector<std::thread> threads;
@@ -57,26 +54,29 @@ void complex_multithread_functions(bool isJoin,bool multithread,Funcs... funcs) 
 }
 
 
+// 使用案例
+//std::vector<std::function<void()>> test = {
+//        []() {
+//            std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 1 << std::endl;
+//        },
+//        []() {
+//            std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 2 << std::endl;
+//        },
+//        []() {
+//            std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 3 << std::endl;
+//        },
+//        []() {
+//            std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 4 << std::endl;
+//        }
+//};
+
+
 #define get_function_running_time(code_block) \
     { \
         get_function_run_time([&]() { \
             code_block \
         }); \
     }
-std::vector<std::function<void()>> test = {
-        []() {
-            std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 1 << std::endl;
-        },
-        []() {
-            std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 2 << std::endl;
-        },
-        []() {
-            std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 3 << std::endl;
-        },
-        []() {
-            std::cout << "Thread ID: " << std::this_thread::get_id() << "  " << 4 << std::endl;
-        }
-};
 
 template<typename Func>
 void get_function_run_time(Func func) {
