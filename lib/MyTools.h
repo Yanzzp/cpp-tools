@@ -59,7 +59,7 @@ public:
 
     void get_folder_info(const std::string &folderPath);
 
-    void change_files_extension(const std::string &folderPath, std:t:sring newExtension, std::string oldExtension = "",
+    void change_files_extension(const std::string &folderPath, std::string newExtension, std::string oldExtension = "",
                                 bool isChange = false, bool option = false);
 
     void move_files_to_main_folder(const std::string &folderPath, bool isMove = false);
