@@ -20,5 +20,11 @@
   }, {
     "name" : "opencv",
     "version>=" : "4.8.0"
+  }, {
+    "name" : "openssl-windows",
+    "version>=" : "deprecated"
+  }, {
+    "name" : "curl",
+    "version>=" : "8.3.0"
   } ]
 }
