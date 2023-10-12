@@ -3,7 +3,6 @@
 #include "lib/MyTools.h"
 #include "lib/InputSimulator.h"
 
-using namespace std;
 
 
 
@@ -19,7 +18,8 @@ int main() {
 //                    myTools.get_folder_size("D:\\zpplibrary\\tencentcloud-sdk-cpp-master");
 //                    );
 //            ,true);
-    myTools.delete_files("E:\\分类","开发");
+
+    myTools.delete_files("E:\\分类","Tea");
 
     return 0;
 }

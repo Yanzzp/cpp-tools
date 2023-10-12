@@ -76,8 +76,9 @@ void MyTools::print_all_files(const std::string &path, int depth) {
 
 // 删除一个文件夹含有某个字符串的文件
 void MyTools::delete_files(const std::string &path, const std::string &name, bool isDelete, bool isPrint) {
+
     if (isPrint) {
-        std::cout << "删除文件或目录: " << endl;
+        std::cout << "准备删除文件或目录: " << std::endl;
     }
     for (const auto &entry: std::filesystem::directory_iterator(path)) {
         if (entry.path().filename().string().find(name) != std::string::npos) { // 检查文件或目录名中是否包含指定的字符串
@@ -85,7 +86,11 @@ void MyTools::delete_files(const std::string &path, const std::string &name, boo
                 std::cout << "    " << entry.path().string() << std::endl;
             }
             if (isDelete) {
-                (void) std::filesystem::remove_all(entry.path()); // 删除文件或目录
+                std::error_code ec; // 用于捕获错误
+                std::filesystem::remove_all(entry.path(), ec); // 删除文件或目录
+                if (ec) { // 如果有错误
+                    std::cerr << "Error deleting: " << entry.path().string() << ". Reason: " << ec.message() << std::endl;
+                }
             }
         }
     }
