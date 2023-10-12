@@ -12,15 +12,13 @@
 #include <thread>
 #include <chrono>   // 包含时间库，用于计算函数运行时间
 #include <mutex>
-
+#include <set>
 #include "multithread.h"
 
 #define txt "txt"
 #define COPY "copy"
 
 class FFmpegTool;
-
-
 
 
 class MyTools {
@@ -34,6 +32,10 @@ private:
 
     uintmax_t folderSize = 0;
     std::mutex fileSizeMutex;
+
+    static const std::set<std::string> imageExtensions;
+    static const std::set<std::string> videoExtensions;
+    static const std::set<std::string> audioExtensions;
 
     static bool isImageFile(const std::string &filename);
 
@@ -49,7 +51,7 @@ public:
 
     void print_all_files(const std::string &folderPath, int depth = 0);
 
-    void delete_files(const std::string &folderPath, std::string name, int depth = 0);
+    void delete_files(const std::string &folderPath, const std::string &name, bool isDelete = false, bool isPrint = true);
 
     void count_imgs_videos_and_audio(const std::string &folderPath, std::string option = "");
 

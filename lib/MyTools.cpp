@@ -1,13 +1,17 @@
 #include "MyTools.h"
 
 using namespace std;
+
 namespace fs = std::filesystem;
 
+
+const std::set<std::string> MyTools::imageExtensions = {".jpg", ".jpeg", ".png", ".bmp", ".gif"};
+const std::set<std::string> MyTools::videoExtensions = {".mp4", ".avi", ".mkv", ".mov", ".wmv"};
+const std::set<std::string> MyTools::audioExtensions = {".mp3", ".wav", ".flac", ".ape", ".aac"};
 
 // 判断是否为图像文件
 bool MyTools::isImageFile(const std::string &filename) {
     // 根据文件扩展名判断是否为图像文件
-    std::vector<std::string> imageExtensions = {".jpg", ".jpeg", ".png", ".bmp", ".gif"};
     for (const std::string &extension: imageExtensions) {
         if (filename.find(extension) != std::string::npos) {
             return true;
@@ -19,7 +23,6 @@ bool MyTools::isImageFile(const std::string &filename) {
 // 判断是否为视频文件
 bool MyTools::isVideoFile(const std::string &filename) {
     // 根据文件扩展名判断是否为视频文件
-    std::vector<std::string> videoExtensions = {".mp4", ".avi", ".mkv", ".mov", ".wmv"};
     for (const std::string &extension: videoExtensions) {
         if (filename.find(extension) != std::string::npos) {
             return true;
@@ -31,7 +34,6 @@ bool MyTools::isVideoFile(const std::string &filename) {
 // 判断是否为音频文件
 bool MyTools::isAudioFile(const std::string &filename) {
     // 根据文件扩展名判断是否为视频文件
-    std::vector<std::string> audioExtensions = {".mp3", ".wav", ".flac", ".ape", ".aac"};
     for (const std::string &extension: audioExtensions) {
         if (filename.find(extension) != std::string::npos) {
             return true;
@@ -73,22 +75,20 @@ void MyTools::print_all_files(const std::string &path, int depth) {
 
 
 // 删除一个文件夹含有某个字符串的文件
-void MyTools::delete_files(const string &path, string name, int depth) {
-    for (const auto &entry: fs::directory_iterator(path)) {
-        for (int i = 0; i < depth; ++i) {
-            std::cout << "    "; // 用缩进表示层级
-        }
-
-        if (entry.is_directory()) {
-            if (entry.path().filename().string().find(name) != string::npos) {
-                cout << "delete " << entry.path().string() << endl;
+void MyTools::delete_files(const std::string &path, const std::string &name, bool isDelete, bool isPrint) {
+    if (isPrint) {
+        std::cout << "删除文件或目录: " << endl;
+    }
+    for (const auto &entry: std::filesystem::directory_iterator(path)) {
+        if (entry.path().filename().string().find(name) != std::string::npos) { // 检查文件或目录名中是否包含指定的字符串
+            if (isPrint) {
+                std::cout << "    " << entry.path().string() << std::endl;
             }
-            print_all_files(entry.path().string(), depth + 1); // 递归调用自身遍历子文件夹
-        } else if (entry.is_regular_file()) {
-
+            if (isDelete) {
+                (void) std::filesystem::remove_all(entry.path()); // 删除文件或目录
+            }
         }
     }
-
 }
 
 // 统计一个文件夹下的图片和视频的数量
@@ -176,7 +176,6 @@ void MyTools::count_imgs_videos_and_audio(const string &folderPath, string optio
                 if (pClipboardText != nullptr) {
                     strcpy_s(pClipboardText, textSize, textToCopy.c_str());
                     GlobalUnlock(hClipboardData);
-
                     // 将数据设置到剪贴板
                     SetClipboardData(CF_TEXT, hClipboardData);
                 } else {
