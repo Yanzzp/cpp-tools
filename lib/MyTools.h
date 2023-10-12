@@ -7,7 +7,7 @@
 #include <algorithm> // 包含算法库，用于对数字列表进行排序
 #include <fstream>
 #include <filesystem> // 包含文件系统库，用于处理文件和目录操作
-#include <Windows.h>
+#include <windows.h>
 #include <regex>
 #include <thread>
 #include <chrono>   // 包含时间库，用于计算函数运行时间

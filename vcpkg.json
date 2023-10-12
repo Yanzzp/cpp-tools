@@ -1,24 +1,9 @@
 {
-  "name" : "test",
+  "name" : "qt",
   "version-string" : "1.0.0",
-  "builtin-baseline" : "cc97b4536ae749ec0e4f643488b600b217540fb3",
+  "builtin-baseline" : "51475feaccb720ab40e5a0e3f8da70a4510defc0",
   "dependencies" : [ {
-    "name" : "vcpkg-cmake",
-    "version>=" : "2023-05-04"
-  }, {
-    "name" : "vcpkg-get-python-packages",
-    "version>=" : "2023-07-28"
-  }, {
     "name" : "ffmpeg",
     "version>=" : "6.0"
-  }, {
-    "name" : "openssl-windows",
-    "version>=" : "deprecated"
-  }, {
-    "name" : "curl",
-    "version>=" : "8.3.0"
-  }, {
-    "name" : "opencv",
-    "version>=" : "4.8.0"
   } ]
 }

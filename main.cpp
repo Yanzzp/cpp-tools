@@ -1,25 +1,17 @@
-#include "lib/multithread.h"
-#include "lib/FFmpegTool.h"
+#include <QApplication>
+#include <QPushButton>
 #include "lib/MyTools.h"
-#include "lib/InputSimulator.h"
+#include "lib/FFmpegTool.h"
 
-
-
-
-int main() {
+int main(int argc, char *argv[]) {
     MyTools myTools;
+    FFmpegTool ffmpegTool;
 
-//    eazy_multithread_functions(
-//            cout<< "Hello world"<<endl;
-//            get_function_running_time(
-//                    myTools.multithread_get_folder_size("D:\\zpplibrary\\tencentcloud-sdk-cpp-master",true);
-//                    );
-//            get_function_running_time(
-//                    myTools.get_folder_size("D:\\zpplibrary\\tencentcloud-sdk-cpp-master");
-//                    );
-//            ,true);
-
-    myTools.delete_files("E:\\分类","Tea");
-
-    return 0;
+    myTools.print_all_files("E:\\MyCodeProject\\CLionProjects\\cpp-tools");
+    ffmpegTool.get_single_video_time("E:\\分类\\千鹤酱的开发日记\\第二集.mp4",true);
+    QApplication a(argc, argv);
+    QPushButton button("Hello world!", nullptr);
+    button.resize(200, 100);
+    button.show();
+    return QApplication::exec();
 }

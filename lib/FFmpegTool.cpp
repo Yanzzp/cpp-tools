@@ -2,9 +2,6 @@
 
 using namespace std;
 
-extern "C" {
-#include <libavformat/avformat.h>
-}
 
 namespace fs = std::filesystem;
 
