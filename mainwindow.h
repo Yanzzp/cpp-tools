@@ -6,7 +6,7 @@
 #define CPP_TOOLS_MAINWINDOW_H
 
 #include <QWidget>
-
+#include <QLabel>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class MainWindow; }
@@ -16,6 +16,8 @@ class MainWindow : public QWidget {
 Q_OBJECT
 
 public:
+    void checkButtonStatus();
+
     explicit MainWindow(QWidget *parent = nullptr);
 
     ~MainWindow() override;

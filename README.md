@@ -20,8 +20,23 @@
 
 #### FFmpegTool
 
-* #### get_single_video_time(获取单个音频或者视频的时长)
+* #### eazy_multithread_functions(code_block, should_join)
 
-* #### get_folder_videos_time(输出一个文件夹下面所有音频或者视频的长度)
+    传入一个代码块，如果should_join=true则使用join，否则使用detach
+
+* #### eazy_start_multithread_functions(Func func, bool thread_join)
+
+    需要用Lambda格式传入代码块，如果should_join=true则使用join，否则使用detach
 
 * #### move_short_videos(将一个文件夹下时长小于maxTime的所有音视频放到当前文件夹下的short目录中)
+
+
+
+#### mutithread
+
+-   #### get_single_video_time(获取单个音频或者视频的时长)
+
+-   #### get_folder_videos_time(输出一个文件夹下面所有音频或者视频的长度)
+
+* #### move_short_videos(将一个文件夹下时长小于maxTime的所有音视频放到当前文件夹下的short目录中)
+
