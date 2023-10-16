@@ -16,10 +16,10 @@
 
 
 template<typename Func>
-void eazy_start_multithread_functions(Func func, bool thread_join) {
+void eazy_start_multithread_functions(Func func, bool should_join) {
     std::thread thread_obj(func);
 
-    if (thread_join) {
+    if (should_join) {
         thread_obj.join();
     } else {
         thread_obj.detach();
@@ -27,7 +27,7 @@ void eazy_start_multithread_functions(Func func, bool thread_join) {
 }
 
 template<typename Func>
-void multithread_functions(const std::vector<Func>& funcs, bool thread_join) {
+void multithread_functions(const std::vector<Func>& funcs, bool should_join) {
     std::vector<std::thread> threads;
 
     for (const auto& func : funcs) {
@@ -35,7 +35,7 @@ void multithread_functions(const std::vector<Func>& funcs, bool thread_join) {
     }
 
     for (auto& thread : threads) {
-        if (thread_join) {
+        if (should_join) {
             thread.join();
         } else {
             thread.detach();
