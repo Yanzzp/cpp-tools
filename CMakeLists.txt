@@ -23,9 +23,7 @@ add_executable(cpp-tools main.cpp
         lib/InputSimulator.cpp
         lib/MyTools.cpp
         lib/FFmpegTool.cpp
-        lib/FFmpegTool.h
         mainwindow.cpp
-        mainwindow.h
         mainwindow.ui)
 
 target_include_directories(cpp-tools PRIVATE ${FFMPEG_INCLUDE_DIRS})

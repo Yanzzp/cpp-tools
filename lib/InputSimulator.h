@@ -1,7 +1,6 @@
 #ifndef CPP_TOOLS_INPUTSIMULATOR_H
 #define CPP_TOOLS_INPUTSIMULATOR_H
 #include <iostream>
-#include <windows.h>
 #include <utility>
 #include <vector>
 
