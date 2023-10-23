@@ -96,117 +96,117 @@ void MyTools::delete_files(const std::string &path, const std::string &name, boo
     }
 }
 
-// 统计一个文件夹下的图片和视频的数量
-void MyTools::count_imgs_videos_and_audio(const string &folderPath, string option) {
-    for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
-        if (isImageFile(entry.path().filename().string())) {
-            imageCount++;
-        } else if (isVideoFile(entry.path().filename().string())) {
-            videoCount++;
-        } else if (isAudioFile(entry.path().filename().string())) {
-            audioCount++;
-        }
-    }
-    cout << "图片的数量是: " << imageCount << endl;
-    cout << "视频的数量是: " << videoCount << endl;
-    cout << "音频的数量是: " << audioCount << endl;
-
-    if (option == "txt") {
-        string txtFileName = folderPath + "\\";
-        // 指定要创建的文件名
-        if (imageCount != 0) {
-            txtFileName += to_string(imageCount) + "P";
-        }
-        if (videoCount != 0) {
-            txtFileName += to_string(videoCount) + "V";
-        }
-        if (audioCount != 0) {
-            txtFileName += to_string(audioCount) + "A";
-        }
-        txtFileName += ".txt";
-        try {
-            fs::path fileToCreate(txtFileName);
-            if (!fs::exists(fileToCreate)) {
-                // 文件不存在，创建文件并打开以进行写入
-                std::ofstream outputFile(fileToCreate.string());
-                if (outputFile.is_open()) { // 检查文件是否成功打开
-                    outputFile << "图片的数量是: " << imageCount << "\n";
-                    outputFile << "视频的数量是: " << videoCount << "\n";
-                    outputFile << "音频的数量是: " << videoCount << "\n";
-                    outputFile.close();
-                    std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
-                } else {
-                    std::cerr << "无法打开文件 " << txtFileName << std::endl;
-                }
-            } else {
-                //            std::cerr << "文件 " << txtFileName << " 已经存在。\n";
-                fs::remove(txtFileName);
-                std::ofstream outputFile(fileToCreate.string());
-                if (outputFile.is_open()) { // 检查文件是否成功打开
-                    outputFile << "图片的数量是: " << imageCount << "\n";
-                    outputFile << "视频的数量是: " << videoCount << "\n";
-                    outputFile << "音频的数量是: " << videoCount << "\n";
-                    outputFile.close();
-                    std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
-                } else {
-                    std::cerr << "无法打开文件 " << txtFileName << std::endl;
-                }
-            }
-        } catch (const std::exception &ex) {
-            std::cerr << "发生错误: " << ex.what() << std::endl;
-        }
-    }
-    if (option == "copy") {
-        string textToCopy;
-        // 指定要创建的文件名
-        if (imageCount != 0) {
-            textToCopy += to_string(imageCount) + "P";
-        }
-        if (videoCount != 0) {
-            textToCopy += to_string(videoCount) + "V";
-        }
-        if (audioCount != 0) {
-            textToCopy += to_string(audioCount) + "A";
-        }
-
-        if (OpenClipboard(nullptr)) {
-            // 清空剪贴板内容
-            EmptyClipboard();
-            // 获取字符串的长度，包括 null 终止字符
-            size_t textSize = textToCopy.size() + 1;
-            // 分配全局内存并将字符串复制进去
-            HGLOBAL hClipboardData = GlobalAlloc(GMEM_MOVEABLE, textSize);
-            if (hClipboardData != nullptr) {
-                char *pClipboardText = static_cast<char *>(GlobalLock(hClipboardData));
-                if (pClipboardText != nullptr) {
-                    strcpy_s(pClipboardText, textSize, textToCopy.c_str());
-                    GlobalUnlock(hClipboardData);
-                    // 将数据设置到剪贴板
-                    SetClipboardData(CF_TEXT, hClipboardData);
-                } else {
-                    std::cerr << "无法锁定全局内存。" << std::endl;
-                }
-            } else {
-                std::cerr << "无法分配全局内存。" << std::endl;
-            }
-
-            CloseClipboard();
-        } else {
-            std::cerr << "无法打开剪贴板。" << std::endl;
-        }
-    }
-    if (option == "") {
-        if (imageCount != 0) {
-            folder_info[0] = to_string(imageCount) + "P";
-        }
-        if (videoCount != 0) {
-            folder_info[1] = to_string(videoCount) + "V";
-        }
-        if (audioCount != 0) {
-            folder_info[2] = to_string(audioCount) + "A";
-        }
-    }
-}
+//// 统计一个文件夹下的图片和视频的数量
+//void MyTools::count_imgs_videos_and_audio(const string &folderPath, string option) {
+//    for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
+//        if (isImageFile(entry.path().filename().string())) {
+//            imageCount++;
+//        } else if (isVideoFile(entry.path().filename().string())) {
+//            videoCount++;
+//        } else if (isAudioFile(entry.path().filename().string())) {
+//            audioCount++;
+//        }
+//    }
+//    cout << "图片的数量是: " << imageCount << endl;
+//    cout << "视频的数量是: " << videoCount << endl;
+//    cout << "音频的数量是: " << audioCount << endl;
+//
+//    if (option == "txt") {
+//        string txtFileName = folderPath + "\\";
+//        // 指定要创建的文件名
+//        if (imageCount != 0) {
+//            txtFileName += to_string(imageCount) + "P";
+//        }
+//        if (videoCount != 0) {
+//            txtFileName += to_string(videoCount) + "V";
+//        }
+//        if (audioCount != 0) {
+//            txtFileName += to_string(audioCount) + "A";
+//        }
+//        txtFileName += ".txt";
+//        try {
+//            fs::path fileToCreate(txtFileName);
+//            if (!fs::exists(fileToCreate)) {
+//                // 文件不存在，创建文件并打开以进行写入
+//                std::ofstream outputFile(fileToCreate.string());
+//                if (outputFile.is_open()) { // 检查文件是否成功打开
+//                    outputFile << "图片的数量是: " << imageCount << "\n";
+//                    outputFile << "视频的数量是: " << videoCount << "\n";
+//                    outputFile << "音频的数量是: " << videoCount << "\n";
+//                    outputFile.close();
+//                    std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
+//                } else {
+//                    std::cerr << "无法打开文件 " << txtFileName << std::endl;
+//                }
+//            } else {
+//                //            std::cerr << "文件 " << txtFileName << " 已经存在。\n";
+//                fs::remove(txtFileName);
+//                std::ofstream outputFile(fileToCreate.string());
+//                if (outputFile.is_open()) { // 检查文件是否成功打开
+//                    outputFile << "图片的数量是: " << imageCount << "\n";
+//                    outputFile << "视频的数量是: " << videoCount << "\n";
+//                    outputFile << "音频的数量是: " << videoCount << "\n";
+//                    outputFile.close();
+//                    std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
+//                } else {
+//                    std::cerr << "无法打开文件 " << txtFileName << std::endl;
+//                }
+//            }
+//        } catch (const std::exception &ex) {
+//            std::cerr << "发生错误: " << ex.what() << std::endl;
+//        }
+//    }
+//    if (option == "copy") {
+//        string textToCopy;
+//        // 指定要创建的文件名
+//        if (imageCount != 0) {
+//            textToCopy += to_string(imageCount) + "P";
+//        }
+//        if (videoCount != 0) {
+//            textToCopy += to_string(videoCount) + "V";
+//        }
+//        if (audioCount != 0) {
+//            textToCopy += to_string(audioCount) + "A";
+//        }
+//
+//        if (OpenClipboard(nullptr)) {
+//            // 清空剪贴板内容
+//            EmptyClipboard();
+//            // 获取字符串的长度，包括 null 终止字符
+//            size_t textSize = textToCopy.size() + 1;
+//            // 分配全局内存并将字符串复制进去
+//            HGLOBAL hClipboardData = GlobalAlloc(GMEM_MOVEABLE, textSize);
+//            if (hClipboardData != nullptr) {
+//                char *pClipboardText = static_cast<char *>(GlobalLock(hClipboardData));
+//                if (pClipboardText != nullptr) {
+//                    strcpy_s(pClipboardText, textSize, textToCopy.c_str());
+//                    GlobalUnlock(hClipboardData);
+//                    // 将数据设置到剪贴板
+//                    SetClipboardData(CF_TEXT, hClipboardData);
+//                } else {
+//                    std::cerr << "无法锁定全局内存。" << std::endl;
+//                }
+//            } else {
+//                std::cerr << "无法分配全局内存。" << std::endl;
+//            }
+//
+//            CloseClipboard();
+//        } else {
+//            std::cerr << "无法打开剪贴板。" << std::endl;
+//        }
+//    }
+//    if (option == "") {
+//        if (imageCount != 0) {
+//            folder_info[0] = to_string(imageCount) + "P";
+//        }
+//        if (videoCount != 0) {
+//            folder_info[1] = to_string(videoCount) + "V";
+//        }
+//        if (audioCount != 0) {
+//            folder_info[2] = to_string(audioCount) + "A";
+//        }
+//    }
+//}
 
 // 统计一个文件夹的大小
 void MyTools::get_folder_size(const std::string &folderPath, bool isPrint, bool printAll, bool keepData) {
@@ -274,48 +274,48 @@ void MyTools::multithread_get_folder_size(const string &folderPath, bool isPrint
 
 }
 
-// 获取文件夹的信息
-void MyTools::get_folder_info(const std::string &folderPath) {
-    cout << "文件夹的路径是: " << folderPath << endl;
-    cout << "文件夹的名称是: " << fs::path(folderPath).filename() << endl;
-    count_imgs_videos_and_audio(folderPath);
-    get_folder_size(folderPath);
-    string textToCopy;
-    for (int i = 0; i < folder_info.size(); ++i) {
-        if (folder_info[i] != "") {
-            textToCopy += folder_info[i] + " ";
-        }
-    }
-    textToCopy.erase(textToCopy.end() - 1);
-    textToCopy = "[" + textToCopy + "]";
-
-    if (OpenClipboard(nullptr)) {
-        // 清空剪贴板内容
-        EmptyClipboard();
-        // 获取字符串的长度，包括 null 终止字符
-        size_t textSize = textToCopy.size() + 1;
-        // 分配全局内存并将字符串复制进去
-        HGLOBAL hClipboardData = GlobalAlloc(GMEM_MOVEABLE, textSize);
-        if (hClipboardData != nullptr) {
-            char *pClipboardText = static_cast<char *>(GlobalLock(hClipboardData));
-            if (pClipboardText != nullptr) {
-                strcpy_s(pClipboardText, textSize, textToCopy.c_str());
-                GlobalUnlock(hClipboardData);
-
-                // 将数据设置到剪贴板
-                SetClipboardData(CF_TEXT, hClipboardData);
-            } else {
-                std::cerr << "无法锁定全局内存。" << std::endl;
-            }
-        } else {
-            std::cerr << "无法分配全局内存。" << std::endl;
-        }
-
-        CloseClipboard();
-    } else {
-        std::cerr << "无法打开剪贴板。" << std::endl;
-    }
-}
+//// 获取文件夹的信息
+//void MyTools::get_folder_info(const std::string &folderPath) {
+//    cout << "文件夹的路径是: " << folderPath << endl;
+//    cout << "文件夹的名称是: " << fs::path(folderPath).filename() << endl;
+//    count_imgs_videos_and_audio(folderPath);
+//    get_folder_size(folderPath);
+//    string textToCopy;
+//    for (int i = 0; i < folder_info.size(); ++i) {
+//        if (folder_info[i] != "") {
+//            textToCopy += folder_info[i] + " ";
+//        }
+//    }
+//    textToCopy.erase(textToCopy.end() - 1);
+//    textToCopy = "[" + textToCopy + "]";
+//
+//    if (OpenClipboard(nullptr)) {
+//        // 清空剪贴板内容
+//        EmptyClipboard();
+//        // 获取字符串的长度，包括 null 终止字符
+//        size_t textSize = textToCopy.size() + 1;
+//        // 分配全局内存并将字符串复制进去
+//        HGLOBAL hClipboardData = GlobalAlloc(GMEM_MOVEABLE, textSize);
+//        if (hClipboardData != nullptr) {
+//            char *pClipboardText = static_cast<char *>(GlobalLock(hClipboardData));
+//            if (pClipboardText != nullptr) {
+//                strcpy_s(pClipboardText, textSize, textToCopy.c_str());
+//                GlobalUnlock(hClipboardData);
+//
+//                // 将数据设置到剪贴板
+//                SetClipboardData(CF_TEXT, hClipboardData);
+//            } else {
+//                std::cerr << "无法锁定全局内存。" << std::endl;
+//            }
+//        } else {
+//            std::cerr << "无法分配全局内存。" << std::endl;
+//        }
+//
+//        CloseClipboard();
+//    } else {
+//        std::cerr << "无法打开剪贴板。" << std::endl;
+//    }
+//}
 
 void MyTools::change_files_extension(const string &folderPath, string newExtension, string oldExtension, bool isChange,
                                      bool option) {

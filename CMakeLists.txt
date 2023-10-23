@@ -1,4 +1,4 @@
-cmake_minimum_required(VERSION 3.26)
+cmake_minimum_required(VERSION 3.22.1)
 project(cpp-tools)
 
 set(CMAKE_CXX_STANDARD 17)
@@ -6,10 +6,12 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
-set(CMAKE_PREFIX_PATH "D:/zpplibrary/Qt/6.6.0/mingw_64")
 
-find_package(FFMPEG REQUIRED)
-find_package(Qt6 COMPONENTS
+find_package(PkgConfig REQUIRED)
+pkg_check_modules(FFMPEG REQUIRED libavcodec libavformat libavutil)
+
+
+find_package(Qt5 COMPONENTS
         Core
         Gui
         Widgets

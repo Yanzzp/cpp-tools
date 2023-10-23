@@ -6,7 +6,7 @@
 
 #include <iostream>
 #include "mainwindow.h"
-#include "ui_MainWindow.h"
+#include "ui_mainwindow.h"
 
 int numb =0;
 MainWindow::MainWindow(QWidget *parent) :
