@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CPP_TOOLS_MULTITHREAD_H
 #define CPP_TOOLS_MULTITHREAD_H
 #include <iostream>

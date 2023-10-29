@@ -1,3 +1,4 @@
+#pragma once
 #ifndef CPP_TOOLS_H
 #define CPP_TOOLS_H
 
