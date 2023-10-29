@@ -6,58 +6,42 @@ set(CMAKE_AUTOMOC ON)
 set(CMAKE_AUTORCC ON)
 set(CMAKE_AUTOUIC ON)
 
+# 添加一个选项，默认为ON
+option(USE_QT "Use Qt for the project" OFF)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(FFMPEG REQUIRED libavcodec libavformat libavutil)
 
-
-find_package(Qt5 COMPONENTS
-        Core
-        Gui
-        Widgets
-        REQUIRED)
+# 只有当USE_QT被设为ON时，才会寻找Qt库
+if(USE_QT)
+    find_package(Qt5 COMPONENTS
+            Core
+            Gui
+            Widgets
+            REQUIRED)
+endif()
 
 add_executable(cpp-tools main.cpp
         lib/MyTools.cpp
         lib/FFmpegTool.cpp
+        lib/HeadFile.h
 )
 
 target_include_directories(cpp-tools PRIVATE ${FFMPEG_INCLUDE_DIRS})
 target_link_directories(cpp-tools PRIVATE ${FFMPEG_LIBRARY_DIRS})
-target_link_libraries(cpp-tools
-        PRIVATE ${FFMPEG_LIBRARIES}
-        Qt::Core
-        Qt::Gui
-        Qt::Widgets
-)
 
-
-# 如果在window下才需要这段代码
-#if (WIN32 AND NOT DEFINED CMAKE_TOOLCHAIN_FILE)
-#    set(DEBUG_SUFFIX)
-#    if (MSVC AND CMAKE_BUILD_TYPE MATCHES "Debug")
-#        set(DEBUG_SUFFIX "d")
-#    endif ()
-#    set(QT_INSTALL_PATH "${CMAKE_PREFIX_PATH}")
-#    if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
-#        set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
-#        if (NOT EXISTS "${QT_INSTALL_PATH}/bin")
-#            set(QT_INSTALL_PATH "${QT_INSTALL_PATH}/..")
-#        endif ()
-#    endif ()
-#    if (EXISTS "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll")
-#        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-#                COMMAND ${CMAKE_COMMAND} -E make_directory
-#                "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
-#        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-#                COMMAND ${CMAKE_COMMAND} -E copy
-#                "${QT_INSTALL_PATH}/plugins/platforms/qwindows${DEBUG_SUFFIX}.dll"
-#                "$<TARGET_FILE_DIR:${PROJECT_NAME}>/plugins/platforms/")
-#    endif ()
-#    foreach (QT_LIB Core Gui Widgets)
-#        add_custom_command(TARGET ${PROJECT_NAME} POST_BUILD
-#                COMMAND ${CMAKE_COMMAND} -E copy
-#                "${QT_INSTALL_PATH}/bin/Qt6${QT_LIB}${DEBUG_SUFFIX}.dll"
-#                "$<TARGET_FILE_DIR:${PROJECT_NAME}>")
-#    endforeach (QT_LIB)
-#endif ()
+# 根据是否使用Qt来链接库
+if(USE_QT)
+    target_link_libraries(cpp-tools
+            PRIVATE
+            ${FFMPEG_LIBRARIES}
+            Qt::Core
+            Qt::Gui
+            Qt::Widgets
+    )
+else()
+    target_link_libraries(cpp-tools
+            PRIVATE
+            ${FFMPEG_LIBRARIES}
+    )
+endif()
