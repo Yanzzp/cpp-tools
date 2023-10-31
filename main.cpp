@@ -1,8 +1,9 @@
 #include "lib/HeadFile.h"
-#include <Python.h>
+
 int main(int argc, char *argv[]) {
-    Py_Initialize();
-    PyRun_SimpleString("print('hello world')\n");
-    Py_Finalize();
+    MyTools myTools;
+
+    myTools.delete_files("/mnt/e/迅雷下载",{"资源", "地址","务必","简评"}, true);
+//    myTools.print_all_files("/mnt/e/迅雷下载", true);
     return 0;
 }

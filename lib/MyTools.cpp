@@ -74,27 +74,56 @@ void MyTools::print_all_files(const std::string &path, int depth) {
 }
 
 
-// 删除一个文件夹含有某个字符串的文件
-void MyTools::delete_files(const std::string &path, const std::string &name, bool isDelete, bool isPrint) {
+//// 删除一个文件夹含有某个字符串的文件
+//void MyTools::delete_files(const std::string &path, const std::string &name, bool isDelete, bool isPrint) {
+//
+//
+//    for (const auto &entry: std::filesystem::directory_iterator(path)) {
+//        // 如果当前条目是一个目录，递归进入这个目录
+//        if (std::filesystem::is_directory(entry.status())) {
+//            delete_files(entry.path().string(), name, isDelete, isPrint);
+//        }
+//
+//        if (entry.path().string().find(name) != std::string::npos) {
+//            if (isPrint) {
+//                std::cout << entry.path().string() << std::endl;
+//            }
+//            if (isDelete) {
+//                std::error_code ec; // 用于捕获错误
+//                std::filesystem::remove_all(entry.path(), ec); // 删除文件或目录
+//                if (ec) { // 如果有错误
+//                    std::cerr << "Error deleting: " << entry.path().string() << ". Reason: " << ec.message() << std::endl;
+//                }
+//            }
+//        }
+//    }
+//}
 
-    if (isPrint) {
-        std::cout << "准备删除文件或目录: " << std::endl;
-    }
+void MyTools::delete_files(const std::string &path, const std::vector<std::string> &names, bool isDelete, bool isPrint) {
     for (const auto &entry: std::filesystem::directory_iterator(path)) {
-        if (entry.path().filename().string().find(name) != std::string::npos) { // 检查文件或目录名中是否包含指定的字符串
-            if (isPrint) {
-                std::cout << "    " << entry.path().string() << std::endl;
-            }
-            if (isDelete) {
-                std::error_code ec; // 用于捕获错误
-                std::filesystem::remove_all(entry.path(), ec); // 删除文件或目录
-                if (ec) { // 如果有错误
-                    std::cerr << "Error deleting: " << entry.path().string() << ". Reason: " << ec.message() << std::endl;
+        // 如果当前条目是一个目录，递归进入这个目录
+        if (std::filesystem::is_directory(entry.status())) {
+            delete_files(entry.path().string(), names, isDelete, isPrint);
+        }
+
+        for (const auto &name : names) {
+            if (entry.path().string().find(name) != std::string::npos) {
+                if (isPrint) {
+                    std::cout << "    发现: " << entry.path().string() << std::endl;
                 }
+                if (isDelete) {
+                    std::error_code ec; // 用于捕获错误
+                    std::filesystem::remove_all(entry.path(), ec); // 删除文件或目录
+                    if (ec) { // 如果有错误
+                        std::cerr << "Error deleting: " << entry.path().string() << ". Reason: " << ec.message() << std::endl;
+                    }
+                }
+                break; // 如果找到了一个匹配，就跳出循环
             }
         }
     }
 }
+
 
 //// 统计一个文件夹下的图片和视频的数量
 //void MyTools::count_imgs_videos_and_audio(const string &folderPath, string option) {

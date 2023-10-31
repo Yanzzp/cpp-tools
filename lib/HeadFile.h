@@ -2,7 +2,7 @@
 #define CPP_TOOLS_HEADFILE_H
 
 #include "MyTools.h"
-#include "FFmpegTool.h"
-#include "multithread.h"
+//#include "FFmpegTool.h"
+//#include "multithread.h"
 
 #endif

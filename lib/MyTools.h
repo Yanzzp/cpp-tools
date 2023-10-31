@@ -54,7 +54,9 @@ public:
 
     void print_all_files(const std::string &folderPath, int depth = 0);
 
-    void delete_files(const std::string &path, const std::string &name, bool isDelete = false, bool isPrint = true);
+//    void delete_files(const std::string &path, const std::string &name, bool isDelete = false, bool isPrint = true);
+
+    void delete_files(const std::string &path, const std::vector<std::string> &names, bool isDelete = false, bool isPrint = true);
 
     void count_imgs_videos_and_audio(const std::string &folderPath, std::string option = "");
 
