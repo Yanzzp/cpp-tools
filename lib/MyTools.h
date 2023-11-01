@@ -17,8 +17,9 @@
 
 #include "multithread.h"
 
+#define print "print"
 #define txt "txt"
-#define COPY "copy"
+#define copy "copy"
 
 
 class FFmpegTool;
@@ -46,6 +47,10 @@ private:
 
     static bool isAudioFile(const std::string &filename);
 
+    static std::string windows_path_to_linux_path(std::string path);
+
+    static std::string copy_to_clipboard(std::string str);
+
     uintmax_t get_file_size(std::string path);
 
 
@@ -58,7 +63,7 @@ public:
 
     void delete_files(const std::string &path, const std::vector<std::string> &names, bool isDelete = false, bool isPrint = true);
 
-    void count_imgs_videos_and_audio(const std::string &folderPath, std::string option = "");
+    void count_imgs_videos_and_audio(const std::string &folderPath, const std::string& option = "");
 
     void get_folder_size(const std::string &folderPath, bool isPrint = true, bool printAll = false, bool keepData = false);
 

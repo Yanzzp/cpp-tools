@@ -1,11 +1,10 @@
-#include "lib/HeadFile.h"
-
+#include <iostream>
+#include <cstdlib>
+#include "lib/MyTools.h"
 int main() {
     MyTools myTools;
 
-    myTools.print_all_files("/mnt/e/迅雷下载");
-//    myTools.print_all_files("/mnt/e/迅雷下载", true);
-    std::string path = "E:/迅雷下载";
+    myTools.count_imgs_videos_and_audio("/mnt/e/分类/宅舞",copy);
 
 
     return 0;
