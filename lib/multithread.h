@@ -1,6 +1,7 @@
 #pragma once
 #ifndef CPP_TOOLS_MULTITHREAD_H
 #define CPP_TOOLS_MULTITHREAD_H
+
 #include <iostream>
 #include <thread>
 #include <vector>
@@ -14,8 +15,6 @@
     }
 
 
-
-
 template<typename Func>
 void eazy_start_multithread_functions(Func func, bool should_join) {
     std::thread thread_obj(func);
@@ -27,32 +26,32 @@ void eazy_start_multithread_functions(Func func, bool should_join) {
     }
 }
 
-template<typename Func>
-void multithread_functions(const std::vector<Func>& funcs, bool should_join) {
-    std::vector<std::thread> threads;
-
-    for (const auto& func : funcs) {
-        threads.emplace_back(func);
-    }
-
-    for (auto& thread : threads) {
-        if (should_join) {
-            thread.join();
-        } else {
-            thread.detach();
-        }
-    }
-}
-
-template<typename... Funcs>
-void complex_multithread_functions(bool isJoin,bool multithread,Funcs... funcs) {
-    if (multithread) {
-        std::vector<std::function<void()>> func_list = {funcs...};
-        multithread_functions(func_list, isJoin); // 使用 thread_join = true
-    } else {
-        (funcs(), ...); // 依次执行传入的函数
-    }
-}
+//template<typename Func>
+//void multithread_functions(const std::vector<Func> &funcs, bool should_join) {
+//    std::vector<std::thread> threads;
+//
+//    for (const auto &func: funcs) {
+//        threads.emplace_back(func);
+//    }
+//
+//    for (auto &thread: threads) {
+//        if (should_join) {
+//            thread.join();
+//        } else {
+//            thread.detach();
+//        }
+//    }
+//}
+//
+//template<typename... Funcs>
+//void complex_multithread_functions(bool isJoin, bool multithread, Funcs... funcs) {
+//    if (multithread) {
+//        std::vector<std::function<void()>> func_list = {funcs...};
+//        multithread_functions(func_list, isJoin); // 使用 thread_join = true
+//    } else {
+//        (funcs(), ...); // 依次执行传入的函数
+//    }
+//}
 
 
 // 使用案例
@@ -91,4 +90,4 @@ void get_function_run_time(Func func) {
     std::cout << "函数" << "的执行时间: " << duration.count() << "ms" << std::endl;
 }
 
-#endif //CPP_TOOLS_MULTITHREAD_H
+#endif

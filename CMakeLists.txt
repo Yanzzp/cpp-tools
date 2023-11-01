@@ -20,7 +20,7 @@ find_package(PythonLibs 3.10.12 REQUIRED)
 add_executable(cpp-tools main.cpp
         lib/MyTools.cpp
         lib/FFmpegTool.cpp
-        lib/HeadFile.h
+        lib/plugs.h
 )
 
 target_include_directories(cpp-tools PRIVATE ${FFMPEG_INCLUDE_DIRS} ${PYTHON_INCLUDE_DIRS})
