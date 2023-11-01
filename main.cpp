@@ -1,9 +1,12 @@
 #include "lib/HeadFile.h"
 
-int main(int argc, char *argv[]) {
+int main() {
     MyTools myTools;
 
-    myTools.delete_files("/mnt/e/迅雷下载",{"资源", "地址","务必","简评"}, true);
+    myTools.print_all_files("/mnt/e/迅雷下载");
 //    myTools.print_all_files("/mnt/e/迅雷下载", true);
+    std::string path = "E:/迅雷下载";
+
+
     return 0;
 }

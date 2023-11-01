@@ -59,7 +59,13 @@ uintmax_t MyTools::get_file_size(string path) {
 
 // 打印一个文件夹下的所有文件的路径
 void MyTools::print_all_files(const std::string &path, int depth) {
-    for (const auto &entry: fs::directory_iterator(path)) {
+    std::string result = path;
+    std::replace(result.begin(), result.end(), '\\', '/');
+    if (result.size() > 1 && result[1] == ':') {
+        char driveLetter = std::tolower(result[0]);
+        result = "/mnt/" + std::string(1, driveLetter) + result.substr(2);
+    }
+    for (const auto &entry: fs::directory_iterator(result)) {
         for (int i = 0; i < depth; ++i) {
             std::cout << "    "; // 用缩进表示层级
         }
@@ -74,33 +80,16 @@ void MyTools::print_all_files(const std::string &path, int depth) {
 }
 
 
-//// 删除一个文件夹含有某个字符串的文件
-//void MyTools::delete_files(const std::string &path, const std::string &name, bool isDelete, bool isPrint) {
-//
-//
-//    for (const auto &entry: std::filesystem::directory_iterator(path)) {
-//        // 如果当前条目是一个目录，递归进入这个目录
-//        if (std::filesystem::is_directory(entry.status())) {
-//            delete_files(entry.path().string(), name, isDelete, isPrint);
-//        }
-//
-//        if (entry.path().string().find(name) != std::string::npos) {
-//            if (isPrint) {
-//                std::cout << entry.path().string() << std::endl;
-//            }
-//            if (isDelete) {
-//                std::error_code ec; // 用于捕获错误
-//                std::filesystem::remove_all(entry.path(), ec); // 删除文件或目录
-//                if (ec) { // 如果有错误
-//                    std::cerr << "Error deleting: " << entry.path().string() << ". Reason: " << ec.message() << std::endl;
-//                }
-//            }
-//        }
-//    }
-//}
+
 
 void MyTools::delete_files(const std::string &path, const std::vector<std::string> &names, bool isDelete, bool isPrint) {
-    for (const auto &entry: std::filesystem::directory_iterator(path)) {
+    std::string result = path;
+    std::replace(result.begin(), result.end(), '\\', '/');
+    if (result.size() > 1 && result[1] == ':') {
+        char driveLetter = std::tolower(result[0]);
+        result = "/mnt/" + std::string(1, driveLetter) + result.substr(2);
+    }
+    for (const auto &entry: std::filesystem::directory_iterator(result)) {
         // 如果当前条目是一个目录，递归进入这个目录
         if (std::filesystem::is_directory(entry.status())) {
             delete_files(entry.path().string(), names, isDelete, isPrint);
@@ -109,7 +98,7 @@ void MyTools::delete_files(const std::string &path, const std::vector<std::strin
         for (const auto &name : names) {
             if (entry.path().string().find(name) != std::string::npos) {
                 if (isPrint) {
-                    std::cout << "    发现: " << entry.path().string() << std::endl;
+                    std::cout <<entry.path().string() << std::endl;
                 }
                 if (isDelete) {
                     std::error_code ec; // 用于捕获错误
