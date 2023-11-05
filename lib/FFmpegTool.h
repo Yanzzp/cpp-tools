@@ -14,6 +14,8 @@ class MyTools;
 class FFmpegTool {
 private:
     static void customErrorCallback(void* avcl, int level, const char* fmt, va_list vl);
+
+    static std::string windows_path_to_linux_path(std::string path);
 public:
     static int get_single_video_time(const std::string& filePath, bool isPrint= false);
 
@@ -21,6 +23,7 @@ public:
 
     void move_short_videos(const std::string& folderPath,int maxTime=120, bool isMove= false,bool isPrint= true);
 
+    void merge_videos(const std::string& path1, const std::string& path2, const std::string& outputPath, bool isPrint= true);
 };
 
 #endif
