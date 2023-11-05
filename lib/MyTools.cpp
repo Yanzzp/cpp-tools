@@ -1,8 +1,6 @@
 #include "MyTools.h"
 
 
-
-
 namespace fs = std::filesystem;
 
 
@@ -75,14 +73,9 @@ uintmax_t MyTools::get_file_size(std::string path) {
 }
 
 // 打印一个文件夹下的所有文件的路径
-void MyTools::print_all_files(const std::string &path, int depth) {
-    std::string result = path;
-    std::replace(result.begin(), result.end(), '\\', '/');
-    if (result.size() > 1 && result[1] == ':') {
-        char driveLetter = std::tolower(result[0]);
-        result = "/mnt/" + std::string(1, driveLetter) + result.substr(2);
-    }
-    for (const auto &entry: fs::directory_iterator(result)) {
+void MyTools::print_all_files(const std::string &folderPath, int depth) {
+    std::string path = windows_path_to_linux_path(folderPath);
+    for (const auto &entry: fs::directory_iterator(path)) {
         for (int i = 0; i < depth; ++i) {
             std::cout << "    "; // 用缩进表示层级
         }
@@ -128,7 +121,8 @@ void MyTools::delete_files(const std::string &folderPath, const std::vector<std:
 
 // 统计一个文件夹下的图片和视频的数量
 void MyTools::count_imgs_videos_and_audio(const std::string &folderPath, const std::string &option) {
-    std::string path = windows_path_to_linux_path(folderPath);;
+    std::string path = windows_path_to_linux_path(folderPath);
+
     for (const auto &entry: fs::recursive_directory_iterator(path)) {
         if (isImageFile(entry.path().filename().string())) {
             imageCount++;
@@ -143,46 +137,30 @@ void MyTools::count_imgs_videos_and_audio(const std::string &folderPath, const s
     std::cout << "音频的数量是: " << audioCount << std::endl;
 
     if (option == "txt") {
-        std::string txtFileName = folderPath + "/";
-        // 指定要创建的文件名
-        if (imageCount != 0) {
-            txtFileName += std::to_string(imageCount) + "P";
+        std::string txtFileName = path + "/" +
+                                  (imageCount ? std::to_string(imageCount) + "P" : "") +
+                                  (videoCount ? std::to_string(videoCount) + "V" : "") +
+                                  (audioCount ? std::to_string(audioCount) + "A" : "") +
+                                  (!(imageCount || videoCount || audioCount) ? "Empty" : "") +
+                                  ".txt";
+        fs::path fileToCreate(txtFileName);
+
+        // 检查文件是否存在，如果存在则删除
+        if (fs::exists(fileToCreate)) {
+            std::cout << "文件 " << txtFileName << " 已存在，将被覆盖。\n";
+            fs::remove(fileToCreate);
         }
-        if (videoCount != 0) {
-            txtFileName += std::to_string(videoCount) + "V";
-        }
-        if (audioCount != 0) {
-            txtFileName += std::to_string(audioCount) + "A";
-        }
-        txtFileName += ".txt";
+        // 创建并写入文件
         try {
-            fs::path fileToCreate(txtFileName);
-            if (!fs::exists(fileToCreate)) {
-                // 文件不存在，创建文件并打开以进行写入
-                std::ofstream outputFile(fileToCreate.string());
-                if (outputFile.is_open()) { // 检查文件是否成功打开
-                    outputFile << "图片的数量是: " << imageCount << "\n";
-                    outputFile << "视频的数量是: " << videoCount << "\n";
-                    outputFile << "音频的数量是: " << videoCount << "\n";
-                    outputFile.close();
-                    std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
-                } else {
-                    std::cerr << "无法打开文件 " << txtFileName << std::endl;
-                }
+            std::ofstream outputFile(fileToCreate.string());
+            if (outputFile.is_open()) {
+                outputFile << "图片的数量是: " << imageCount << "\n";
+                outputFile << "视频的数量是: " << videoCount << "\n";
+                outputFile << "音频的数量是: " << audioCount << "\n";
+                outputFile.close();
+                std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
             } else {
-                // 文件已存在，删除文件并重新创建
-                std::cout << "文件 " << txtFileName << " 已存在，删除文件并重新创建。\n";
-                fs::remove(txtFileName);
-                std::ofstream outputFile(fileToCreate.string());
-                if (outputFile.is_open()) { // 检查文件是否成功打开
-                    outputFile << "图片的数量是: " << imageCount << "\n";
-                    outputFile << "视频的数量是: " << videoCount << "\n";
-                    outputFile << "音频的数量是: " << videoCount << "\n";
-                    outputFile.close();
-//                    std::cout << "文件 " << txtFileName << " 创建并写入成功。\n";
-                } else {
-                    std::cerr << "无法打开文件 " << txtFileName << std::endl;
-                }
+                std::cerr << "无法打开文件 " << txtFileName << std::endl;
             }
         } catch (const std::exception &ex) {
             std::cerr << "发生错误: " << ex.what() << std::endl;
@@ -190,40 +168,35 @@ void MyTools::count_imgs_videos_and_audio(const std::string &folderPath, const s
     }
     if (option == "copy") {
         std::string textToCopy;
-        // 指定要创建的文件名
-        if (imageCount != 0) {
-            textToCopy += std::to_string(imageCount) + "P";
-        }
-        if (videoCount != 0) {
-            textToCopy += std::to_string(videoCount) + "V";
-        }
-        if (audioCount != 0) {
-            textToCopy += std::to_string(audioCount) + "A";
+
+        // 通过条件运算符合并三个条件的判断和字符串拼接
+        textToCopy += (imageCount != 0) ? std::to_string(imageCount) + "P" : "";
+        textToCopy += (videoCount != 0) ? std::to_string(videoCount) + "V" : "";
+        textToCopy += (audioCount != 0) ? std::to_string(audioCount) + "A" : "";
+
+        // 如果上面的统计都是0，textToCopy将为空
+        if (textToCopy.empty()) {
+            textToCopy = "Empty";  // 或者你可能想要一个指示"无内容"的消息
         }
 
+        // 输出到剪贴板结果
         std::cout << copy_to_clipboard(textToCopy) << std::endl;
-
     }
     if (option.empty()) {
-        if (imageCount != 0) {
-            folder_info[0] = std::to_string(imageCount) + "P";
-        }
-        if (videoCount != 0) {
-            folder_info[1] = std::to_string(videoCount) + "V";
-        }
-        if (audioCount != 0) {
-            folder_info[2] = std::to_string(audioCount) + "A";
-        }
+        folder_info[0] = (imageCount != 0) ? std::to_string(imageCount) + "P" : "";
+        folder_info[1] = (videoCount != 0) ? std::to_string(videoCount) + "V" : "";
+        folder_info[2] = (audioCount != 0) ? std::to_string(audioCount) + "A" : "";
     }
 }
 
 // 统计一个文件夹的大小
 void MyTools::get_folder_size(const std::string &folderPath, bool isPrint, bool printAll, bool keepData) {
+    std::string path = windows_path_to_linux_path(folderPath);
     // 是否保留之前文件的大小
     if (!keepData) {
         folderSize = 0;
     }
-    for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
+    for (const auto &entry: fs::recursive_directory_iterator(path)) {
         if (entry.is_regular_file()) {
             uintmax_t fileSize = get_file_size(entry.path().string());
             if (printAll) {
@@ -237,18 +210,31 @@ void MyTools::get_folder_size(const std::string &folderPath, bool isPrint, bool 
             }
         }
     }
-    float Size = static_cast<float>(this->folderSize) / 1024 / 1024;
-    bool isMB = true;
-    if (Size > 1024) {
-        Size /= 1024;
-        isMB = false;
+    uintmax_t sizeBytes = this->folderSize; // 保持原始大小，单位为字节
+    std::vector<std::string> units = {"B", "KB", "MB", "G", "T"}; // 单位数组
+    int unitIndex = 0; // 用于索引单位的数组
+    double displaySize = static_cast<double>(sizeBytes); // 用于显示的大小
+
+    // 循环通过1024除以大小，直到找到合适的单位
+    while (displaySize >= 1024 && unitIndex < units.size() - 1) {
+        displaySize /= 1024;
+        ++unitIndex;
     }
-    std::cout << std::fixed << std::setprecision(2);
+
+    // 根据单位决定是否显示小数位
+    std::streamsize precision = (unitIndex > 1) ? 2 : 0;
+    std::cout << std::fixed << std::setprecision(precision);
+
     if (isPrint) {
-        std::cout << "文件夹的大小是: " << Size << (isMB ? "MB" : "GB") << std::endl;
+        // 输出文件夹的大小，用适当的单位
+        std::cout << "文件夹的大小是: " << displaySize << units[unitIndex] << std::endl;
     }
-    std::string store_num = std::to_string(Size);
-    folder_info[3] = (store_num.substr(0, store_num.find('.') + 3) + (isMB ? "MB" : "GB"));
+
+    // 存储格式化后的文件夹大小信息
+    std::ostringstream storeStream;
+    storeStream << std::fixed << std::setprecision(precision) << displaySize << units[unitIndex];
+    folder_info[3] = storeStream.str();
+
 }
 
 void MyTools::multithread_get_folder_size(const std::string &folderPath, bool isPrint) {
