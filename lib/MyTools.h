@@ -27,6 +27,8 @@ class FFmpegTool;
 class MyTools {
 private:
 
+    bool linuxMode = true;
+
     int imageCount = 0;
     int videoCount = 0;
     int audioCount = 0;

@@ -74,7 +74,10 @@ uintmax_t MyTools::get_file_size(std::string path) {
 
 // 打印一个文件夹下的所有文件的路径
 void MyTools::print_all_files(const std::string &folderPath, int depth) {
-    std::string path = windows_path_to_linux_path(folderPath);
+    std::string path;
+    if(linuxMode){
+         path = windows_path_to_linux_path(folderPath);
+    }
     for (const auto &entry: fs::directory_iterator(path)) {
         for (int i = 0; i < depth; ++i) {
             std::cout << "    "; // 用缩进表示层级
@@ -92,7 +95,11 @@ void MyTools::print_all_files(const std::string &folderPath, int depth) {
 
 void MyTools::delete_files(const std::string &folderPath, const std::vector<std::string> &names, bool isDelete,
                            bool isPrint) {
-    std::string path = windows_path_to_linux_path(folderPath);
+    std::string path;
+    if(linuxMode){
+        path = windows_path_to_linux_path(folderPath);
+    }
+
     for (const auto &entry: std::filesystem::directory_iterator(path)) {
         // 如果当前条目是一个目录，递归进入这个目录
         if (std::filesystem::is_directory(entry.status())) {
@@ -121,7 +128,10 @@ void MyTools::delete_files(const std::string &folderPath, const std::vector<std:
 
 // 统计一个文件夹下的图片和视频的数量
 void MyTools::count_imgs_videos_and_audio(const std::string &folderPath, const std::string &option) {
-    std::string path = windows_path_to_linux_path(folderPath);
+    std::string path;
+    if(linuxMode){
+        path = windows_path_to_linux_path(folderPath);
+    }
 
     for (const auto &entry: fs::recursive_directory_iterator(path)) {
         if (isImageFile(entry.path().filename().string())) {
@@ -191,7 +201,10 @@ void MyTools::count_imgs_videos_and_audio(const std::string &folderPath, const s
 
 // 统计一个文件夹的大小
 void MyTools::get_folder_size(const std::string &folderPath, bool isPrint, bool printAll, bool keepData) {
-    std::string path = windows_path_to_linux_path(folderPath);
+    std::string path;
+    if(linuxMode){
+        path = windows_path_to_linux_path(folderPath);
+    }
     // 是否保留之前文件的大小
     if (!keepData) {
         folderSize = 0;
@@ -270,7 +283,10 @@ void MyTools::multithread_get_folder_size(const std::string &folderPath, bool is
 }
 
 void MyTools::get_folder_info(const std::string &folderPath) {
-    std::string path = windows_path_to_linux_path(folderPath);
+    std::string path;
+    if(linuxMode){
+        path = windows_path_to_linux_path(folderPath);
+    }
     std::cout << "文件夹的路径是: " << path << std::endl;
     std::cout << "文件夹的名称是: " << fs::path(path).filename() << std::endl;
     count_imgs_videos_and_audio(path);
