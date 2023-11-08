@@ -1,5 +1,4 @@
 #!/bin/bash
-echo "Running Git commands..."
 
 # 检查是否提供了命令行参数
 if [ -z "$1" ]; then
@@ -13,5 +12,3 @@ fi
 git add .
 git commit -m "$COMMIT_MESSAGE"
 git push
-
-echo "Git commands finished."
