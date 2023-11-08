@@ -115,11 +115,85 @@ void FFmpegTool::move_short_videos(const std::string &folderPath, int maxTime, b
     std::cout << "视频总数: " << videoCount << std::endl;
 }
 
-void FFmpegTool::merge_videos(const std::string &path1, const std::string &path2, const std::string &outputPath,
-                              bool isPrint) {
+std::vector<std::string> FFmpegTool::check_video_properties(const std::string &Path, bool isPrint) {
+    std::string filePath;
+    if (linuxMode) {
+        filePath = windows_path_to_linux_path(Path);
+    }
+    std::vector<std::string> result;
+    const char *filename = filePath.c_str();
+    AVFormatContext *pFormatCtx = avformat_alloc_context();
 
+    // 打开视频文件
+    if (avformat_open_input(&pFormatCtx, filename, NULL, NULL) != 0) {
+        std::cerr << "Could not open file: " << filename << std::endl;
+    }
 
+    // 检索流信息
+    if (avformat_find_stream_info(pFormatCtx, NULL) < 0) {
+        std::cerr << "Could not find stream information for file: " << filename << std::endl;
+    }
 
+    // 找到视频流
+    int videoStreamIndex = -1;
+    for (unsigned int i = 0; i < pFormatCtx->nb_streams; i++) {
+        if (pFormatCtx->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_VIDEO) {
+            videoStreamIndex = i;
+            break;
+        }
+    }
+
+    if (videoStreamIndex == -1) {
+        std::cerr << "Could not find video stream in file: " << filename << std::endl;
+    }
+
+    // 获取视频流的编解码器参数
+    AVCodecParameters *pCodecPar = pFormatCtx->streams[videoStreamIndex]->codecpar;
+
+    // 获取编解码器描述符
+    const AVCodecDescriptor *codec_desc = avcodec_descriptor_get(pCodecPar->codec_id);
+
+    double frame_rate = av_q2d(pFormatCtx->streams[videoStreamIndex]->avg_frame_rate);
+
+    // 使用ostringstream来进行转换
+    std::ostringstream stream;
+
+    // 检查小数部分是否为0
+    if (frame_rate - static_cast<int>(frame_rate) == 0.0) {
+        // 小数部分为0，只输出整数部分
+        stream << static_cast<int>(frame_rate);
+    } else {
+        // 小数部分不为0，保留两位小数
+        stream << std::fixed << std::setprecision(2) << frame_rate;
+    }
+
+    // 将ostringstream转换为string
+    std::string frame_rate_str = stream.str();
+
+    // 打印所需的信息
+    if (isPrint) {
+        std::cout << "File: " << filename << std::endl;
+        if (codec_desc) {
+            std::cout << "Codec: " << codec_desc->name << std::endl; // 打印编解码器的名称
+            result.emplace_back(codec_desc->name);
+        } else {
+            std::cout << "Codec ID: " << pCodecPar->codec_id << " (Unknown)" << std::endl; // 未知的编解码器ID
+            result.emplace_back(std::to_string(pCodecPar->codec_id));
+
+        }
+        std::cout << "Resolution: " << pCodecPar->width << "x" << pCodecPar->height << std::endl;
+        std::cout << "Frame rate: " << frame_rate_str << std::endl;
+        result.emplace_back(std::to_string(pCodecPar->width));
+        result.emplace_back(std::to_string(pCodecPar->height));
+        result.emplace_back(frame_rate_str);
+    }
+
+    // 关闭视频文件并清理
+    avformat_close_input(&pFormatCtx);
+    avformat_free_context(pFormatCtx);
+
+    return result;
 }
+
 
 
