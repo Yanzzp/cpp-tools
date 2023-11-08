@@ -1,10 +1,17 @@
 #include <iostream>
-#include <tencentcloud/core/TencentCloud.h>
-#include <tencentcloud/core/Credential.h>
-#include "lib/MyTools.h"
-int main(){
-    MyTools myTools;
 
-//    myTools.print_all_files("E:\\迅雷下载");
+using namespace std;
+
+
+
+int main() {
+
+    // 忘记释放指针 b 申请的内存, 从而导致内存泄露
+    int *a = new int;
+    int *b = new int[12];
+
+    delete a;
+
     return 0;
+
 }

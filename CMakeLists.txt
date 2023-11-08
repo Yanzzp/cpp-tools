@@ -9,7 +9,7 @@ pkg_check_modules(FFMPEG REQUIRED libavcodec libavformat libavutil)
 find_package(PythonLibs 3.10.12 REQUIRED)
 
 # 假设腾讯云 SDK 安装在了 /path/to/tencentcloud-sdk 路径下
-set(TENCENTCLOUD_SDK_PATH "/home/yanzzp/Download/tencentcloud-sdk-cpp")
+#set(TENCENTCLOUD_SDK_PATH "/home/yanzzp/Download/tencentcloud-sdk-cpp")
 
 # 包含腾讯云 SDK 头文件
 include_directories(${TENCENTCLOUD_SDK_PATH}/include)
