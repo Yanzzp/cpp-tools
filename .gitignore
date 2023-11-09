@@ -1,2 +1,9 @@
 /cmake-build-debug/
 /.idea/
+# Ignore all video files
+*.mp4
+*.mkv
+*.avi
+*.flv
+*.mov
+*.wmv

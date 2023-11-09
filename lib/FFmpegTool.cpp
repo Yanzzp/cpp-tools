@@ -183,16 +183,86 @@ std::vector<std::string> FFmpegTool::check_video_properties(const std::string &P
         }
         std::cout << "Resolution: " << pCodecPar->width << "x" << pCodecPar->height << std::endl;
         std::cout << "Frame rate: " << frame_rate_str << std::endl;
-        result.emplace_back(std::to_string(pCodecPar->width));
-        result.emplace_back(std::to_string(pCodecPar->height));
-        result.emplace_back(frame_rate_str);
     }
+    if (codec_desc) {
+        result.emplace_back(codec_desc->name);
+    } else {
+        result.emplace_back(std::to_string(pCodecPar->codec_id));
+
+    }
+    result.emplace_back(std::to_string(pCodecPar->width));
+    result.emplace_back(std::to_string(pCodecPar->height));
+    result.emplace_back(frame_rate_str);
 
     // 关闭视频文件并清理
     avformat_close_input(&pFormatCtx);
     avformat_free_context(pFormatCtx);
 
     return result;
+}
+
+void FFmpegTool::get_folder_video_properties(const std::string& folderPath, bool isPrint) {
+    std::string path = linuxMode ? windows_path_to_linux_path(folderPath) : folderPath;
+
+    std::vector<std::vector<std::string>> outputProperties;
+
+    for (const auto& entry : fs::recursive_directory_iterator(path)) {
+        if (MyTools::isVideoFile(entry.path().filename().string())) {
+            std::vector<std::string> temp = check_video_properties(entry.path().string(), isPrint);
+            std::vector<std::string> properties{entry.path().filename().string()};
+            properties.insert(properties.end(), temp.begin(), temp.end());
+            properties.emplace_back(entry.path().string());
+            outputProperties.push_back(properties);
+        }
+    }
+
+    fs::path outputPath = fs::path(path) / "output.txt";
+    std::ofstream outfile(outputPath); // 创建或打开文件
+
+    if (!outfile) {
+        // 文件未能打开，可能是由于权限问题或其他原因
+        std::cerr << "Unable to open file for writing." << '\n';
+        return;
+    }
+
+
+    std::map<std::pair<std::string, std::string>, std::vector<std::string>> groupedProperties;
+    for (const auto& props : outputProperties) {
+        if (props.size() >= 5) { // 确保有足够的属性信息
+            // 创建一个包含编码格式和分辨率的键
+            std::pair<std::string, std::string> key(props[1], props[2] + "x" + props[3]);
+            // 添加文件名到对应的分组中
+            groupedProperties[key].push_back(props[0]);
+        }
+    }
+
+    // 遍历 map 并输出每个分组的视频文件
+    for (const auto& group : groupedProperties) {
+        const auto& [key, filenames] = group;
+        const auto& [codec, resolution] = key;
+        outfile << "编码格式: " << codec << " 分辨率: " << resolution << '\n';
+
+        for (const auto& filename : filenames) {
+            // 查找完整路径和帧数
+            auto it = std::find_if(outputProperties.begin(), outputProperties.end(),
+                                   [&](const std::vector<std::string>& props) {
+                                       return props.size() > 0 && props[0] == filename;
+                                   });
+
+            if (it != outputProperties.end() && it->size() >= 6) {
+                // 输出文件名、路径和帧数
+                // 假设帧数是第五个元素（索引为4），这需要根据你的实际情况调整
+                outfile << "    文件名: " << filename
+                        << " 路径: " << it->at(it->size() - 1)
+                        << " 帧数: " << it->at(4) << '\n';
+            }
+        }
+        outfile << '\n';
+    }
+
+    outfile << "********************" << '\n';
+    // 关闭文件
+    outfile.close();
 }
 
 

@@ -1,0 +1,29 @@
+编码格式: h264 分辨率: 464x848
+    文件名: 4分钟身体流水.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/4分钟身体流水.mp4 帧数: 24
+    文件名: v9.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v9.mp4 帧数: 30.00
+    文件名: v10.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v10.mp4 帧数: 29.84
+    文件名: V6.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/V6.mp4 帧数: 24
+    文件名: v12.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v12.mp4 帧数: 24.00
+    文件名: v7.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v7.mp4 帧数: 24.01
+
+编码格式: h264 分辨率: 624x832
+    文件名: v3.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v3.mp4 帧数: 18.42
+    文件名: v4.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v4.mp4 帧数: 23.98
+
+编码格式: h264 分辨率: 624x848
+    文件名: v5.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v5.mp4 帧数: 24
+
+编码格式: h264 分辨率: 720x1280
+    文件名: v1.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v1.mp4 帧数: 21.13
+    文件名: v2.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v2.mp4 帧数: 24
+    文件名: 音频v14.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/音频v14.mp4 帧数: 23.95
+
+编码格式: h264 分辨率: 848x464
+    文件名: v11.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v11.mp4 帧数: 19.51
+    文件名: v13.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v13.mp4 帧数: 24.01
+    文件名: v8.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/v8.mp4 帧数: 24.01
+
+编码格式: h264 分辨率: 848x624
+    文件名: 9分钟ZW.mp4 路径: /home/yanzzp/MyCodeProject/CppProject/cpp-tools/v/9分钟ZW.mp4 帧数: 25
+
+********************

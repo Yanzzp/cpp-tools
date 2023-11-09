@@ -26,6 +26,8 @@ public:
     void move_short_videos(const std::string& folderPath,int maxTime=120, bool isMove= false,bool isPrint= true);
 
     std::vector<std::string> check_video_properties(const std::string &filePath, bool isPrint = false);
+
+    void get_folder_video_properties(const std::string &filePath, bool isPrint = false);
 };
 
 #endif
