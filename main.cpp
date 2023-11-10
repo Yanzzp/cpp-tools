@@ -12,7 +12,7 @@ int main() {
     for (const auto &property: properties) {
         std::cout << property << std::endl;
     }
-//    ffmpeg.get_folder_video_properties("/home/yanzzp/MyCodeProject/CppProject/cpp-tools/v", false);
+    ffmpeg.get_folder_video_properties("/home/yanzzp/MyCodeProject/CppProject/cpp-tools/v", false);
 
     return 0;
 }

@@ -124,6 +124,8 @@ std::vector<std::string> FFmpegTool::check_video_properties(const std::string &P
     const char *filename = filePath.c_str();
     AVFormatContext *pFormatCtx = avformat_alloc_context();
 
+
+
     // 打开视频文件
     if (avformat_open_input(&pFormatCtx, filename, NULL, NULL) != 0) {
         std::cerr << "Could not open file: " << filename << std::endl;
@@ -150,9 +152,17 @@ std::vector<std::string> FFmpegTool::check_video_properties(const std::string &P
     // 获取视频流的编解码器参数
     AVCodecParameters *pCodecPar = pFormatCtx->streams[videoStreamIndex]->codecpar;
 
+    // 获取视频流的比特率
+    int64_t bit_rate = pCodecPar->bit_rate / 1000;
+
+    // 获取视频流的时长
+    int64_t duration = pFormatCtx->duration + (pFormatCtx->duration <= INT64_MAX - 5000 ? 5000 : 0);
+    int64_t duration_in_seconds = duration / AV_TIME_BASE;
+
     // 获取编解码器描述符
     const AVCodecDescriptor *codec_desc = avcodec_descriptor_get(pCodecPar->codec_id);
 
+    // 获取帧率
     double frame_rate = av_q2d(pFormatCtx->streams[videoStreamIndex]->avg_frame_rate);
 
     // 使用ostringstream来进行转换
@@ -183,16 +193,19 @@ std::vector<std::string> FFmpegTool::check_video_properties(const std::string &P
         }
         std::cout << "Resolution: " << pCodecPar->width << "x" << pCodecPar->height << std::endl;
         std::cout << "Frame rate: " << frame_rate_str << std::endl;
+        std::cout << "Bit rate: " << bit_rate << "kbps" << std::endl;
+        std::cout << "Duration: " << duration_in_seconds << " seconds" << std::endl;
     }
     if (codec_desc) {
         result.emplace_back(codec_desc->name);
     } else {
         result.emplace_back(std::to_string(pCodecPar->codec_id));
-
     }
     result.emplace_back(std::to_string(pCodecPar->width));
     result.emplace_back(std::to_string(pCodecPar->height));
     result.emplace_back(frame_rate_str);
+    result.emplace_back(std::to_string(bit_rate));
+    result.emplace_back(std::to_string(duration_in_seconds));
 
     // 关闭视频文件并清理
     avformat_close_input(&pFormatCtx);
@@ -201,12 +214,12 @@ std::vector<std::string> FFmpegTool::check_video_properties(const std::string &P
     return result;
 }
 
-void FFmpegTool::get_folder_video_properties(const std::string& folderPath, bool isPrint) {
+void FFmpegTool::get_folder_video_properties(const std::string &folderPath, bool isPrint) {
     std::string path = linuxMode ? windows_path_to_linux_path(folderPath) : folderPath;
 
     std::vector<std::vector<std::string>> outputProperties;
 
-    for (const auto& entry : fs::recursive_directory_iterator(path)) {
+    for (const auto &entry: fs::recursive_directory_iterator(path)) {
         if (MyTools::isVideoFile(entry.path().filename().string())) {
             std::vector<std::string> temp = check_video_properties(entry.path().string(), isPrint);
             std::vector<std::string> properties{entry.path().filename().string()};
@@ -227,7 +240,7 @@ void FFmpegTool::get_folder_video_properties(const std::string& folderPath, bool
 
 
     std::map<std::pair<std::string, std::string>, std::vector<std::string>> groupedProperties;
-    for (const auto& props : outputProperties) {
+    for (const auto &props: outputProperties) {
         if (props.size() >= 5) { // 确保有足够的属性信息
             // 创建一个包含编码格式和分辨率的键
             std::pair<std::string, std::string> key(props[1], props[2] + "x" + props[3]);
@@ -237,30 +250,58 @@ void FFmpegTool::get_folder_video_properties(const std::string& folderPath, bool
     }
 
     // 遍历 map 并输出每个分组的视频文件
-    for (const auto& group : groupedProperties) {
-        const auto& [key, filenames] = group;
-        const auto& [codec, resolution] = key;
+    for (const auto &group: groupedProperties) {
+        const auto &[key, filenames] = group;
+        const auto &[codec, resolution] = key;
         outfile << "编码格式: " << codec << " 分辨率: " << resolution << '\n';
 
-        for (const auto& filename : filenames) {
+        for (const auto &filename: filenames) {
             // 查找完整路径和帧数
             auto it = std::find_if(outputProperties.begin(), outputProperties.end(),
-                                   [&](const std::vector<std::string>& props) {
+                                   [&](const std::vector<std::string> &props) {
                                        return props.size() > 0 && props[0] == filename;
                                    });
 
-            if (it != outputProperties.end() && it->size() >= 6) {
-                // 输出文件名、路径和帧数
-                // 假设帧数是第五个元素（索引为4），这需要根据你的实际情况调整
+            if (it != outputProperties.end() && it->size() >= 8) {
+
                 outfile << "    文件名: " << filename
-                        << " 路径: " << it->at(it->size() - 1)
-                        << " 帧数: " << it->at(4) << '\n';
+                        << " 路径: " << it->at(7)
+                        << " 帧数: " << it->at(4)
+                        << " 码率: " << it->at(5)
+                        << " 时长: " << it->at(6) << '\n';
+
             }
         }
         outfile << '\n';
     }
 
-    outfile << "********************" << '\n';
+    outfile << "********************" << "\n\n";
+
+    for (const auto &group: groupedProperties) {
+        const auto &[key, filenames] = group;
+        const auto &[codec, resolution] = key;
+
+        bool isFirst = true;
+
+        for (const auto &filename: filenames) {
+            // 查找完整路径
+            auto it = std::find_if(outputProperties.begin(), outputProperties.end(),
+                                   [&](const std::vector<std::string> &props) {
+                                       return props.size() > 0 && props[0] == filename;
+                                   });
+
+            if (it != outputProperties.end() && it->size() >= 8) {
+                // 如果是第一个文件，先输出编码格式和分辨率
+                if (isFirst) {
+                    outfile << "编码格式: " << codec << " 分辨率: " << resolution << '\n';
+                    isFirst = false;
+                }
+                // 按照指定格式输出文件路径
+                outfile << "file '" << it->at(7) << "'\n";
+            }
+        }
+        outfile << '\n'; // 每个分组后面加一个新行
+    }
     // 关闭文件
     outfile.close();
 }
