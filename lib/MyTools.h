@@ -48,15 +48,17 @@ private:
 
     static bool isAudioFile(const std::string &filename);
 
+
+
+
+public:
+    friend class FFmpegTool;
+
     static std::string windows_path_to_linux_path(std::string path);
 
     static std::string copy_to_clipboard(std::string str);
 
     uintmax_t get_file_size(std::string path);
-
-
-public:
-    friend class FFmpegTool;
 
     void print_all_files(const std::string &folderPath, int depth = 0);
 

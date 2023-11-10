@@ -1,42 +1,36 @@
 ## 这是我个人的C++关于管理文件的工具
 
-#### Mytools
+### MyTools Library 
 
-- #### print_all_files(打印出一个文件夹下的所有文件，以类似tree的格式)
+MyTools is a utility library that provides a set of functions to manipulate and retrieve information about files and directories on your filesystem. With MyTools, you can perform a variety of file operations like printing all files in a directory, deleting files, counting media files, changing file extensions, and more. 
 
-- #### delete_files(删除一个文件夹下面带有指定string的文件或者文件夹)
+#### Features 
 
-- #### count_imgs_videos_and_audio(计算一个文件夹下所有的图片/视频/音频数量)
-
-- #### get_folder_size(计算一个文件夹的大小)
-
-- #### move_files_to_main_folder(将一个文件夹下所有的文件移动到主路径下)
-
-- #### find_name(查找文件夹下是否有指定名称的文件或文件夹)
-
-- #### change_files_extension(修改一个文件夹下所有指定后缀的文件)
-
-- #### get_folder_info(获取一个文件夹下所有的图片/视频/音频数量以及文件夹大小并复制到粘贴板)
-
-#### FFmpegTool
-
-* #### eazy_multithread_functions(code_block, should_join)
-
-    传入一个代码块，如果should_join=true则使用join，否则使用detach
-
-* #### eazy_start_multithread_functions(Func func, bool thread_join)
-
-    需要用Lambda格式传入代码块，如果should_join=true则使用join，否则使用detach
-
-* #### move_short_videos(将一个文件夹下时长小于maxTime的所有音视频放到当前文件夹下的short目录中)
+- **windows_path_to_linux_path**: Convert Windows-style paths to Linux-style. 
+- **copy_to_clipboard**: Copy a given string to the system clipboard. 
+- **get_file_size**: Retrieve the size of a file.
+- **print_all_files**: Print all files in a directory in a tree-like format. 
+- **delete_files**: Delete files or directories containing specific names within a directory.
+- **count_imgs_videos_and_audio**: Count the number of image, video, and audio files in a directory. 
+- **get_folder_size**: Calculate the total size of a directory. 
+- **multithread_get_folder_size**: Calculate the total size of a directory using multithreading for efficiency. 
+- **get_folder_info**: Get a summary of media file counts and folder size, then copy the information to the clipboard. 
+- **change_files_extension**: Change the file extension of all matching files in a directory. 
+- **move_files_to_main_folder**: Move all files from subdirectories to the main directory.
 
 
 
-#### mutithread
+### FFmpegTool 
 
--   #### get_single_video_time(获取单个音频或者视频的时长)
+Class The `FFmpegTool` class is part of a C++ library that interfaces with FFmpeg, a powerful multimedia framework. This class provides a suite of methods for interacting with video files, enabling operations such as retrieving video durations, moving short videos, and checking video properties. It's designed to work in both Linux and Windows environments with ease.
 
--   #### get_folder_videos_time(输出一个文件夹下面所有音频或者视频的长度)
+#### Features 
 
-* #### move_short_videos(将一个文件夹下时长小于maxTime的所有音视频放到当前文件夹下的short目录中)
+- **get_single_video_time**: Retrieve the duration of a single video file. 
+- **get_folder_videos_time**: Calculate the total duration of all video files within a specified folder. 
+- **move_short_videos**: Move videos shorter than a specified duration to a different location. 
+- **check_video_properties**: Extract various properties from a video file, such as codec, resolution, and frame rate. 
+- **get_folder_video_properties**: Gather and list properties of all video files within a specified folder. 
+
+
 
