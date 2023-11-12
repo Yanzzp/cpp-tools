@@ -124,8 +124,6 @@ std::vector<std::string> FFmpegTool::check_video_properties(const std::string &P
     const char *filename = filePath.c_str();
     AVFormatContext *pFormatCtx = avformat_alloc_context();
 
-
-
     // 打开视频文件
     if (avformat_open_input(&pFormatCtx, filename, NULL, NULL) != 0) {
         std::cerr << "Could not open file: " << filename << std::endl;

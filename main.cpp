@@ -1,18 +1,12 @@
 #include <iostream>
-#include "lib/FFmpegTool.h"
+#include "lib/plugs.h"
 
 using namespace std;
 
 
-int main() {
-    FFmpegTool ffmpeg{.linuxMode=true};
-    std::vector<std::string> properties = ffmpeg.check_video_properties(
-            "E:\\分类\\BondageTea绳精病炮机调教合集【33V16GB】\\100.Sweet Girl Sexual Fantasies Part 2.mp4",
-            false);
-    for (const auto &property: properties) {
-        std::cout << property << std::endl;
-    }
-    ffmpeg.get_folder_video_properties("/home/yanzzp/MyCodeProject/CppProject/cpp-tools/v", false);
+int main(){
+    MyTools myTools;
+    myTools.multithread_get_folder_size("D:\\EdgeDownload\\小说\\全部合集");
 
     return 0;
 }

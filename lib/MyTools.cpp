@@ -253,7 +253,11 @@ void MyTools::get_folder_size(const std::string &folderPath, bool isPrint, bool 
 void MyTools::multithread_get_folder_size(const std::string &folderPath, bool isPrint) {
     folderSize = 0;
     int count = 0;
-    for (const auto &entry: fs::directory_iterator(folderPath)) {
+    std::string path;
+    if(linuxMode){
+        path = windows_path_to_linux_path(folderPath);
+    }
+    for (const auto &entry: fs::directory_iterator(path)) {
         if (entry.is_directory()) {
             count++;
         }
@@ -263,7 +267,7 @@ void MyTools::multithread_get_folder_size(const std::string &folderPath, bool is
     }
     std::vector<std::thread> threads;
     if (count >= 4) {
-        for (const auto &entry: fs::directory_iterator(folderPath)) {
+        for (const auto &entry: fs::directory_iterator(path)) {
             if (entry.is_directory()) {
                 threads.emplace_back(&MyTools::get_folder_size, this, entry.path().string(), false, false, true);
             } else {
@@ -271,7 +275,7 @@ void MyTools::multithread_get_folder_size(const std::string &folderPath, bool is
             }
         }
     } else {
-        get_folder_size(folderPath, false);
+        get_folder_size(path, false);
     }
 
     for (auto &thread: threads) {
