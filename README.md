@@ -1,5 +1,17 @@
 ## 这是我个人的C++关于管理文件的工具
 
+## 安装
+
+在Linux环境下使用一下命令来安装所需要的库：
+
+``` sh
+chmod +x ./shells/install_packets.sh
+```
+
+
+
+## 工具类介绍
+
 ### MyTools Library 
 
 MyTools is a utility library that provides a set of functions to manipulate and retrieve information about files and directories on your filesystem. With MyTools, you can perform a variety of file operations like printing all files in a directory, deleting files, counting media files, changing file extensions, and more. 
