@@ -18,6 +18,7 @@ add_executable(cpp-tools main.cpp
         lib/MyTools.cpp
         lib/FFmpegTool.cpp
         lib/plugs.h
+        lib/threadpools.h
 )
 
 target_include_directories(cpp-tools PRIVATE
