@@ -6,13 +6,16 @@ set(CMAKE_CXX_STANDARD 20)
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(FFMPEG REQUIRED libavcodec libavformat libavutil)
 
+# 包含 MySQL 头文件路径
+include_directories(/usr/include/mysql)
+
 #find_package(PythonLibs 3.10.12 REQUIRED)
 
 # 假设腾讯云 SDK 安装在了 /path/to/tencentcloud-sdk 路径下
 #set(TENCENTCLOUD_SDK_PATH "/home/yanzzp/Download/tencentcloud-sdk-cpp")
 
 # 包含腾讯云 SDK 头文件
-include_directories(${TENCENTCLOUD_SDK_PATH}/include)
+#include_directories(${TENCENTCLOUD_SDK_PATH}/include)
 
 add_executable(cpp-tools main.cpp
         lib/MyTools.cpp
@@ -23,6 +26,8 @@ add_executable(cpp-tools main.cpp
 
 target_include_directories(cpp-tools PRIVATE
         ${FFMPEG_INCLUDE_DIRS}
+        # 添加 MySQL 库文件路径
+        /usr/lib/x86_64-linux-gnu
 #        ${PYTHON_INCLUDE_DIRS}
 )
 
@@ -35,6 +40,8 @@ target_link_directories(cpp-tools PRIVATE
 target_link_libraries(cpp-tools
         PRIVATE
         ${FFMPEG_LIBRARIES}
+        mysqlclient
+        mysqlcppconn
 #        ${PYTHON_LIBRARIES}
         # 链接腾讯云 SDK 核心库
 #        tencentcloud-sdk-cpp-core
