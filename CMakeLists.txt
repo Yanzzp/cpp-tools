@@ -22,6 +22,9 @@ add_executable(cpp-tools main.cpp
         lib/FFmpegTool.cpp
         lib/plugs.h
         lib/threadpools.h
+        lib/database/Database.h
+        lib/database/MySQLDatabase.cpp
+        lib/database/MySQLDatabase.h
 )
 
 target_include_directories(cpp-tools PRIVATE
