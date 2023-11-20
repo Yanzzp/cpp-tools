@@ -14,8 +14,6 @@ class FFmpegTool : public Tools{
 private:
 
     static void customErrorCallback(void* avcl, int level, const char* fmt, va_list vl);
-
-    static std::string windows_path_to_linux_path(std::string path);
 public:
     static int get_single_video_time(const std::string& filePath, bool isPrint= false);
 

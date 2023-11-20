@@ -25,9 +25,6 @@ protected:
 public:
     static bool linuxMode;
 
-
-
-
     static bool isImageFile(const std::string &filename);
 
     static bool isVideoFile(const std::string &filename);

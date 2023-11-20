@@ -2,15 +2,6 @@
 
 namespace fs = std::filesystem;
 
-std::string FFmpegTool::windows_path_to_linux_path(std::string path) {
-    std::string result = std::move(path);
-    std::replace(result.begin(), result.end(), '\\', '/');
-    if (result.size() > 1 && result[1] == ':') {
-        char driveLetter = std::tolower(result[0]);
-        result = "/mnt/" + std::string(1, driveLetter) + result.substr(2);
-    }
-    return result;
-}
 
 // 自定义错误处理回调函数
 void FFmpegTool::customErrorCallback(void *avcl, int level, const char *fmt, va_list vl) {
