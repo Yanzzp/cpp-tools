@@ -311,9 +311,13 @@ void MyTools::get_folder_info(const std::string &folderPath) {
 
 }
 
-void MyTools::change_files_extension(const std::string &folderPath, std::string newExtension, std::string oldExtension,
+void MyTools::change_files_extension(const std::string &Path, std::string newExtension, std::string oldExtension,
                                      bool isChange,
                                      bool option) {
+    std::string folderPath;
+    if(linuxMode){
+        folderPath = windows_path_to_linux_path(Path);
+    }
     if (option) {
         for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
             if (entry.is_regular_file()) {

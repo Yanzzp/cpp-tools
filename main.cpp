@@ -1,15 +1,12 @@
 #include  <iostream>
-#include "lib/database//MySQLDatabase.h"
+#include "lib/plugs.h"
 
 
 using namespace std;
 
 
 int main() {
-    MySQLDatabase myDb;
-    if(myDb.connect("yanzzp.xyz","YanSQL","123zpy","ToolsDB")){
-        cout << "连接成功" << endl;
-    }
-
+    MyTools tools;
+    tools.delete_files("E:\\BaiduNetdiskDownload\\娜美", {"7z","地址","污喵社","无用文件"}, true);
     return 0;
 }
