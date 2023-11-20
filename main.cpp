@@ -6,7 +6,7 @@ using namespace std;
 
 
 int main() {
-    MyTools tools;
-    cout << "Hello, World!" << endl;
+    FileOrganizer fileOrganizer;
+    FFmpegTool ffmpegTool;
     return 0;
 }

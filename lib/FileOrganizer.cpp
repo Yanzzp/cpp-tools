@@ -1,11 +1,11 @@
-#include "MyTools.h"
+#include "FileOrganizer.h"
 
 
 namespace fs = std::filesystem;
 
 
 // 获取文件的大小
-uintmax_t MyTools::get_file_size(std::string path) {
+uintmax_t FileOrganizer::get_file_size(std::string path) {
     std::lock_guard<std::mutex> lockGuard(fileSizeMutex);
     std::error_code ec{};
     auto size = std::filesystem::file_size(path, ec);
@@ -19,7 +19,7 @@ uintmax_t MyTools::get_file_size(std::string path) {
 }
 
 // 打印一个文件夹下的所有文件的路径
-void MyTools::print_all_files(const std::string &folderPath, int depth) {
+void FileOrganizer::print_all_files(const std::string &folderPath, int depth) {
     std::string path;
     if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);
@@ -39,8 +39,8 @@ void MyTools::print_all_files(const std::string &folderPath, int depth) {
 }
 
 
-void MyTools::delete_files(const std::string &folderPath, const std::vector<std::string> &names, bool isDelete,
-                           bool isPrint) {
+void FileOrganizer::delete_files(const std::string &folderPath, const std::vector<std::string> &names, bool isDelete,
+                                 bool isPrint) {
     std::string path;
     if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);
@@ -73,7 +73,7 @@ void MyTools::delete_files(const std::string &folderPath, const std::vector<std:
 
 
 // 统计一个文件夹下的图片和视频的数量
-void MyTools::count_imgs_videos_and_audio(const std::string &folderPath, const std::string &option) {
+void FileOrganizer::count_imgs_videos_and_audio(const std::string &folderPath, const std::string &option) {
     std::string path;
     if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);
@@ -146,7 +146,7 @@ void MyTools::count_imgs_videos_and_audio(const std::string &folderPath, const s
 }
 
 // 统计一个文件夹的大小
-void MyTools::get_folder_size(const std::string &folderPath, bool isPrint, bool printAll, bool keepData) {
+void FileOrganizer::get_folder_size(const std::string &folderPath, bool isPrint, bool printAll, bool keepData) {
     std::string path;
     if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);
@@ -196,7 +196,7 @@ void MyTools::get_folder_size(const std::string &folderPath, bool isPrint, bool 
 
 }
 
-void MyTools::multithread_get_folder_size(const std::string &folderPath, bool isPrint) {
+void FileOrganizer::multithread_get_folder_size(const std::string &folderPath, bool isPrint) {
     folderSize = 0;
     int count = 0;
     std::string path;
@@ -215,7 +215,7 @@ void MyTools::multithread_get_folder_size(const std::string &folderPath, bool is
     if (count >= 4) {
         for (const auto &entry: fs::directory_iterator(path)) {
             if (entry.is_directory()) {
-                threads.emplace_back(&MyTools::get_folder_size, this, entry.path().string(), false, false, true);
+                threads.emplace_back(&FileOrganizer::get_folder_size, this, entry.path().string(), false, false, true);
             } else {
                 get_file_size(entry.path().string());
             }
@@ -232,7 +232,7 @@ void MyTools::multithread_get_folder_size(const std::string &folderPath, bool is
 
 }
 
-void MyTools::get_folder_info(const std::string &folderPath) {
+void FileOrganizer::get_folder_info(const std::string &folderPath) {
     std::string path;
     if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);
@@ -257,9 +257,9 @@ void MyTools::get_folder_info(const std::string &folderPath) {
 
 }
 
-void MyTools::change_files_extension(const std::string &Path, std::string newExtension, std::string oldExtension,
-                                     bool isChange,
-                                     bool option) {
+void FileOrganizer::change_files_extension(const std::string &Path, std::string newExtension, std::string oldExtension,
+                                           bool isChange,
+                                           bool option) {
     std::string folderPath;
     if (linuxMode) {
         folderPath = windows_path_to_linux_path(Path);
@@ -302,7 +302,7 @@ void MyTools::change_files_extension(const std::string &Path, std::string newExt
     }
 }
 
-void MyTools::move_files_to_main_folder(const std::string &folderPath, bool isMove) {
+void FileOrganizer::move_files_to_main_folder(const std::string &folderPath, bool isMove) {
     for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
         if (entry.is_regular_file()) {
             if (isMove) {

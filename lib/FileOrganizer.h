@@ -3,17 +3,9 @@
 #define CPP_TOOLS_H
 
 
-#include <vector> // 包含向量库，用于存储文件名中的数字列表
-#include <algorithm> // 包含算法库，用于对数字列表进行排序
-#include <fstream>
-#include <filesystem> // 包含文件系统库，用于处理文件和目录操作
-#include <regex>
-#include <thread>
-#include <chrono>   // 包含时间库，用于计算函数运行时间
-#include <mutex>
+
 #include "tools.h"
 
-#include "multithread.h"
 
 #define print "print"
 #define txt "txt"
@@ -23,7 +15,7 @@
 class FFmpegTool;
 
 
-class MyTools : public Tools{
+class FileOrganizer : public Tools{
 private:
 
 

@@ -18,7 +18,7 @@ include_directories(/usr/include/mysql)
 #include_directories(${TENCENTCLOUD_SDK_PATH}/include)
 
 add_executable(cpp-tools main.cpp
-        lib/MyTools.cpp
+        lib/FileOrganizer.cpp
         lib/FFmpegTool.cpp
         lib/plugs.h
         lib/threadpools.h

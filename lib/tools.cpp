@@ -1,5 +1,12 @@
 #include "tools.h"
 
+bool Tools::linuxMode = true;
+
+const std::set<std::string> Tools::imageExtensions = {".jpg", ".jpeg", ".png", ".bmp", ".gif"};
+const std::set<std::string> Tools::videoExtensions = {".mp4", ".avi", ".mkv", ".mov", ".wmv"};
+const std::set<std::string> Tools::audioExtensions = {".mp3", ".wav", ".flac", ".ape", ".aac"};
+
+
 // 判断是否为图像文件
 bool Tools::isImageFile(const std::string &filename) {
     // 根据文件扩展名判断是否为图像文件
