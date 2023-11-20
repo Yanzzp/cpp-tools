@@ -1,8 +1,8 @@
-#pragma once
+
 #ifndef CPP_TOOLS_H
 #define CPP_TOOLS_H
 
-#include <iostream> // 包含输入输出流库，用于输出信息到终端
+
 #include <vector> // 包含向量库，用于存储文件名中的数字列表
 #include <algorithm> // 包含算法库，用于对数字列表进行排序
 #include <fstream>
@@ -11,8 +11,7 @@
 #include <thread>
 #include <chrono>   // 包含时间库，用于计算函数运行时间
 #include <mutex>
-#include <set>
-
+#include "tools.h"
 
 #include "multithread.h"
 
@@ -24,10 +23,10 @@
 class FFmpegTool;
 
 
-class MyTools {
+class MyTools : public Tools{
 private:
 
-    bool linuxMode = true;
+
 
     int imageCount = 0;
     int videoCount = 0;
@@ -38,25 +37,12 @@ private:
     uintmax_t folderSize = 0;
     std::mutex fileSizeMutex;
 
-    static const std::set<std::string> imageExtensions;
-    static const std::set<std::string> videoExtensions;
-    static const std::set<std::string> audioExtensions;
-
-    static bool isImageFile(const std::string &filename);
-
-    static bool isVideoFile(const std::string &filename);
-
-    static bool isAudioFile(const std::string &filename);
-
-
 
 
 public:
     friend class FFmpegTool;
 
-    static std::string windows_path_to_linux_path(std::string path);
 
-    static std::string copy_to_clipboard(std::string str);
 
     uintmax_t get_file_size(std::string path);
 

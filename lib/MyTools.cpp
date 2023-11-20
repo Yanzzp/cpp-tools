@@ -4,60 +4,6 @@
 namespace fs = std::filesystem;
 
 
-const std::set<std::string> MyTools::imageExtensions = {".jpg", ".jpeg", ".png", ".bmp", ".gif"};
-const std::set<std::string> MyTools::videoExtensions = {".mp4", ".avi", ".mkv", ".mov", ".wmv"};
-const std::set<std::string> MyTools::audioExtensions = {".mp3", ".wav", ".flac", ".ape", ".aac"};
-
-// 判断是否为图像文件
-bool MyTools::isImageFile(const std::string &filename) {
-    // 根据文件扩展名判断是否为图像文件
-    for (const std::string &extension: imageExtensions) {
-        if (filename.find(extension) != std::string::npos) {
-            return true;
-        }
-    }
-    return false;
-}
-
-// 判断是否为视频文件
-bool MyTools::isVideoFile(const std::string &filename) {
-    // 根据文件扩展名判断是否为视频文件
-    for (const std::string &extension: videoExtensions) {
-        if (filename.find(extension) != std::string::npos) {
-            return true;
-        }
-    }
-    return false;
-}
-
-// 判断是否为音频文件
-bool MyTools::isAudioFile(const std::string &filename) {
-    // 根据文件扩展名判断是否为视频文件
-    for (const std::string &extension: audioExtensions) {
-        if (filename.find(extension) != std::string::npos) {
-            return true;
-        }
-    }
-    return false;
-}
-
-std::string MyTools::windows_path_to_linux_path(std::string path) {
-    std::string result = std::move(path);
-    std::replace(result.begin(), result.end(), '\\', '/');
-    if (result.size() > 1 && result[1] == ':') {
-        char driveLetter = std::tolower(result[0]);
-        result = "/mnt/" + std::string(1, driveLetter) + result.substr(2);
-    }
-    return result;
-}
-
-std::string MyTools::copy_to_clipboard(std::string str) {
-    std::string cmd = "echo \"" + str + "\" | clip.exe";
-    std::system(cmd.c_str());
-    return str;
-}
-
-
 // 获取文件的大小
 uintmax_t MyTools::get_file_size(std::string path) {
     std::lock_guard<std::mutex> lockGuard(fileSizeMutex);
@@ -75,8 +21,8 @@ uintmax_t MyTools::get_file_size(std::string path) {
 // 打印一个文件夹下的所有文件的路径
 void MyTools::print_all_files(const std::string &folderPath, int depth) {
     std::string path;
-    if(linuxMode){
-         path = windows_path_to_linux_path(folderPath);
+    if (linuxMode) {
+        path = windows_path_to_linux_path(folderPath);
     }
     for (const auto &entry: fs::directory_iterator(path)) {
         for (int i = 0; i < depth; ++i) {
@@ -96,7 +42,7 @@ void MyTools::print_all_files(const std::string &folderPath, int depth) {
 void MyTools::delete_files(const std::string &folderPath, const std::vector<std::string> &names, bool isDelete,
                            bool isPrint) {
     std::string path;
-    if(linuxMode){
+    if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);
     }
 
@@ -129,7 +75,7 @@ void MyTools::delete_files(const std::string &folderPath, const std::vector<std:
 // 统计一个文件夹下的图片和视频的数量
 void MyTools::count_imgs_videos_and_audio(const std::string &folderPath, const std::string &option) {
     std::string path;
-    if(linuxMode){
+    if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);
     }
 
@@ -202,7 +148,7 @@ void MyTools::count_imgs_videos_and_audio(const std::string &folderPath, const s
 // 统计一个文件夹的大小
 void MyTools::get_folder_size(const std::string &folderPath, bool isPrint, bool printAll, bool keepData) {
     std::string path;
-    if(linuxMode){
+    if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);
     }
     // 是否保留之前文件的大小
@@ -254,7 +200,7 @@ void MyTools::multithread_get_folder_size(const std::string &folderPath, bool is
     folderSize = 0;
     int count = 0;
     std::string path;
-    if(linuxMode){
+    if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);
     }
     for (const auto &entry: fs::directory_iterator(path)) {
@@ -288,7 +234,7 @@ void MyTools::multithread_get_folder_size(const std::string &folderPath, bool is
 
 void MyTools::get_folder_info(const std::string &folderPath) {
     std::string path;
-    if(linuxMode){
+    if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);
     }
     std::cout << "文件夹的路径是: " << path << std::endl;
@@ -315,7 +261,7 @@ void MyTools::change_files_extension(const std::string &Path, std::string newExt
                                      bool isChange,
                                      bool option) {
     std::string folderPath;
-    if(linuxMode){
+    if (linuxMode) {
         folderPath = windows_path_to_linux_path(Path);
     }
     if (option) {

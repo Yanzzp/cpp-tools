@@ -25,6 +25,8 @@ add_executable(cpp-tools main.cpp
         lib/database/Database.h
         lib/database/MySQLDatabase.cpp
         lib/database/MySQLDatabase.h
+        lib/tools.h
+        lib/tools.cpp
 )
 
 target_include_directories(cpp-tools PRIVATE
