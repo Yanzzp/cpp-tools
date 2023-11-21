@@ -18,6 +18,19 @@ uintmax_t FileOrganizer::get_file_size(std::string path) {
     return size;
 }
 
+// 获取文件的大小
+void FileOrganizer::get_file_size1(std::string path, std::atomic<uintmax_t> &fileSize) {
+    std::lock_guard<std::mutex> lockGuard(fileSizeMutex);
+    std::error_code ec{};
+    auto size = std::filesystem::file_size(path, ec);
+    if (ec == std::error_code{}) {
+        fileSize += size;
+    } else {
+        std::cout << "Error accessing file '" << path
+                  << "' message: " << ec.message() << std::endl;
+    }
+}
+
 // 打印一个文件夹下的所有文件的路径
 void FileOrganizer::print_all_files(const std::string &folderPath, int depth) {
     std::string path;
@@ -199,10 +212,7 @@ void FileOrganizer::get_folder_size(const std::string &folderPath, bool isPrint,
 void FileOrganizer::multithread_get_folder_size(const std::string &folderPath, bool isPrint) {
     folderSize = 0;
     int count = 0;
-    std::string path;
-    if (linuxMode) {
-        path = windows_path_to_linux_path(folderPath);
-    }
+    std::string path = linuxMode ? windows_path_to_linux_path(folderPath) : folderPath;
     for (const auto &entry: fs::directory_iterator(path)) {
         if (entry.is_directory()) {
             count++;
@@ -229,8 +239,45 @@ void FileOrganizer::multithread_get_folder_size(const std::string &folderPath, b
     }
     std::cout << std::fixed << std::setprecision(2);
     std::cout << "文件夹的大小是: " << folder_info[3] << std::endl;
-
 }
+
+//void FileOrganizer::threadpool_get_folder_size(const std::string &path, bool isPrint) {
+//    std::threadpool pool(48);
+//    std::vector<std::future<void>> futures;
+//    std::string folderPath = linuxMode ? windows_path_to_linux_path(path) : path;
+//    std::atomic<uintmax_t> folderSize = 0;
+//    for (const auto &entry: fs::recursive_directory_iterator(folderPath)) {
+//        if (entry.is_regular_file()) {
+//            auto future = pool.commit(
+//                    std::bind(&FileOrganizer::get_file_size1, this, entry.path().string(), std::ref(folderSize)));
+//            futures.push_back(std::move(future));
+////            auto future = pool.commit([this, &entry, &folderSize]() {
+////                return this->get_file_size1(entry.path().string(), folderSize);
+////            });
+//        }
+//    }
+//    for (auto &f: futures) {
+//        f.get();
+//    }
+//    std::vector<std::string> units = {"B", "KB", "MB", "G", "T"}; // 单位数组
+//    int unitIndex = 0; // 用于索引单位的数组
+//    double displaySize = static_cast<double>(folderSize); // 用于显示的大小
+//
+//    // 循环通过1024除以大小，直到找到合适的单位
+//    while (displaySize >= 1024 && unitIndex < units.size() - 1) {
+//        displaySize /= 1024;
+//        ++unitIndex;
+//    }
+//
+//    // 根据单位决定是否显示小数位
+//    std::streamsize precision = (unitIndex > 1) ? 2 : 0;
+//    std::cout << std::fixed << std::setprecision(precision);
+//
+//    if (isPrint) {
+//        // 输出文件夹的大小，用适当的单位
+//        std::cout << "文件夹的大小是: " << displaySize << units[unitIndex] << std::endl;
+//    }
+//}
 
 void FileOrganizer::get_folder_info(const std::string &folderPath) {
     std::string path;
@@ -317,6 +364,28 @@ void FileOrganizer::move_files_to_main_folder(const std::string &folderPath, boo
     }
 }
 
+std::string FileOrganizer::cli_get_file_size(const std::string &path,bool isPrint) {
+    std::string folderPath = linuxMode ? windows_path_to_linux_path(path) : path;
+    std::string command = "du -sh --block-size=K " + folderPath;
+    std::string output = exec_command(command.c_str());
+
+    // 提取数字部分
+    size_t pos = output.find("K");
+    double displaySize;
+    displaySize = std::stod(output.substr(0, pos));
+
+    std::vector<std::string> units = {"KB", "MB", "GB", "TB"};
+    int unitIndex = 0;
+    while (displaySize >= 1024.0 && unitIndex < units.size() - 1) {
+        displaySize /= 1024.0;
+        ++unitIndex;
+    }
+
+    std::ostringstream stream;
+    stream << std::fixed << std::setprecision(2) << displaySize << units[unitIndex];
+    std::cout << stream.str() << std::endl;
+    return stream.str();
+}
 
 
 

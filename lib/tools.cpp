@@ -55,3 +55,23 @@ std::string Tools::copy_to_clipboard(std::string str) {
     std::system(cmd.c_str());
     return str;
 }
+
+
+std::string Tools::exec_command(const char *cmd) {
+    std::array<char, 128> buffer{};
+    std::string result;
+    try {
+        std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd, "r"), pclose);
+        if (!pipe) {
+            throw std::runtime_error("popen() failed!");
+        }
+        while (fgets(buffer.data(), buffer.size(), pipe.get()) != nullptr) {
+            result += buffer.data();
+        }
+    } catch (const std::runtime_error &e) {
+        // 返回错误消息，而不是抛出异常
+        return std::string("Error: ") + e.what();
+    }
+
+    return result;
+}

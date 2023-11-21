@@ -1,12 +1,9 @@
-#include  <iostream>
 #include "lib/plugs.h"
-
 
 using namespace std;
 
-
 int main() {
     FileOrganizer fileOrganizer;
-    FFmpegTool ffmpegTool;
+    fileOrganizer.cli_get_file_size("E:\\迅雷下载");
     return 0;
 }

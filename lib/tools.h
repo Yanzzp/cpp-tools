@@ -12,7 +12,7 @@
 #include <chrono>   // 包含时间库，用于计算函数运行时间
 #include <mutex>
 
-
+#include "threadpools.h"
 #include "multithread.h"
 
 
@@ -34,6 +34,8 @@ public:
     static std::string windows_path_to_linux_path(std::string path);
 
     static std::string copy_to_clipboard(std::string str);
+
+    std::string exec_command(const char* cmd);
 };
 
 
