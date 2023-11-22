@@ -1,7 +1,7 @@
 #include "FFmpegTool.h"
 
 namespace fs = std::filesystem;
-
+using namespace std;
 
 // 自定义错误处理回调函数
 void FFmpegTool::customErrorCallback(void *avcl, int level, const char *fmt, va_list vl) {
@@ -16,6 +16,21 @@ void FFmpegTool::customErrorCallback(void *avcl, int level, const char *fmt, va_
         std::cerr << "视频文件: " << videoFilePath << ", FFmpeg Error: " << logMessage << std::endl;
     }
 }
+
+std::string FFmpegTool::convert_seconds_to_time_format(int total_seconds) {
+    int hours = total_seconds / 3600;
+    int minutes = (total_seconds % 3600) / 60;
+    int seconds = total_seconds % 60;
+
+    std::stringstream ss;
+    ss << hours << ":"
+       << std::setfill('0') << std::setw(2) << minutes << ":"
+       << std::setfill('0') << std::setw(2) << seconds;
+
+    return ss.str();
+}
+
+
 
 int FFmpegTool::get_single_video_time(const std::string &filePath, bool isPrint) {
     std::string linuxPath = windows_path_to_linux_path(filePath);
@@ -53,6 +68,64 @@ int FFmpegTool::get_single_video_time(const std::string &filePath, bool isPrint)
     avformat_close_input(&formatContext);
 
     return returnSeconds;
+}
+
+std::vector<std::string> FFmpegTool::get_video_details(const std::string &path) {
+    /*
+     * 1. 获取视频文件的详细信息
+     * 2. 返回一个vector，包含视频文件的详细信息
+     * 3. {"路径", "文件名", "编码格式", "分辨率", "帧率", "码率", "时长"}
+     */
+    string filePath = windows_path_to_linux_path(path);
+    vector<std::string> videoInfo;
+    // {"路径", "文件名", "编码格式", "分辨率", "帧率", "码率", "时长"}
+    videoInfo.push_back(linux_path_to_windows_path(filePath));
+    videoInfo.push_back(fs::path(filePath).filename().string());
+
+    avformat_network_init();
+
+    // 打开媒体文件
+    AVFormatContext* formatContext = avformat_alloc_context();
+    if (avformat_open_input(&formatContext, path.c_str(), NULL, NULL) != 0) {
+        std::cerr << "无法打开文件：" << path << std::endl;
+        return videoInfo;
+    }
+
+    // 获取流信息
+    if (avformat_find_stream_info(formatContext, NULL) < 0) {
+        std::cerr << "无法获取流信息" << std::endl;
+        return videoInfo;
+    }
+
+    // 查找视频流
+    AVStream* videoStream = nullptr;
+    for (unsigned int i = 0; i < formatContext->nb_streams; i++) {
+        if (formatContext->streams[i]->codecpar->codec_type == AVMEDIA_TYPE_VIDEO) {
+            videoStream = formatContext->streams[i];
+            break;
+        }
+    }
+
+    if (!videoStream) {
+        std::cerr << "未找到视频流" << std::endl;
+        return videoInfo;
+    }
+
+    // 获取编码器上下文
+    AVCodecParameters* codecParams = videoStream->codecpar;
+
+    // 获取视频详细信息
+    videoInfo.emplace_back(avcodec_get_name(codecParams->codec_id)); // 编码格式
+    videoInfo.emplace_back(std::to_string(codecParams->width) + "x" + std::to_string(codecParams->height)); // 分辨率
+    videoInfo.emplace_back(std::to_string(videoStream->avg_frame_rate.num / (double)videoStream->avg_frame_rate.den)); // 帧率
+    videoInfo.emplace_back(std::to_string(codecParams->bit_rate)); // 码率
+
+    videoInfo.emplace_back(to_string(formatContext->duration / AV_TIME_BASE)); // 时长（秒）
+
+    // 清理
+    avformat_close_input(&formatContext);
+    avformat_free_context(formatContext);
+    avformat_network_deinit();
 }
 
 

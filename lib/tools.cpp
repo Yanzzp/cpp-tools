@@ -75,3 +75,21 @@ std::string Tools::exec_command(const char *cmd) {
 
     return result;
 }
+
+std::string Tools::linux_path_to_windows_path(std::string path) {
+    // 检查是否以 /mnt/ 开始
+    if (path.size() > 5 && path.substr(0, 5) == "/mnt/") {
+        // 提取盘符并转换为大写
+        char driveLetter = std::toupper(path[5]);
+
+        // 构造 Windows 风格的路径
+        std::string result = driveLetter + std::string(":") + path.substr(6);
+
+        // 替换所有正斜杠为反斜杠
+        std::replace(result.begin(), result.end(), '/', '\\');
+        return result;
+    }
+
+    // 如果路径不符合 /mnt/<drive>/ 格式，则保持原样或者进行其他处理
+    return path;
+}

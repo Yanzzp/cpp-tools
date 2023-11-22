@@ -2,6 +2,16 @@
 
 
 namespace fs = std::filesystem;
+using namespace std;
+
+std::string FileOrganizer::Hyperlink_file(string &path, string &name) {
+    string hyperlink = "[";
+    hyperlink += name;
+    hyperlink += "](";
+    hyperlink += path;
+    hyperlink += ")";
+    return hyperlink;
+}
 
 
 // 获取文件的大小
@@ -18,18 +28,18 @@ uintmax_t FileOrganizer::get_file_size(std::string path) {
     return size;
 }
 
-// 获取文件的大小
-void FileOrganizer::get_file_size1(std::string path, std::atomic<uintmax_t> &fileSize) {
-    std::lock_guard<std::mutex> lockGuard(fileSizeMutex);
-    std::error_code ec{};
-    auto size = std::filesystem::file_size(path, ec);
-    if (ec == std::error_code{}) {
-        fileSize += size;
-    } else {
-        std::cout << "Error accessing file '" << path
-                  << "' message: " << ec.message() << std::endl;
-    }
-}
+//// 获取文件的大小
+//void FileOrganizer::get_file_size1(std::string path, std::atomic<uintmax_t> &fileSize) {
+//    std::lock_guard<std::mutex> lockGuard(fileSizeMutex);
+//    std::error_code ec{};
+//    auto size = std::filesystem::file_size(path, ec);
+//    if (ec == std::error_code{}) {
+//        fileSize += size;
+//    } else {
+//        std::cout << "Error accessing file '" << path
+//                  << "' message: " << ec.message() << std::endl;
+//    }
+//}
 
 // 打印一个文件夹下的所有文件的路径
 void FileOrganizer::print_all_files(const std::string &folderPath, int depth) {
@@ -39,7 +49,7 @@ void FileOrganizer::print_all_files(const std::string &folderPath, int depth) {
     }
     for (const auto &entry: fs::directory_iterator(path)) {
         for (int i = 0; i < depth; ++i) {
-            std::cout << "    "; // 用缩进表示层级
+            std::cout << "  "; // 用缩进表示层级
         }
 
         if (entry.is_directory()) {
@@ -50,6 +60,8 @@ void FileOrganizer::print_all_files(const std::string &folderPath, int depth) {
         }
     }
 }
+
+
 
 
 void FileOrganizer::delete_files(const std::string &folderPath, const std::vector<std::string> &names, bool isDelete,
@@ -386,6 +398,40 @@ std::string FileOrganizer::cli_get_file_size(const std::string &path,bool isPrin
     std::cout << stream.str() << std::endl;
     return stream.str();
 }
+
+void FileOrganizer::create_markdown(const std::string &folderPath, bool isPrint) {
+    std::string path = linuxMode ? windows_path_to_linux_path(folderPath) : folderPath;
+    std::string markdownFileName = path + "/Info.md";
+    fs::path fileToCreate(markdownFileName);
+
+    vector<vector<string>> fileInfos;
+    for (const auto &entry: fs::recursive_directory_iterator(path)) {
+        if (entry.is_regular_file()) {
+            if(isVideoFile(entry.path().filename().string())){
+                fileInfos.emplace_back(FFmpegTool::get_video_details(entry.path().string()));
+            }
+        }
+    }
+    for (auto i:fileInfos) {
+        for (auto j:i) {
+            std::cout << j << " ";
+        }
+        cout << endl;
+    }
+    std::ofstream file(fileToCreate);
+    // 检查文件是否成功打开
+    if (!file.is_open()) {
+        std::cerr << "无法打开文件：" << fileToCreate << std::endl;
+    }
+    for (auto i:fileInfos) {
+        file << Hyperlink_file(i[0], i[1]) << " ";
+        file <<"分辨率:"<< i[3] <<" 视频时长:";
+        file << FFmpegTool::convert_seconds_to_time_format(stoi(i[6]));
+        file << endl;
+    }
+    file.close();
+}
+
 
 
 

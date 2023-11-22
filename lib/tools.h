@@ -33,6 +33,8 @@ public:
 
     static std::string windows_path_to_linux_path(std::string path);
 
+    static std::string linux_path_to_windows_path(std::string path);
+
     static std::string copy_to_clipboard(std::string str);
 
     std::string exec_command(const char* cmd);

@@ -4,7 +4,7 @@
 
 
 #include "tools.h"
-
+#include "FFmpegTool.h"
 
 #define print "print"
 #define txt "txt"
@@ -17,7 +17,6 @@ class FFmpegTool;
 class FileOrganizer : public Tools {
 private:
 
-
     int imageCount = 0;
     int videoCount = 0;
     int audioCount = 0;
@@ -27,6 +26,7 @@ private:
     uintmax_t folderSize = 0;
     std::mutex fileSizeMutex;
 
+    static std::string Hyperlink_file(std::string& path, std::string &name);
 
 public:
     friend class FFmpegTool;
@@ -34,7 +34,7 @@ public:
 
     uintmax_t get_file_size(std::string path);
 
-    void get_file_size1(std::string path, std::atomic<uintmax_t> &fileSize);
+//    void get_file_size1(std::string path, std::atomic<uintmax_t> &fileSize);
 
     void print_all_files(const std::string &folderPath, int depth = 0);
 
@@ -60,6 +60,8 @@ public:
                                 bool isChange = false, bool option = false);
 
     void move_files_to_main_folder(const std::string &folderPath, bool isMove = false);
+
+    void create_markdown(const std::string &folderPath, bool isPrint = true);
 
 };
 
