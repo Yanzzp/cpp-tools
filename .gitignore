@@ -1,6 +1,6 @@
 /cmake-build-debug/
 /.idea/
-# Ignore all video files
+config.json
 *.mp4
 *.mkv
 *.avi
