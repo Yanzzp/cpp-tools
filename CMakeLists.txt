@@ -17,29 +17,30 @@ include_directories(/usr/include/mysql)
 # 包含腾讯云 SDK 头文件
 #include_directories(${TENCENTCLOUD_SDK_PATH}/include)
 
-add_executable(cpp-tools main.cpp
-        lib/FileOrganizer.cpp
-        lib/FFmpegTool.cpp
-        lib/plugs.h
-        lib/threadpools.h
-        lib/database/Database.h
-        lib/database/MySQLDatabase.cpp
-        lib/database/MySQLDatabase.h
-        lib/tools.h
-        lib/tools.cpp
+
+file(GLOB SOURCES
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/*.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/lib/*.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/lib/*.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/lib/database/*.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/lib/database/*.h"
 )
+
+add_executable(cpp-tools ${SOURCES})
+
 
 target_include_directories(cpp-tools PRIVATE
         ${FFMPEG_INCLUDE_DIRS}
         # 添加 MySQL 库文件路径
         /usr/lib/x86_64-linux-gnu
-#        ${PYTHON_INCLUDE_DIRS}
+        #        ${PYTHON_INCLUDE_DIRS}
 )
 
 target_link_directories(cpp-tools PRIVATE
         ${FFMPEG_LIBRARY_DIRS}
         # 添加腾讯云 SDK 库文件目录
-#        ${TENCENTCLOUD_SDK_PATH}/lib
+        #        ${TENCENTCLOUD_SDK_PATH}/lib
 )
 
 target_link_libraries(cpp-tools
@@ -48,7 +49,6 @@ target_link_libraries(cpp-tools
         mysqlclient
         mysqlcppconn
 #        ${PYTHON_LIBRARIES}
-        # 链接腾讯云 SDK 核心库
 #        tencentcloud-sdk-cpp-core
 )
 
