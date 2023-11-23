@@ -3,6 +3,9 @@
 # 更新包管理器
 sudo apt-get update
 
+# 安装gcc、g++、cmake、gdb
+sudo apt-get install gcc g++ cmake gdb
+
 # 安装FFmpeg
 sudo apt-get install ffmpeg
 

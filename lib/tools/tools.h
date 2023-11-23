@@ -12,8 +12,8 @@
 #include <chrono>   // 包含时间库，用于计算函数运行时间
 #include <mutex>
 
-#include "threadpools.h"
-#include "multithread.h"
+#include "../threadpools.h"
+#include "../multithread.h"
 
 
 class Tools {

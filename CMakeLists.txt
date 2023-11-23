@@ -23,11 +23,15 @@ file(GLOB SOURCES
         "${CMAKE_CURRENT_SOURCE_DIR}/*.h"
         "${CMAKE_CURRENT_SOURCE_DIR}/lib/*.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/lib/*.h"
+        "${CMAKE_CURRENT_SOURCE_DIR}/lib/tools/*.cpp"
+        "${CMAKE_CURRENT_SOURCE_DIR}/lib/tools/*.h"
         "${CMAKE_CURRENT_SOURCE_DIR}/lib/database/*.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/lib/database/*.h"
 )
 
-add_executable(cpp-tools ${SOURCES})
+add_executable(cpp-tools ${SOURCES}
+        lib/tools/python.cpp
+        lib/tools/python.h)
 
 
 target_include_directories(cpp-tools PRIVATE

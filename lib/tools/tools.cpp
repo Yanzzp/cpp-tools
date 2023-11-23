@@ -58,6 +58,10 @@ std::string Tools::copy_to_clipboard(std::string str) {
 
 
 std::string Tools::exec_command(const char *cmd) {
+    /*
+     * execute_command
+     * 执行命令并通过管道返回结果
+     */
     std::array<char, 128> buffer{};
     std::string result;
     try {
