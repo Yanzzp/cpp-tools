@@ -1,11 +1,12 @@
 #ifndef CPP_TOOLS_MYSQLDATABASE_H
 #define CPP_TOOLS_MYSQLDATABASE_H
+
 #include <mysql_driver.h>
 #include <mysql_connection.h>
 #include <cppconn/statement.h>
 #include "Database.h"
 
-class MySQLDatabase : public Database{
+class MySQLDatabase : public Database {
 private:
     std::unique_ptr<sql::Connection> connection;
 public:
@@ -14,6 +15,8 @@ public:
 
     // 执行 SQL 语句
     void execute(const std::string &query) override;
+
+    void createTable(const std::string &TableName, bool replace = false);
 
     // 新增插入数据函数
     void insertData(const std::string &query) {

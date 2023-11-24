@@ -3,6 +3,8 @@
 
 #include "tools/FileOrganizer.h"
 #include "tools/FFmpegTool.h"
+#include "tools/MySQLTool.h"
+#include "database/MySQLDatabase.h"
 #include "multithread.h"
 
 #endif

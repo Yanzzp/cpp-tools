@@ -31,7 +31,8 @@ file(GLOB SOURCES
 
 add_executable(cpp-tools ${SOURCES}
         lib/tools/python.cpp
-        lib/tools/python.h)
+        lib/tools/python.h
+)
 
 
 target_include_directories(cpp-tools PRIVATE
