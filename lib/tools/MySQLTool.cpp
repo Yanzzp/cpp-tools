@@ -10,24 +10,34 @@ namespace fs = std::filesystem;
 void MySQLTool::createTable(const std::string &TableName, bool replace) {
     try {
         std::unique_ptr<sql::Statement> stmt(connection->createStatement());
+
         if (replace) {
             stmt->execute("DROP TABLE IF EXISTS " + TableName);
             cout << "已经存在表,清空表并重新输入" << endl;
+        } else {
+            // 检查表是否存在
+            std::unique_ptr<sql::ResultSet> res(stmt->executeQuery("SHOW TABLES LIKE '" + TableName + "'"));
+            if (res->next()) {
+                // 如果表已存在，则返回
+                cout << "表 " << TableName << " 已存在，未进行替换。" << endl;
+                return;
+            }
         }
+
         stmt->execute("CREATE TABLE IF NOT EXISTS " + TableName + " ("
                                                                   "id INT AUTO_INCREMENT PRIMARY KEY,\n"
                                                                   "filePath VARCHAR(255),\n"
                                                                   "fileName VARCHAR(128),\n"
                                                                   "suffix VARCHAR(16),\n"
                                                                   "fileSize BIGINT\n"
-                                                                  ")ENGINE=InnoDB DEFAULT CHARSET=utf8;");
+                                                                  ") ENGINE=InnoDB DEFAULT CHARSET=utf8;");
         stmt->execute("CREATE INDEX idx_filePath ON " + TableName + " (filePath);");
     } catch (const sql::SQLException &e) {
         std::cerr << "创建表失败: " << e.what() << std::endl;
         exit(1);
     }
-
 }
+
 
 bool MySQLTool::connect(const std::string &host, const std::string &user, const std::string &password,
                         const std::string &database) {
@@ -90,7 +100,7 @@ void MySQLTool::insertFiles(const string &folderPath, string table, bool isRoot)
                                                 : entry.path().string();
                     string fileName = entry.path().filename().string();
                     string suffix = entry.path().extension().string();
-                    string fileSize = to_string(entry.file_size());
+                    string fileSize = to_string(entry.file_size() / 1024);
                     insertData(table, filePath, fileName, suffix, fileSize);
                     cout << "成功插入数据: " << filePath << endl;
                 });
@@ -99,7 +109,7 @@ void MySQLTool::insertFiles(const string &folderPath, string table, bool isRoot)
                 string filePath = linuxMode ? linux_path_to_windows_path(entry.path().string()) : entry.path().string();
                 string fileName = entry.path().filename().string();
                 string suffix = entry.path().extension().string();
-                string fileSize = to_string(entry.file_size());
+                string fileSize = to_string(entry.file_size()/1024);
                 insertData(table, filePath, fileName, suffix, fileSize);
                 cout << "成功插入数据: " << filePath << endl;
             }
