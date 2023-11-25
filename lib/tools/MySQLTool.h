@@ -1,7 +1,3 @@
-//
-// Created by 11057 on 2023/11/24.
-//
-
 #ifndef CPP_TOOLS_MYSQLTOOL_H
 #define CPP_TOOLS_MYSQLTOOL_H
 
@@ -21,12 +17,15 @@ public:
     // 执行 SQL 语句
     void execute(const std::string &query) override;
 
-    void createTable(const std::string& TableName = "FileName", bool replace = false);
+    void createTable(const std::string &TableName = "FileName", bool replace = false);
 
-    void insertData(std::string filePath, std::string fileName, std::string suffix, std::string fileSize);
+    void
+    insertData(std::string table, std::string filePath, std::string fileName, std::string suffix, std::string fileSize);
 
-    void insertFiles(const std::string& folderPath,bool isRoot=true);
+    void insertFiles(const std::string &folderPath, std::string table, bool isRoot = true);
+
+    bool searchFile(const std::string& table,const std::string &filePath);
 };
 
 
-#endif //CPP_TOOLS_MYSQLTOOL_H
+#endif
