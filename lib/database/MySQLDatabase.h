@@ -4,17 +4,17 @@
 #include <mysql_driver.h>
 #include <mysql_connection.h>
 #include <cppconn/statement.h>
-#include "Database.h"
 
-class MySQLDatabase : public Database {
+
+class MySQLDatabase {
 private:
     std::unique_ptr<sql::Connection> connection;
 public:
     bool connect(const std::string &host, const std::string &user,
-                 const std::string &password, const std::string &database) override;
+                 const std::string &password, const std::string &database) ;
 
     // 执行 SQL 语句
-    void execute(const std::string &query) override;
+    void execute(const std::string &query) ;
 
     void createTable(const std::string &TableName, bool replace = false);
 

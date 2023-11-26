@@ -72,24 +72,24 @@ void MySQLTool::execute(const std::string &query) {
     }
 }
 
-void MySQLTool::insertData(string table, string filePath, string fileName, string suffix,
-                           std::string fileSize) {
+void MySQLTool::insertData(std::unique_ptr<sql::Statement> &stmt, string table, string filePath, string fileName,
+                           string suffix, std::string fileSize) {
     try {
         std::replace(filePath.begin(), filePath.end(), '\\', '/');
-        std::unique_ptr<sql::Statement> stmt(connection->createStatement());
         stmt->execute(
                 "INSERT INTO " + table + " (filePath, fileName, suffix, fileSize) VALUES ('" + filePath + "', '" +
                 fileName +
                 "', '" + suffix + "', '" + fileSize + "')");
     } catch (const sql::SQLException &e) {
         std::cerr << "插入数据失败: " << e.what() << std::endl;
-        exit(1);
     }
 }
+
 
 void MySQLTool::insertFiles(const string &folderPath, string table, bool isRoot) {
     string path = linuxMode ? windows_path_to_linux_path(folderPath) : folderPath;
     std::vector<std::thread> threads; // 用于存储线程的容器
+    std::unique_ptr<sql::Statement> stmt(connection->createStatement()); // 在这里创建stmt对象
 
     for (const auto &entry: fs::directory_iterator(path)) {
         if (entry.is_regular_file()) {
@@ -101,7 +101,7 @@ void MySQLTool::insertFiles(const string &folderPath, string table, bool isRoot)
                     string fileName = entry.path().filename().string();
                     string suffix = entry.path().extension().string();
                     string fileSize = to_string(entry.file_size() / 1024);
-                    insertData(table, filePath, fileName, suffix, fileSize);
+                    insertData(stmt, table, filePath, fileName, suffix, fileSize);
                     cout << "成功插入数据: " << filePath << endl;
                 });
             } else {
@@ -109,8 +109,8 @@ void MySQLTool::insertFiles(const string &folderPath, string table, bool isRoot)
                 string filePath = linuxMode ? linux_path_to_windows_path(entry.path().string()) : entry.path().string();
                 string fileName = entry.path().filename().string();
                 string suffix = entry.path().extension().string();
-                string fileSize = to_string(entry.file_size()/1024);
-                insertData(table, filePath, fileName, suffix, fileSize);
+                string fileSize = to_string(entry.file_size() / 1024);
+                insertData(stmt, table, filePath, fileName, suffix, fileSize);
                 cout << "成功插入数据: " << filePath << endl;
             }
         } else if (entry.is_directory()) {
@@ -151,5 +151,55 @@ bool MySQLTool::searchFile(const string &table, const string &filePath) {
     return found;  // 返回是否找到匹配文件
 }
 
+void MySQLTool::insertFiles1(const string &folderPath, std::string table) {
+    std::string path = linuxMode ? windows_path_to_linux_path(folderPath) : folderPath;
+    std::threadpool pool(24); // 创建线程池，假设有 4 个工作线程
 
 
+    for (const auto &entry: std::filesystem::recursive_directory_iterator(path)) {
+        if (entry.is_regular_file()) {
+            try {
+                pool.commit([this, entry, table]() {
+                    try {
+                        // 为每个线程创建一个新的 SQL 语句对象
+                        std::unique_ptr<sql::Statement> localStmt(connection->createStatement());
+                        // 根据 linuxMode 转换文件路径
+                        std::string filePath = linuxMode ? linux_path_to_windows_path(entry.path().string()) : entry.path().string();
+                        // 提取文件名、扩展名和大小
+                        std::string fileName = entry.path().filename().string();
+                        std::string suffix = entry.path().extension().string();
+                        std::string fileSize = std::to_string(entry.file_size() / 1024);
+                        // 调用修改后的 insertData1 函数
+                        insertData1(localStmt, table, filePath, fileName, suffix, fileSize);
+                        std::cout << "成功插入数据: " << filePath << std::endl;
+                    } catch (const std::exception &e) {
+                        std::cerr << "插入文件时发生错误: " << e.what() << std::endl;
+                    }
+                });
+            } catch (const std::exception &e) {
+                std::cerr << "插入文件时发生错误: " << e.what() << std::endl;
+            }
+        }
+    }
+}
+
+
+void
+MySQLTool::insertData1(std::unique_ptr<sql::Statement> &stmt, const std::string &table, const std::string &filePath,
+                       const std::string &fileName, const std::string &suffix, const std::string &fileSize) {
+    try {
+        // 替换文件路径中的反斜杠为斜杠
+        std::string safeFilePath = filePath;
+        std::replace(safeFilePath.begin(), safeFilePath.end(), '\\', '/');
+
+        // 构建 SQL 插入语句
+        std::string query =
+                "INSERT INTO " + table + " (filePath, fileName, suffix, fileSize) VALUES ('" + safeFilePath + "', '" +
+                fileName + "', '" + suffix + "', '" + fileSize + "')";
+
+        // 执行 SQL 语句
+        stmt->execute(query);
+    } catch (const sql::SQLException &e) {
+        std::cerr << "插入数据失败: " << e.what() << std::endl;
+    }
+}

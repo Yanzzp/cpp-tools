@@ -1,13 +1,15 @@
 cmake_minimum_required(VERSION 3.22.1)
 project(cpp-tools)
 
-set(CMAKE_CXX_STANDARD 20)
+set(CMAKE_CXX_STANDARD 23)
 
 find_package(PkgConfig REQUIRED)
 pkg_check_modules(FFMPEG REQUIRED libavcodec libavformat libavutil)
+pkg_check_modules(HIREDIS REQUIRED hiredis)
 
 # 包含 MySQL 头文件路径
 include_directories(/usr/include/mysql)
+include_directories(${HIREDIS_INCLUDE_DIRS})
 
 #find_package(PythonLibs 3.10.12 REQUIRED)
 
@@ -53,6 +55,7 @@ target_link_libraries(cpp-tools
         ${FFMPEG_LIBRARIES}
         mysqlclient
         mysqlcppconn
+        ${HIREDIS_LIBRARIES}
 #        ${PYTHON_LIBRARIES}
 #        tencentcloud-sdk-cpp-core
 )
