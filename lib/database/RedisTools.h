@@ -2,8 +2,8 @@
 #define CPP_TOOLS_REDISTOOLS_H
 
 #include "../tools/tools.h"
-#include "../threadpools.h"
-#include "../redispool.h"
+#include "../pools/threadpools.h"
+#include "../pools/redispool.h"
 
 struct FileInfo {
     std::string filePath;

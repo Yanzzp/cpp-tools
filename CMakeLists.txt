@@ -7,9 +7,12 @@ find_package(PkgConfig REQUIRED)
 pkg_check_modules(FFMPEG REQUIRED libavcodec libavformat libavutil)
 pkg_check_modules(HIREDIS REQUIRED hiredis)
 
+
 # 包含 MySQL 头文件路径
 include_directories(/usr/include/mysql)
 include_directories(${HIREDIS_INCLUDE_DIRS})
+
+
 
 #find_package(PythonLibs 3.10.12 REQUIRED)
 
@@ -19,17 +22,15 @@ include_directories(${HIREDIS_INCLUDE_DIRS})
 # 包含腾讯云 SDK 头文件
 #include_directories(${TENCENTCLOUD_SDK_PATH}/include)
 
-
-file(GLOB SOURCES
+file(GLOB CURRENT_DIR_SOURCES
         "${CMAKE_CURRENT_SOURCE_DIR}/*.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/*.h"
+)
+file(GLOB_RECURSE LIB_SOURCES
         "${CMAKE_CURRENT_SOURCE_DIR}/lib/*.cpp"
         "${CMAKE_CURRENT_SOURCE_DIR}/lib/*.h"
-        "${CMAKE_CURRENT_SOURCE_DIR}/lib/tools/*.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/lib/tools/*.h"
-        "${CMAKE_CURRENT_SOURCE_DIR}/lib/database/*.cpp"
-        "${CMAKE_CURRENT_SOURCE_DIR}/lib/database/*.h"
 )
+set(SOURCES ${CURRENT_DIR_SOURCES} ${LIB_SOURCES})
 
 add_executable(cpp-tools ${SOURCES}
         lib/tools/python.cpp

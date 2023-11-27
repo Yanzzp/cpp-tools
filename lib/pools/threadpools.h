@@ -2,14 +2,7 @@
 #ifndef THREAD_POOL_H
 #define THREAD_POOL_H
 
-#include <vector>
-#include <queue>
-#include <atomic>
-#include <future>
-#include <condition_variable>
-#include <thread>
-#include <functional>
-#include <stdexcept>
+#include "pools.h"
 
 namespace std {
 //线程池最大容量,应尽量设小一点
