@@ -19,5 +19,9 @@
 
 #include <hiredis/hiredis.h>
 #include <mysql/mysql.h>
+#include "redispool.h"
+#include "mysqlpool.h"
+#include "threadpools.h"
+
 
 #endif //CPP_TOOLS_POOLS_H
