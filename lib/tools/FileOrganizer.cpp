@@ -292,6 +292,9 @@ void FileOrganizer::multithread_get_folder_size(const std::string &folderPath, b
 //}
 
 void FileOrganizer::get_folder_info(const std::string &folderPath) {
+    /*
+     * 使用系统的方式来获取文件夹的路径和名称
+     */
     std::string path;
     if (linuxMode) {
         path = windows_path_to_linux_path(folderPath);

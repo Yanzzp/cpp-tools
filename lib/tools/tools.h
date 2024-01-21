@@ -37,7 +37,7 @@ public:
 
     static std::string copy_to_clipboard(std::string str);
 
-    std::string exec_command(const char* cmd);
+    std::string exec_command(const char *cmd);
 };
 
 
