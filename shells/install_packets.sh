@@ -22,5 +22,8 @@ sudo apt install -y libhiredis-dev
 sudo apt install -y libmysqlcppconn-dev
 sudo apt install -y libmysqlclient-dev
 
+# 安装Exiv2的开发库
+sudo apt install -y libexiv2-dev
+
 # 安装PkgConfig工具
 sudo apt install -y pkg-config
