@@ -23,20 +23,28 @@ protected:
     static const std::set<std::string> videoExtensions;
     static const std::set<std::string> audioExtensions;
 public:
+    // 是否为 Linux 模式
     static bool linuxMode;
 
+    // 判断是否为图像文件
     static bool isImageFile(const std::string &filename);
 
+    // 判断是否为视频文件
     static bool isVideoFile(const std::string &filename);
 
+    // 判断是否为音频文件
     static bool isAudioFile(const std::string &filename);
 
+    // 将 Windows 路径转换为 Linux 路径
     static std::string windows_path_to_linux_path(std::string path);
 
+    // 将 Linux 路径转换为 Windows 路径
     static std::string linux_path_to_windows_path(std::string path);
 
+    // 将字符串复制到剪贴板并运行
     static std::string copy_to_clipboard(std::string str);
 
+    // 执行命令并通过管道返回结果
     std::string exec_command(const char *cmd);
 };
 

@@ -65,6 +65,9 @@ std::string Tools::exec_command(const char *cmd) {
     std::array<char, 128> buffer{};
     std::string result;
     try {
+        /* 使用 popen 函数执行 cmd 指定的命令，并创建一个到命令输出的管道。
+         * popen 返回一个 FILE*，这里被包装在一个 std::unique_ptr 中，使用 pclose 函数作为删除器。
+         * 这样可以确保管道在离开作用域时被正确关闭。 */
         std::unique_ptr<FILE, decltype(&pclose)> pipe(popen(cmd, "r"), pclose);
         if (!pipe) {
             throw std::runtime_error("popen() failed!");
